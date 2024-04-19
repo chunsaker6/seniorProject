@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta name="description" content="Personal Training website. Home page.">
+        <meta name="author" content="Calvin Hunsaker">
+        <meta name="keywords" content="Fitness, Workout, Training">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Work For Your Masterpiece</title>
+        <link rel = "stylesheet" type= "text/css" href= "style.css">
+    </head>
+    <body>
+        <div id= "app">
+            <!--this is Vue app-->
+            <div id="wrapper_home" v-if="logPage === 'A'"> 
+                <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="logo1">
+                <div class="nav">
+                    <nav>
+                        <ul>
+                            <li><a class = "nav_padding nav_index" @click="showPage = 'A'; logPage = 'A'">Home</a></li>
+                            <li><a class = "nav_padding nav_index" @click="showPage = 'B'; logPage = 'A'">About</a></li>
+                            <li><a class = "nav_padding nav_index" @click="showPage = 'C'; logPage = 'A'">Contact</a></li>
+                            <li><a class = "nav_padding nav_index" @click="showPage = 'D'; logPage = 'B'">Login</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="sign_up_nav">
+                    <a @click="showPage = 'E'; logPage = 'C'">Sign Up</a>
+                </div>
+            </div>
+            <div id="indexPageWrapper"  v-if="showPage === 'A'">
+                <div id="workoutphoto">
+                    <div id="journey">
+                        <h1 >Get Started On <br> Your Fitness Journey</h1>
+                        <div class="journey_button">
+                            <a @click="showPage = 'E'; logPage = 'C'">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="white_background_why"></div>
+                <div id="why_header">
+                    <h1>Work For Your Masterpiece</h1>
+                </div>
+                <div id="yellow_underline"></div>
+                <!--<main>-->
+                <div id="why_us">
+                    <h1>Why Choose Us?</h1><hr><br>
+                    <p>In life you need <b>mentors/coaches</b> to teach you through their <b>failures and successes.</b>
+                        Fitness is no different. Having an <b>extremely experienced</b> and dedicated coach can exponentially increase
+                        your progress. That does not mean that reaching your fitness goals will be easy but we can make it take <b>significantly less
+                        time and guess work.</b> You still have to do the <b>work</b> but having a <b>step by step guide</b> of what are optimal exercises and proper
+                        nutrition <b>WILL</b> help you achieve your fitness goals.
+                    </p><br>
+                    <h1>Our Mission:</h1><hr><br>
+                    <p>Our mission is to give you the <b>best results</b> we can during our 12 week program,
+                    as well as instill in you the <b>habits</b> and <b>knowledge</b> to continue on your fitness journey after our time with you has ended.</p>
+                </div>
+                <!--</main>-->
+                <div id="perk_header">
+                    <h1>Online Training</h1><br>
+                    <p>Information for our online training as well as what type of personalized workout program is best for you.
+                        BULK or SHRED??
+                    </p>
+                </div>
+                <div id="top_left_perk_picture">
+                    <div class="top_perk_spacing training_flex top_hack_spacing">
+                        <img src="images/hacksquat.jpeg" alt="hacksquat" class = "mirror_size">
+                    </div>
+                </div>  
+                <div id="top_center_perk_content">
+                    <div class="top_perk_spacing training_flex top_hack_spacing">
+                        <div class="perk_buttons training_mid" id="train_padding">
+                            <a href="sign_up.html">
+                                <h1>TRAIN</h1><br>
+                                <div class="hover_saver">
+                                    <ul>
+                                        <li>Customized workouts</li>
+                                        <li>At home programs</li>
+                                        <li>Lorem Ipsum</li>
+                                        <li>Lorem Ipsum</li>
+                                    </ul>
+                                </div>
+                                <div class="more_info_perks" id = "more_info_train">More Info</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="top_right_perk_picture">
+                    <div class="top_perk_spacing training_flex" id="mirror_flex_spacing">
+                        <img src="images/mirror_wriststraps2.jpeg" alt="deadlift" class="mirror_size">
+                    </div>
+                </div>  
+                <div id="bottom_left_perk_content">
+                    <div class="bottom_perk_spacing training_flex">
+                        <div class="perk_buttons training_mid" id="shred_spacing">
+                            <a href="sign_up.html"> 
+                                <h1>SHRED</h1><br>
+                                <div class="hover_saver">
+                                    <ul>
+                                        <li>Cut Fat</li>
+                                        <li>Gain lean muscle</li>
+                                        <li>Gain vascularity</li>
+                                        <li>Confidence</li>
+                                    </ul>
+                                </div>
+                                <div class="more_info_perks" id="more_information">More Info</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="bottom_right_perk_content">
+                    <div class="bottom_perk_spacing training_flex">
+                        <div class="perk_buttons training_mid" id="bulk_padding">
+                            <a href="sign_up.html">
+                                <h1>BULK</h1><br>
+                                <div class="hover_saver">
+                                    <ul>
+                                        <li>Gain Lean Muscle Mass</li>
+                                        <li>Increase Strength</li>
+                                        <li>Pack on Muscle</li>
+                                        <li>Confidence</li>
+                                    </ul>
+                                </div>
+                                <div class="more_info_perks">More Info</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="bottom_perk_picture">
+                    <div id="bottom_perk_picture_spacing" class="training_flex">
+                        <img src="images/back_deadlift.jpeg" alt="deadlift" id="deadlift_size">
+                    </div>
+                </div>
+                <div id="white_background_about"></div>
+                <div id="transformations">
+                    <h1>Results</h1><hr class="hr_yellow"><br>
+                </div>
+                <div id="transformations_pics">
+                    <!-- Slideshow container -->
+                    <div class="transformation_flex">
+                        <div class="slideshow-container1">
+
+                            <!-- Full-width images with number and caption text -->
+                            <div class="mySlides1 fade1">
+                                <div class="numbertext1">1 / 3</div>
+                                <div class="border_transformation">
+                                    <img src="images/pre_transformations_c.jpg" alt="calvin_before" class="index_slide_size">
+                                    <img src="images/post_transformation_c.jpg" alt="calvin_after" class="index_slide_size">
+                                </div>
+                                <div class="text1">Caption Text</div>
+                            </div>
+                        
+                            <div class="mySlides1 fade1">
+                                <div class="numbertext1">2 / 3</div>
+                                <div class="border_transformation">
+                                    <img src="images/pre_transformations_c.jpg" alt="calvin_before" class="index_slide_size">
+                                    <img src="images/post_transformation_c.jpg" alt="calvin_after" class="index_slide_size">
+                                </div>
+                                <div class="text1">Caption Two</div>
+                            </div>
+                        
+                            <div class="mySlides1 fade1">
+                                <div class="numbertext1">3 / 3</div>
+                                <div class="border_transformation">
+                                    <img src="images/pre_transformations_c.jpg" alt="calvin_before" class="index_slide_size">
+                                    <img src="images/post_transformation_c.jpg" alt="calvin_after" class="index_slide_size">
+                                </div>
+                                <div class="text1">Caption Three</div>
+                            </div>
+                        
+                            <!-- Next and previous buttons -->
+                            <a class="prev1" onclick="plusSlides(-1, 0)">&#10094;</a>
+                            <a class="next1" onclick="plusSlides(1, 0)">&#10095;</a>
+                        </div>
+                        <br>
+                    </div>            
+                </div>
+                <div id="transformations_messages">
+                    <div class="transformation_flex">
+                        <div class="slideshow-container2">
+
+
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div id="index_about_photo"></div>
+                <div id="index_about_content">
+                    <h1>Christian Case</h1><hr class="hr_yellow" id="hr_about_spacing">
+                    <p class="about_padding">"I have been working out for 13 years now. I started with a New Years resolution when I was 10 to do as many 
+                        push-ups, pull-ups and sit ups as I could every day and I have not missed a day of working out since."<br>
+                        Christian has tons of experience from all of his years of intense lifting and his most recent bodybuilding competitions.
+                        His advice on nutrition and optimal exercises is an extremely valuable asset kickstart you along on your fitness journey.
+                    </p>
+                </div>
+                <div id="index_about_button">
+                    <a href="about.html">Learn More</a>
+                </div>
+                <div id="opt_in">
+                    <h1>Free Workout Tips</h1><br>
+                    <p>Join our newsletter to recieve emails with workout techniques and tips.</p><br>
+                    <p>As well as motivational and perspective shifting emails.</p><br>
+                    <form>
+                        <input type="email" name="myEmail" id="Email_opt" placeholder="Email">    
+                        <input type="submit" id="mySubmit_opt" value="Get Tips">
+                    </form>
+                </div>
+                <div id="social_section">
+                    <hr class="hr_yellow">
+                    <h1> Follow Us Here</h1>
+                    <a href="https://www.instagram.com">
+                        <img src="images/icons8-instagram-50.png" alt="instagram" height="38">
+                    </a>
+                    <a href="https://www.tiktok.com">
+                        <img src="images/icons8-tiktok-50.png" alt="tiktok" height="38">
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <img src="images/icons8-facebook-50.png" alt="facebook" height="40">
+                    </a>
+                </div>
+                <div id="footer_home_page">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <nav>
+                            <ul>
+                                <li class="nav2"><a href="index.html">Home</a></li>
+                                <li class="nav2"><a href="about.html">About</a></li>
+                                <li class="nav2"><a href="contact.html">Contact</a></li>
+                                <li class="nav2"><a href= "login.html">Login</a></li>
+                            </ul>
+                        </nav>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                    </footer>
+                </div>
+            </div>
+            <!-- 
+            NEW PAGE
+            ABOUT PAGE
+             -->
+            <div id="aboutWrapper" v-if="showPage === 'B'">
+                <div id="white_background_about_page"></div>
+                <div id="hero_about_content">
+                    <h1>Christian Case</h1><hr class="hr_yellow"><br>
+                    <h4>Trainer & Bodybuilder</h4><br>
+                    <!--<h1>Work For Your Masterpiece</h1>-->
+                </div>
+                <div id="about_main_content">
+                    <h1 class="center_about">About Me</h1><br>
+                    <p>My name is Christian Case, I've had a love for lifting weights and fitness for nearly as long as I can remember. 
+                        It started as a New Years resolution for me when I was 10 years old to workout six times a week and not miss a day. During that time and every year since, 
+                        I've discovered an intense passion for doing hard things for the sake of proving to myself that I can! Over the years fitness has become a part of who I am, I absolutely love to lift weights 
+                        and that is what fuels every single workout for me. I truly believe that with proper nutrition, workout structure, and mindset that the sky is the limit for any and everyone's fitness. 
+                        All it takes is starting, with no intention of stopping!
+                    </p>
+                </div>
+                <div id="about_main_image">
+                    <img src="images/hacksquat.jpeg" alt="hacksquat" id="about_christian">
+                </div>
+                <div id="about_why_white_background"></div>
+                <div id="about_why_image">
+                    <img src="images/why_train.JPG" alt="hacksquat" id="why_train_photo">
+                </div>
+                <div id="about_why_content">
+                    <h1 class="center_about">Why do I train?</h1><br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div id="footer_about_page">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <nav>
+                            <ul>
+                                <li class="nav2"><a href="index.html">Home</a></li>
+                                <li class="nav2"><a href="about.html">About</a></li>
+                                <li class="nav2"><a href="contact.html">Contact</a></li>
+                                <li class="nav2"><a href= "login.html">Login</a></li>
+                            </ul>
+                        </nav>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                    </footer>
+                </div>
+            </div>
+            <!-- 
+            NEW PAGE
+            CONTACT PAGE
+             -->
+            <div id="wrapperContact" v-if="showPage === 'C'">
+                <div id="hero_contact"></div>
+                <div id="hero_contact_content">
+                    <h1>Contact Us</h1><br><hr><br>
+                </div>
+                <div id="form_border">
+                    <div id="form_padding">
+                        <p>Reach out to us with any questions or feedback that you may have.</p><br>
+                        <p>You will get a response within 48 hours.</p><br>
+                        <h2>Enter Your Information Below</h2>
+                        <form method="post">
+                            <input type="text" name="myFname" id="name" placeholder="First Name" required>
+                            <input type="text" name="myLname" id="lname" placeholder="Last Name" required>
+                            <input type="email" name="myEmail" id="email" placeholder="Email" required>
+                            <textarea rows="4" cols="20" name= "myFeedback" placeholder="Feedback" id="Feedback"></textarea>
+                            <input type="submit" id="mySubmit_contact">
+                        </form>
+                    </div>
+                </div>
+                <div id="footer_contact_page">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <nav>
+                            <ul>
+                                <li class="nav2"><a href="index.html">Home</a></li>
+                                <li class="nav2"><a href="about.html">About</a></li>
+                                <li class="nav2"><a href="contact.html">Contact</a></li>
+                                <li class="nav2"><a href= "login.html">Login</a></li>
+                            </ul>
+                        </nav>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                    </footer>
+                </div>
+            </div>
+            <div id="wrapper_log_in" v-if="showPage === 'D' && logPage === 'B'">
+                <div id="login_background">
+                    <h1>Members Login</h1>
+                </div>
+                <div id="login_form">
+                    <form action="login_grabber.html" method="get">    
+                        <div class="container">
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+                        
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw"  id="psw" required>
+                        
+                            <button type="submit" id="log_in_button">Login</button><br>
+                            <p id="log_in_form_center">or</p>
+                            <div id="sign_up_log_in"><a @click="showPage = 'E'; logPage = 'C'">Sign Up</a></div><br>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label>
+                            <p id="forgot_password"><a href="#">Forgot password?</a></p>
+                        </div>
+                    </form>
+                </div>
+                <div id="footer_log_in">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
+            <!-- 
+            NEW PAGE
+            SIGN UP PAGE
+             -->
+            <div id="wrapper_sign_up" v-if="showPage === 'E' && logPage === 'C'"> 
+                <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="logo_sign">
+                <div id="nav_wm"><h1 class="yellow">Work For Your Masterpiece</h1></div>
+                <div id="sign_white_background"></div>
+                <div id="lead_section">
+                    <h1 class="center_size yellow">When you are tired of having to fake confidence, here is what to do.</h1><br>
+                    <p>Are you satisfied with the person looking back at your in the mirror?</p>
+                    <p>Is that person confident, strong and dense with muscle?</p>
+                    <p>Are they someone that other men respect and women admire?</p>
+                    <p>Or is it someone who wishes they were that person?</p>
+                    <p>I struggled for a long time with wanting to feel truly confident..</p>
+                    <p>Once I dedicated myself to fitness I realized that it all starts with fitness, 
+                    if you aren't satisfied with how you look in the mirror then you will struggle in all other areas of your life.</p>
+                    <p>The way to build TRUE confidence is by earning the respect of that man looking back at you in the mirror.</p>
+                    <p>Looking and feeling like a Greek God is just an amazing byproduct.</p>
+                    <h3 class="yellow">Join today and I will teach you how to build that inner strength through fitness.</h3><hr><br>
+                    <div class= "training_button">
+                        <a @click="showPage = 'F'; logPage = 'D'">
+                            <h3>Build Your Dream Body -></h3>
+                        </a>
+                    </div>
+                </div>
+                <div id="sign_up_transformation">
+                    <!-- Slideshow container -->
+                    <div class="transformation_flex">
+                        <div class="slideshow-container">
+    
+                            <div class="mySlides fade">
+                                <div class="numbertext">1 / 3</div>
+                                <div class="border_transformation">
+                                    <img src="images/pre_transformations_c.jpg" alt="calvin_before" class="slide_sign_up">
+                                    <img src="images/post_transformation_c.jpg" alt="calvin_after" class="slide_sign_up">
+                                </div>
+                                <div class="text">Caption Text</div>
+                            </div>
+                        
+                            <div class="mySlides fade">
+                                <div class="numbertext">2 / 3</div>
+                                <div class="border_transformation">
+                                    <img src="images/pre_transformations_c.jpg" alt="calvin_before" class="slide_sign_up">
+                                    <img src="images/post_transformation_c.jpg" alt="calvin_after" class="slide_sign_up">
+                                </div>
+                                <div class="text">Caption Two</div>
+                            </div>
+                        
+                            <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                            <div class="border_transformation">
+                                <img src="images/pre_transformations_c.jpg" alt="calvin_before" class="slide_sign_up">
+                                <img src="images/post_transformation_c.jpg" alt="calvin_after" class="slide_sign_up">
+                            </div>
+                            <div class="text">Caption Three</div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <!-- The dots/circles -->
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+                <div id="smokewhite"></div>
+                <div id="sign_up_meet">
+                    <h1 class="center_size yellow">Meet Your Trainer</h1><br>
+                    <h2 class="center_size">Christian Case</h2><br>
+                    <h2 class="sign_mobile_center">Christian Case fitness origin story</h2> <br>
+                    <div id="christian_float">
+                        <img src="images/pre_christian.jpg" alt="christian_before" class="christian_size_sign">
+                        <img src="images/post_christian.JPG" alt="christian_after" class="christian_size_sign">
+                    </div>
+                    <p>It is time for you to begin your fitness journey. It is time for you to begin building your <b>confidence</b> and <b>self-discipline.</b></p>
+                    <p>Getting into shape will have a <b>tremendous</b> impact on your life. You will grow as a person as you push yourself through difficult workouts.</p>
+                    <p>Your <b>self-esteem</b> will increase <b>exponentially</b>. The way that people percieve you will be <b>drastically</b> changed.</p>
+                    <p>You will be viewed with <b>respect</b> and <b>admiration</b> as people see the changes you start to embody as you commit yourself to fitness. </p>
+                    <p>You will be viewed as <b>hard working</b> and <b>dedicated</b> by those who see your commitment.</p>
+                    <p>The <b>reality</b> is that people makes judgements off of <b>appearences</b> and the more in shape you look, the more <b>positively</b> people will percieve you.</p>
+                    <p>Take that <b>first step</b> toward becoming the <b>version</b> of you that you always knew you could be.</p>
+                    <div class="training_button">
+                        <a @click="showPage = 'F'; logPage = 'D'">
+                            <h3>Become Your Best -></h3>
+                        </a>
+                    </div>
+                </div>
+                <div id="what_you_get_white"></div>
+                <div id="what_you_get">
+                    <h1 class="center_size yellow">How Work For Your Masterpiece Works</h1><br>
+                    <h2>Pick Your Program</h2><br>
+                    <p>First things first, you will pick between SHRED and BULK.</p>
+                    <p>Depending on which program you pick you will be given a slightly different experience. 
+                        Different workouts but the biggest difference will be the diets that are recommended.
+                    </p><br>
+                    <h2>Upload Beginning Photo</h2><br>
+                    <p>The next step in Work For Your Masterpiece is submitting your starting photo.</p>
+                    <p>At the end of each month you will upload a different photo.</p>
+                    <p>This will allow you to compare photos side by side each month to track the progress you are making.</p>
+                    <p>This is also a way to help ensure you are consistently putting in the work it will take to see changes.</p><br>
+                    <h2>Starting Zoom Call</h2><br>
+                    <p>The next step will be a zoom call with Christian.</p>
+                    <p>This will be to get some basic information so that I can build you your personalized workout program.</p><br>
+                    <h2>Begin Your Workouts</h2><br>
+                    <p>You will then be sent to the home page with modules of step by step workout for each day of the week.</p>
+                    <p>There be recommended rep ranges and goals for you accomplish as well depending on you size and familiarity with fitness</p>
+                    <p>There will also be modules of at home workouts that you can do if you do not have access to a gym.</p>
+                    <p>Each week there will also be bonus challenges to test your comittment and to add a bit of fun.</p><br>
+                    <h2>Weekly Zoom Calls</h2><br>
+                    <p>At the end of each week you will have a 30 minute zoom call with Christian to go over any concerns or just recieve advice.</p>
+                    <p>This will also help with your consistency since you will be held accountable during these calls.</p><br>
+                    <div class="training_button">
+                        <a @click="showPage = 'F'; logPage = 'D'">
+                            <h3>Begin -></h3>
+                        </a>
+                    </div>
+                </div>
+                <div id="testimonials_whitesmoke"></div>
+                <div id="testimonials">
+                    <h1 class="center_size yellow">Testimonials</h1><br>
+                    <div id="float_calvin">
+                        <img src="images/pre_transformations_c.jpg" alt="calvin_before" class="test_size">
+                        <img src="images/post_transformation_c.jpg" alt="calvin_after" class="test_size">
+                    </div>
+                    <div id="calvin_section">
+                        <h2>Calvin Hunsaker</h2><br>
+                        <p>"I thought I knew how to workout until I signed up for Work For Your Masterpiece.
+                            After starting the program I realized how much I didn't know. Being able to use Christian's years of experience
+                            to my advantage really sped up the time in which I was able to see results."
+                        </p>
+                    </div>
+                    <div class="float_other">
+                        <img src="images/pre_transformations_c.jpg" alt="calvin_before" class="test_size">
+                        <img src="images/post_transformation_c.jpg" alt="calvin_after" class="test_size">
+                    </div>
+                    <div class="other_section">
+                        <h2>Calvin Hunsaker</h2><br>
+                        <p>"I thought I knew how to workout until I signed up for Work For Your Masterpiece.
+                            After starting the program I realized how much I didn't know. Being able to use Christian's years of experience
+                            to my advantage really sped up the time in which I was able to see results."
+                        </p>
+                    </div>
+                    <div class="float_other">
+                        <img src="images/pre_transformations_c.jpg" alt="calvin_before" class="test_size">
+                        <img src="images/post_transformation_c.jpg" alt="calvin_after" class="test_size">
+                    </div>
+                    <div class="other_section">
+                        <h2>Calvin Hunsaker</h2><br>
+                        <p>"I thought I knew how to workout until I signed up for Work For Your Masterpiece.
+                            After starting the program I realized how much I didn't know. Being able to use Christian's years of experience
+                            to my advantage really sped up the time in which I was able to see results."
+                        </p>
+                    </div>
+                </div>
+                <div id="benefits">
+                    <h1 class="center_size yellow">Membership Benefits</h1><br>
+                    <div id="benefits_box">
+                        <ul>
+                            <li>Personalized Workout Program (VALUE $147)</li>
+                            <li>Custom Meal Plans (VALUE $100)</li>
+                            <li>Personal Zoom Calls (VALUE $50)</li>
+                            <li>Additional Workouts (VALUE $80)</li>
+                            <li>24/7 Email Support (VALUE $167)</li>
+                            <li>Cancel Anytime</li>
+                            <li>100% Money Back Guaranteed</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="white_sign_up"></div>
+                <div id="sign_up">
+                    <h1>Begin Your Journey</h1><br>
+                    <p>Pick A Training Package:</p><br>
+                    <hr class="hr_yellow">
+                </div>
+                <div id="shred_plan">
+                    <div class="sign_up_container">
+                        <h1 class="white">SHRED</h1><br>
+                        <ul>
+                            <li><span>blah blah</span></li>
+                            <li><span>blah blah</span></li>
+                            <li><span>blah blah</span></li>
+                            <li><span>blah blah</span></li>
+                            <li><span>blah blah</span></li>
+                            <li><span>blah blah</span></li>
+                        </ul>
+                        <!-- 
+                        ACCESS TO
+                        SHRED LOGGED IN PAGE
+                        -->
+                        <div>
+                            <button class="shred_logged_in_button" @click ="shredOption()">Lets Shred</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="bulk_plan">
+                    <div class="sign_up_container">
+                        <h1 class="white">BULK</h1><br>
+                        <ul>
+                            <li><span>200px</span></li>
+                            <li><span>200px</span></li>
+                            <li><span>200px</span></li>
+                            <li><span>200px</span></li>
+                            <li><span>200px</span></li>
+                            <li><span>200px</span></li>
+                        </ul>
+                        <div>
+                            <button class="shred_logged_in_button" @click ="showPage = 'H'; logPage = 'F'">Lets Bulk</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer_sign_up">
+                    <footer>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
+            <div id="wrapper_signing_up" v-if="showPage === 'F' && logPage === 'D'"> 
+                <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="logo1">
+                <div id="nav_wm"><h1 class="yellow">Work For Your Masterpiece</h1></div>
+                <div id="signing_up_background"></div>
+                <div id="sign_up_form">
+                    <h1>Begin Your Journey</h1>
+                    <form method="post" action="/login">   
+                        <div class="container">
+                            <label for="username"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+                        
+                            <label for="password"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="password"  id="password" required>
+                            <label for="password"><b> Re-enter Password</b></label>
+                            <input type="password" placeholder="Re-enter Password" name="password2"  id="password2" required>
+                            <input type="submit" name="type" value="Submit" id="submit_button"><br>
+                        </div>
+                    </form>
+                </div>
+                <div id="footer_sign_in">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
+            <!-- 
+            NEW PAGE
+            SHRED PAGE
+             -->
+            <div id="logged_in_nav" v-if="logPage === 'E'"> 
+                <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="logo1">
+                <div class="nav">
+                    <nav>
+                        <ul>
+                            <li><a class = "nav_padding nav_index" @click ="showPage = 'G'">Home</a></li>
+                            <li><a class = "nav_padding nav_index" @click ="showPage = 'N'">Chest Data</a></li>
+                            <li><a class = "nav_padding nav_index">Back Data</a></li>
+                            <li><a class = "nav_padding nav_index">Arms Data</a></li>
+                            <li><a class = "nav_padding nav_index">Legs Data</a></li>
+                            <li><a class = "nav_padding nav_index">Shoulders Data</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="logout_nav">
+                    <form method="post" action="/logout">
+                        <button type="submit" class= "logout" name="logout">Logout</button>
+                    </form>
+                </div>
+            </div>
+            <!-- 
+            SHRED HOMEPAGE
+             -->
+            <div id="wrapper_logged_in_shred" v-if="showPage === 'G'">
+                <div id="logged_in_background_shred"></div>
+                <div id="welcome_shred">
+                    <h1 id="welcome_user">Welcome, User!</h1>
+                </div>
+                <div id="button_section_shred">
+                    <h2 class="logged_center_button" id="split_padding">Choose your workout split:</h2>
+                    <div class = "logged_options">
+                        <div class="logged_shred_buttons">
+                            <a @click ="showPage = 'L'"><h2 class="logged_center_button">Chest</h2></a>
+                        </div>
+                        <div class="logged_shred_buttons">
+                            <a><h2 class="logged_center_button">Back</h2></a>
+                        </div>
+                        <div class="logged_shred_buttons">  
+                            <a><h2 class="logged_center_button">Arms</h2></a>
+                        </div>
+                    </div>
+                    <div class="logged_options_gap">
+                        <div id="quad_button">
+                            <a @click ="showPage = 'I'"><h2 class="logged_center_button">Shoulders</h2></a>
+                        </div>
+                        <div id="hamstring_button">  
+                            <a><h2 class="logged_center_button">Legs</h2></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="workoutsAccomplishedHeader">
+                    <h1>Workouts Accomplished</h1>
+                </div>
+                <div id="workoutsAccomplishedChestShred">
+                    <h2 class="workoutsAccomplishedSubset">Chest:</h2>
+                    <div v-if="shredChestSubset === 'Y'">
+                        <h3 class="accomplishedWorkout">Chest Workout Accomplished</h3>
+                        <span class="accomplishedWorkout">&#10003;</span>
+                        <h4 class="accomplishedWorkoutDetails">You finished {{totalChestShredWorkouts}} of the 6 recommended workouts.</h4>
+                        <h4 class="accomplishedWorkoutDetails">You finished {{totalChestShredIntensifiedWorkouts}} of the 5 intensified workouts.</h4>
+                    </div>
+                </div>
+                <div id="workoutsAccomplishedBackShred">
+                    <h2 class="workoutsAccomplishedSubset">Back:</h2>
+                    <div v-if="shredBackSubset === 'Y'">
+                        <h3 class="accomplishedWorkout">Back Accomplished</h3>
+
+                    </div>
+                </div>
+                <div id="workoutsAccomplishedArmsShred">
+                    <h2 class="workoutsAccomplishedSubset">Arms:</h2>
+                    <div v-if="shredArmsSubset === 'Y'">
+                        <h3 class="accomplishedWorkout">Arms Accomplished</h3>
+                    </div>
+
+                </div>
+                <div id="workoutsAccomplishedShouldersShred">
+                    <h2 class="workoutsAccomplishedSubset">Shoulders:</h2>
+                    <div v-if="shredShouldersSubset === 'Y'">
+                        <h3 class="accomplishedWorkout">Shoulders Accomplished</h3>
+
+                    </div>
+                </div>
+                <div id="workoutsAccomplishedLegsShred">
+                    <h2 class="workoutsAccomplishedSubset">Legs:</h2>
+                    <div v-if="shredLegsSubset === 'Y'">
+                        <h3 class="accomplishedWorkout">Legs Accomplished</h3>
+
+                    </div>
+                </div>
+                <div id="motivation_shred">
+                    <h2>WeightLifting Basics</h2><br>
+                    <h3>Repetitions:</h3>
+                    <p>Is one complete exercise movement.</p><br>
+                    <h3>Sets:</h3>
+                    <p>A group of repetitions of an exercise.</p><br>
+                    <h3>Drop Set:</h3>
+                    <p>An exercise technique where you do a set of an exercise until failure and then you decrease the weight and repeat the process.</p><br>
+                    <h3>Super Set:</h3>
+                    <p>The concept of a superset is to perform 2 exercises back to back to double the amount of work that is achieved.</p>
+                </div>
+                <div id="progress_shred">
+                    <h2 class="center_about">Progress Photos</h2><br>
+                    <div class="progress_image">
+
+                        <input type="file" @change="previewImage($event, 'image1')" accept="image/*" class="upload_icon upload_button">
+                        <h2 class="photo_descrip">Upload Image</h2>
+                        <div v-if="imageUrl1">
+                            <img :src="imageUrl1" alt="Image 1 preview" style="max-width: 400px;">
+                        </div>
+                    </div>
+                    <div class="progress_image">
+                        <input type="file" @change="previewImage($event, 'image2')" accept="image/*" class="upload_icon upload_button">
+                        <!-- Image Upload Input -->
+                        <!-- Image Preview -->
+                        <h2 class="photo_descrip">Upload Image</h2>
+                        <div v-if="imageUrl2">
+                            <img :src="imageUrl2" alt="Image 2 preview" style="max-width: 400px;">
+                        </div>
+                    </div>
+                </div>
+                <div id="footer_logged_in_shred">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
+            <!-- 
+            SHRED WORKOUTS DATA PAGE
+             -->
+            <div class="wrapperShredWorkoutData" v-if="showPage === 'N'">
+                <div class="shredWorkoutBackground"></div>
+                <div class="chestShredContainer">
+                    <h1 class="shoulderMaxHOne">Previous Chest Workouts</h1>
+                    <ul>
+                        <li class="maxContainer" v-for="workout in chestShredWorkoutData" :key="workout._id">
+                            <h1><strong>{{workout.dateTime}}</strong></h1>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.chestWarmupTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.workoutWarmupWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.setsWarmupAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.repsWarmupAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.newChestPressTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.newPressOneWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.newSetsPressOneAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.newRepsPressOneAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.newChestFlyOneTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.newFlyOneWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.newSetsFlyOneAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.newRepsFlyOneAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.chestPressTwoTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.newPressTwoWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.newSetsPressTwoAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.newRepsPressTwoAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.newFlyTwoTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.newFlyTwoWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.newSetsFlyTwoAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.newRepsFlyTwoAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.newTricepsTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.newTricepsWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.newSetsTricepsAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.newRepsTricepsAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <button class="workoutSelect" @click="addToChestExtractedList(workout)">Compare</button>
+                            <button class="workoutSelect" v-on:click="deleteChestWorkoutData(workout._id)">Delete</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="progressReport" v-if="showProgress === 'B'">
+                    <button class="push_buttons_press" @click ="showPage = 'Z'; progressCount = 0; calculateChestComparision()">Progress Report</button>
+                </div>
+                <div class="workoutShredFooter">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
+            <!-- 
+            NEW PAGE
+            CHEST PROGRESS REPORT
+            -->
+            <div class="wrapperChestProgress" v-if="showPage === 'Z'">
+                <div class="chestProgressBackground"></div>
+                <div class="chestProgressContainer">
+                    <div class="maxContainer">
+                        <h1 class="progressHOne">Progress Report</h1>
+                        <br>
+                        <hr class="hr_yellow">
+                        <br>
+                        <h1 class="progressHOne">Chest Warmup Stats</h1>
+                        <br>
+                        <hr class="hr_yellow">
+                        <br>
+                        <h3 v-show="chestWarmupProgress === 'F'">No data to compare</h3>
+                        <h3 v-show="chestWarmupProgress === 'T'">Chest Warmup weight: {{firstCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestWarmupProgress === 'T'">Chest Warmup sets: {{secondCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestWarmupProgress === 'T'">Chest Warmup reps: {{thirdCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h1 class="progressHOne">Chest Press One Stats</h1>
+                        <br>
+                        <hr class="hr_yellow">
+                        <br>
+                        <h3 v-show="chestPressOneProgress === 'F'">No data to compare</h3>
+                        <h3 v-show="chestPressOneProgress === 'T'">Chest Press weight: {{fourthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestPressOneProgress === 'T'">Chest Press sets: {{fifthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestPressOneProgress === 'T'">Chest Press reps: {{sixthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h1 class="progressHOne">Chest Fly One Stats</h1>
+                        <br>
+                        <hr class="hr_yellow">
+                        <br>
+                        <h3 v-show="chestFlyOneProgress === 'F'">No data to compare</h3>
+                        <h3 v-show="chestFlyOneProgress === 'T'">Chest Press weight: {{seventhCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestFlyOneProgress === 'T'">Chest Press sets: {{eighthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestFlyOneProgress === 'T'">Chest Press reps: {{ninthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h1 class="progressHOne">Chest Press Two Stats</h1>
+                        <br>
+                        <hr class="hr_yellow">
+                        <br>
+                        <h3 v-show="chestPressTwoProgress === 'F'">No data to compare</h3>
+                        <h3 v-show="chestPressTwoProgress === 'T'">Chest Press weight: {{tenthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestPressTwoProgress === 'T'">Chest Press sets: {{eleventhCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestPressTwoProgress === 'T'">Chest Press reps: {{twelveCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h1 class="progressHOne">Chest Fly Two Stats</h1>
+                        <br>
+                        <hr class="hr_yellow">
+                        <br>
+                        <h3 v-show="chestFlyTwoProgress === 'F'">No data to compare</h3>
+                        <h3 v-show="chestFlyTwoProgress === 'T'">Chest Press weight: {{thirteenthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestFlyTwoProgress === 'T'">Chest Press sets: {{fourteenthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestFlyTwoProgress === 'T'">Chest Press reps: {{fifteenthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h1 class="progressHOne">Triceps Stats</h1>
+                        <br>
+                        <hr class="hr_yellow">
+                        <br>
+                        <h3 v-show="chestTricepsProgress === 'F'">No data to compare</h3>
+                        <h3 v-show="chestTricepsProgress === 'T'">Tricep weight: {{sixteenthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestTricepsProgress === 'T'">Tricep sets: {{seventeenthCountVar}}% increase from last workout</h3>
+                        <br>
+                        <h3 v-show="chestTricepsProgress === 'T'">Tricep reps: {{eighteenthCountVar}}% increase from last workout</h3>
+                    </div>
+                </div>
+                <div class="workoutProgressFooter">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
+            <!-- 
+            NEW PAGE
+            SHRED PAGE
+            SHOULDERS
+            -->
+            <div id="wrapper_push_1" v-if="showPage === 'I'">
+                <div id="push_1_background"></div>
+                <div id="welcome_push_1">
+                    <h2>Workout:: Shoulders</h2>
+                </div>
+                <div id="push_1_warm_up">
+                    <div class="push_flex">
+                        <div class="push_container" id="push_warmup_cont">
+                            <h2 class="center_font warmup_header_push">{{ warmupHeader }}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="warmup_grid" v-if="isWarmupVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul class="warmup_ul">
+                                        <li><button class="push_buttons_press" id="lightDumbbellRaise" @click="handleShoulderWarmup('lightDumbbellRaise')">Light Dumbbell Raises</button></li>
+                                        <li><button class="push_buttons_press" id="rotatorCuffWarm" @click="handleShoulderWarmup('rotatorCuffWarm')">Rotator Cuff Warmups</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul class="warmup_ul">
+                                        <li><button class="push_buttons_press" id="lightCableRearDelt" @click="handleShoulderWarmup('lightCableRearDelt')">Light Cable Rear Delt Flies</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="p_warmup" v-if="isWarmupVisible != 'A'">3 sets, 10 to 12 reps</p>
+                            <ul id="seated_fly_ul" v-if="isWarmupVisible != 'A'">
+                                <li class="li_pushed" id="li1" v-for="(instruction, index) in instructions"> {{ instruction }} </li>
+                            </ul>
+                            <button class="back_button" id="confirm_warmup" @click="confirmWarmupShoulder" v-if="isWarmupVisible === 'B'">Confirm</button>
+                            <button class="back_button" id="warmup_seated_back_button" @click="goBackShoulderWarmup" v-if="isWarmupVisible === 'B'">- Back</button>
+                        </div>
+                        <div class="vid_margin">
+                            <video controls="controls" class="vid_size" id="push_warmup" :src="videoSrc"></video>
+                            <!-- poster="dixie11/movie.jpg" -->
+                        </div>
+                    </div>
+                </div>
+                <div id="push_1_1st_press">
+                    <div class="push_flex">
+                        <div class="push_container">
+                            <h2 class="center_font" id="second_press_header">{{ rearDeltHeader }}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="press_grid_display_second" v-if="isRearDeltVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="rearDeltCables" @click="handleRearDelt('rearDeltCables')">Rear Delt Cable Flies</button></li>
+                                        <li><button class="push_buttons_press" id="chestRearDelt" @click="handleRearDelt('chestRearDelt')">Chest Supported Rear Delt Dumbbell Flies</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="rearDeltFlies" @click="handleRearDelt('rearDeltFlies')">Rear Delt Dumbbell Flies</button></li>
+                                        <li><button class="push_buttons_press" id="rearDeltPeckDeck" @click="handleRearDelt('rearDeltPeckDeck')">Rear Delt Peck Deck Flies</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="second_p_presses" v-if="isRearDeltVisible === 'B' || isRearDeltVisible === 'C' || isRearDeltVisible === 'D' || isRearDeltVisible === 'F'">{{rearDeltP}}</p>
+                            <ul id="second_press_ul" v-if="isRearDeltVisible === 'B' || isRearDeltVisible === 'C' || isRearDeltVisible === 'F'">
+                                <li class="li_pushed" id="second_press_li1" v-for="(instruction, index) in rearDeltInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <h2 class="center_font" id="second_press_header" v-if="isRearDeltVisible === 'F' ">{{ rearDeltHeaderConfirmed }}</h2>
+                            <hr class="hr_yellow" v-if="isRearDeltVisible === 'F'"><br>
+                            <ul id="second_press_ul_confirm" v-if="isRearDeltVisible === 'E' || isRearDeltVisible === 'F' " >
+                                <li class="li_pushed" id="second_press_li1" v-for="(instructions, index) in intensifiedInstructions"> {{ instructions }} </li>
+                            </ul>
+                            <button class="intesifier" id="second_intensified_press" v-if="isRearDeltVisible === 'B'" @click="intensifyRearDeltShoulder()">Intensifier</button>
+                            <button class="intesifier" id="drop_press_two" v-if="isRearDeltVisible === 'D'" @click="handleIntensfier('drop_press_two')">Drop Set</button>
+                            <button class="intesifier" id="seth_press_two" v-if="isRearDeltVisible === 'D'" @click="handleIntensfier('seth_press_two')">Seth Set</button>
+                            <button class="unilateral" id="negatives_press_two" v-if="isRearDeltVisible === 'D'"  @click="handleIntensfier('negatives_press_two')">Negatives</button>
+                            <button class="pause" id="pause_press_two" v-if="isRearDeltVisible === 'D'" @click="handleIntensfier('pause_press_two')">Pause Reps</button>
+                            <button class="back_button" id="confirm_press_two" v-if="isRearDeltVisible === 'B'" @click="confirmRearDeltShoulder()">Confirm</button>
+                            <button class="back_button" id="second_confirm_press_two" v-if="isRearDeltVisible === 'E'" @click="confirmRearDeltShoulderTwo()">Confirm</button>
+                            <button class="back_button" id="second_push_press_button" v-if="isRearDeltVisible === 'B'" @click="goBackShoulderRearDelt()">- Back</button>
+                            <button class="back_button" id="third_press_button_two"  v-if="isRearDeltVisible === 'D'" @click="goBackShoulderRearDeltSecond()">- Back</button>
+                            <button class="back_button" id="second_press_button_two" v-if="isRearDeltVisible === 'E'" @click="goBackShoulderRearDeltThird()">- Back</button>
+                        </div>
+                        <div class="vid_margin">
+                            <video controls="controls" class="vid_size" id="second_press_video">
+                                <!-- <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a> -->
+                                <!-- poster="dixie11/movie.jpg" -->
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="push_1_2nd_press">
+                    <div class="push_flex">
+                        <div class="push_container">
+                            <h2 class="center_font" id="tricep_header"> {{ auxileriesOneHeader }}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="tricep_grid_display" v-if="isAuxOneVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="dumbbellLateralRaises" @click="handleAuxOne('dumbbellLateralRaises')">Dumbbell Lateral Raises</button></li>
+                                        <li><button class="push_buttons_press" id="cableLateralRaises" @click="handleAuxOne('cableLateralRaises')">Cable Lateral Raises</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="frontLateralRaises" @click="handleAuxOne('frontLateralRaises')">Front Lateral Raises</button></li>
+                                        <li><button class="push_buttons_press" id="uprightRows" @click="handleAuxOne('uprightRows')">Upright Rows</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="p_tricep" v-if="isAuxOneVisible === 'B' || isAuxOneVisible === 'C' || isAuxOneVisible === 'D' || isAuxOneVisible === 'F'">{{ auxOneP }}</p>
+                            <ul id="tricep_ul" v-if="isAuxOneVisible === 'B' || isAuxOneVisible === 'C' || isAuxOneVisible === 'F'">
+                                <li class="li_pushed" id="second_press_li1" v-for="(instruction, index) in auxOneInstructions"> {{ instruction }} </li>
+
+                            </ul>
+                            <h2 class="center_font" id="tricep_second_header_confirm" v-if="isAuxOneVisible === 'F' ">{{ auxOneHeaderConfirmed }}</h2>
+                            <hr class="hr_yellow" id="hr_yellow_confirm_triceps" v-if="isAuxOneVisible === 'F' "><br>
+                            <ul id="second_tricep_ul_confirm" v-if="isAuxOneVisible === 'E' || isAuxOneVisible === 'F' ">
+                                <li class="li_pushed" id="tricep_li1_confirm_second" v-for="(instructions, index) in auxIntensifiedInstructions">{{ instructions }}</li>
+                            </ul>
+                            <button class="intesifier" id="intensified_tricep" v-if="isAuxOneVisible === 'B'" @click="intensifyAuxOneShoulder()">Intensifier</button>
+                            <button class="intesifier" id="drop_press_tricep" v-if="isAuxOneVisible === 'D'" @click="handleAuxIntensfier('drop_press_tricep')">Drop Set</button>
+                            <button class="intesifier" id="seth_press_tricep" v-if="isAuxOneVisible === 'D'" @click="handleAuxIntensfier('seth_press_tricep')">Seth Set</button>
+                            <button class="unilateral" id="negatives_tricep" v-if="isAuxOneVisible === 'D'"  @click="handleAuxIntensfier('negatives_tricep')">Negatives</button>
+                            <button class="pause" id="pause_press_tricep" v-if="isAuxOneVisible === 'D'" @click="handleAuxIntensfier('pause_press_tricep')">Pause Reps</button>
+                            <button class="back_button" v-if="isAuxOneVisible === 'B'" @click="confirmAuxOneShoulder()">Confirm</button>
+                            <button class="back_button" v-if="isAuxOneVisible === 'E'" @click="confirmAuxOneShoulderTwo()">Confirm</button>
+                            <button class="back_button" id="tricep_back_button" v-if="isAuxOneVisible === 'B'" @click="goBackShoulderAuxOne()">- Back</button>
+                            <button class="back_button" id="second_tricep_button" v-if="isAuxOneVisible === 'D'" @click="goBackShoulderAuxOneSecond()">- Back</button>
+                            <button class="back_button" id="third_tricep_button" v-if="isAuxOneVisible === 'E'" @click="goBackShoulderAuxOneThird()">- Back</button>
+                        </div>
+                        <div id="vid_margin">
+                            <video controls="controls" class="vid_size" id="tricep_video">
+                                <!-- <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a> -->
+                                <!-- poster="dixie11/movie.jpg" -->
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="push_2_aux">
+                    <div class="push_flex">
+                        <div class="push_container">
+                            <h2 class="center_font" id="press_header">{{ pressHeader }}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="press_grid_display" v-if="isPressVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="dumbbellShoulderPress" @click="handlePress('dumbbellShoulderPress')">Dumbbell Shoulder Press</button></li>
+                                        <li><button class="push_buttons_press" id="plateLoadedShoulder" @click="handlePress('plateLoadedShoulder')">Plate Loaded Shoulder Press</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="cableShoulderPress" @click="handlePress('cableShoulderPress')">Cable Shoulder Press</button></li>
+                                        <li><button class="push_buttons_press" id="smithShoulderPress" @click="handlePress('smithShoulderPress')">Smith Shoulder Press</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="p_presses" v-if="isPressVisible === 'B' || isPressVisible === 'C' || isPressVisible === 'D' || isPressVisible === 'F'">{{ pressP }}</p>
+                            <ul id="first_press_ul" v-if="isPressVisible === 'B' || isPressVisible === 'C' || isPressVisible === 'F'">
+                                <li class="li_pushed" id="press_li1_confirm" v-for="(instruction, index) in pressInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <h2 class="center_font" id="press_header_confirm" v-if="isPressVisible === 'F' ">{{ pressHeaderConfirmed }}</h2>
+                            <hr class="hr_yellow" id="hr_yellow_confirm" v-if="isPressVisible === 'F' "><br>
+                            <ul id="first_press_ul_confirm" v-if="isPressVisible === 'E' || isPressVisible === 'F' ">
+                                <li class="li_pushed" id="press_li1_confirm" v-for="(instruction, index) in pressIntensifiedInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <button class="intesifier" id="intensified_press" v-if="isPressVisible === 'B'" @click="intensifyPressShoulder()">Intensifier</button>
+                            <button class="intesifier" id="drop_press" v-if="isPressVisible === 'D'" @click="handlePressIntensfier('drop_press')">Drop Set</button>
+                            <button class="intesifier" id="seth_press" v-if="isPressVisible === 'D'" @click="handlePressIntensfier('seth_press')">Seth Set</button>
+                            <button class="unilateral" id="negatives_press" v-if="isPressVisible === 'D'"  @click="handlePressIntensfier('negatives_press')">Negatives</button>
+                            <!-- <button class="unilateral" id="unilateral_press">Unilateral Set</button> -->
+                            <button class="pause" id="pause_press" v-if="isPressVisible === 'D'" @click="handlePressIntensfier('pause_press')">Pause Reps</button>
+                            <button class="back_button" id="confirm_press" v-if="isPressVisible === 'B'" @click="confirmPressShoulder()">Confirm</button>
+                            <button class="back_button" id="second_confirm_press" v-if="isPressVisible === 'E'" @click="confirmPressShoulderTwo()">Confirm</button>
+                            <button class="back_button" id="first_press_button" v-if="isPressVisible === 'B'" @click="goBackShoulderPress()">- Back</button>
+                            <button class="back_button" id="second_press_button" v-if="isPressVisible === 'D'" @click="goBackShoulderPressSecond()">- Back</button>
+                            <button class="back_button" id="third_press_button" v-if="isPressVisible === 'E'" @click="goBackShoulderPressThird()">- Back</button>
+                        </div>
+                        <div id="vid_margin">
+                            <video controls="controls" class="vid_size" id="press_video">
+                                <!-- <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a> -->
+                                <!-- poster="dixie11/movie.jpg" -->
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="push_2_flies">
+                    <div class="push_flex">
+                        <div class="push_container">
+                            <h2 class="center_font" id="fly_header">{{ auxileriesTwoHeader }}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="fly_grid_display" v-if="isAuxTwoVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="dumbbellLateralRaises_two" @click="handleAuxTwo('dumbbellLateralRaises_two')">Dumbbell Lateral Raises</button></li>
+                                        <li><button class="push_buttons_press" id="cableLateralRaises_two" @click="handleAuxTwo('cableLateralRaises_two')">Cable Lateral Raises</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="frontLateralRaises_two" @click="handleAuxTwo('frontLateralRaises_two')">Front Lateral Raises</button></li>
+                                        <li><button class="push_buttons_press" id="uprightRows_two" @click="handleAuxTwo('uprightRows_two')">Upright Rows</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="p_fly" v-if="isAuxTwoVisible === 'B' || isAuxTwoVisible === 'C' || isAuxTwoVisible === 'D' || isAuxTwoVisible === 'F'">{{ auxTwoP }}</p>
+                            <ul id="fly_ul" v-if="isAuxTwoVisible === 'B' || isAuxTwoVisible === 'C' || isAuxTwoVisible === 'F'">
+                                <li class="li_pushed" id="fly_press_li1" v-for="(instruction, index) in auxTwoInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <h2 class="center_font" id="fly_second_header_confirm" v-if="isAuxTwoVisible === 'F' ">{{ auxTwoHeaderConfirmed }}</h2>
+                            <hr class="hr_yellow" id="hr_yellow_confirm_fly" v-if="isAuxTwoVisible === 'F' "><br>
+                            <ul id="second_fly_ul_confirm" v-if="isAuxTwoVisible === 'E' || isAuxTwoVisible === 'F' ">
+                                <li class="li_pushed" id="fly_li1_confirm_second" v-for="(instruction, index) in auxTwoIntensifiedInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <button class="intesifier" id="intensified_fly" v-if="isAuxTwoVisible === 'B'" @click="intensifyAuxTwoShoulder()">Intensifier</button>
+                            <button class="intesifier" id="drop_press_fly" v-if="isAuxTwoVisible === 'D'" @click="handleAuxTwoIntensfier('drop_press_fly')">Drop Set</button>
+                            <button class="intesifier" id="seth_press_fly" v-if="isAuxTwoVisible === 'D'" @click="handleAuxTwoIntensfier('seth_press_fly')">Seth Set</button>
+                            <button class="intesifier" id="negatives_fly" v-if="isAuxTwoVisible === 'D'"  @click="handleAuxTwoIntensfier('negatives_fly')">Negatives</button>
+                            <button class="pause" id="pause_press_fly" v-if="isAuxTwoVisible === 'D'" @click="handleAuxTwoIntensfier('pause_press_fly')">Pause Reps</button>
+                            <button class="back_button" id="confirm_fly" v-if="isAuxTwoVisible === 'B'" @click="confirmAuxTwoShoulder()">Confirm</button>
+                            <button class="back_button" id="confirm_fly_two" v-if="isAuxTwoVisible === 'E'" @click="confirmAuxTwoShoulderTwo()">Confirm</button>
+                            <button class="back_button" id="fly_back_button" v-if="isAuxTwoVisible === 'B'" @click="goBackShoulderAuxTwo()">- Back</button>
+                            <button class="back_button" id="second_fly_button" v-if="isAuxTwoVisible === 'D'" @click="goBackShoulderAuxTwoSecond()">- Back</button>
+                            <button class="back_button" id="third_fly_button" v-if="isAuxTwoVisible === 'E'" @click="goBackShoulderAuxTwoThird()">- Back</button>
+                        </div>
+                        <div id="vid_margin">
+                            <video controls="controls" class="vid_size" id="fly_video">
+                                <!-- <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a> -->
+                                <!-- poster="dixie11/movie.jpg" -->
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer_push_1">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
+            <!-- 
+            NEW PAGE
+            SHRED PAGE
+            CHEST
+            -->
+            <div id="wrapper_chest" v-if="showPage === 'L'"> 
+                <div id="chest_background"></div>
+                <div id="welcome_chest">
+                    <h2>Workout:: Chest</h2>
+                </div>
+                <div id="chest_warm_up">
+                    <div class="push_flex">
+                        <div class="push_container" id="push_warmup_cont">
+                            <h2 class="center_font warmup_header_push">{{ chestWarmupHeader }}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="warmup_grid" v-if="isChestWarmupVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul class="warmup_ul">
+                                        <li><button class="push_buttons_press seated_cable_fly" @click="handleChest('seated_cable_fly')">Seated Cable Fly</button></li>
+                                        <li><button class="push_buttons_press standing_cable_fly" @click="handleChest('standing_cable_fly')">Standing Cable Fly</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul class="warmup_ul">
+                                        <li><button class="push_buttons_press incline_dumbbell_fly" @click="handleChest('incline_dumbbell_fly')">Incline Dumbbell Fly</button></li>
+                                        <li><button class="push_buttons_press flat_dumbbell_fly" @click="handleChest('flat_dumbbell_fly')">Flat Dumbbell Fly</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="p_warmup" v-if="isChestWarmupVisible != 'A'">{{chestWarmupP}}</p>
+                            <ul id="seated_fly_ul" v-if="isChestWarmupVisible != 'A'">
+                                <li class="li_pushed" id="li1" v-for="(instruction, index) in chestWarmupInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <div v-if="isChestWarmupVisible === 'C' && chestShredWarmupForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newWarmupWorkoutWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsWarmupAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsWarmupAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestWarmup'); chestShredWarmupForm = 'N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="back_button" id="confirm_warmup" @click="confirmWarmupChest(); incrementChestAccomplishedPercent()" v-if="isChestWarmupVisible === 'B'">Confirm</button>
+                            <button class="back_button" id="warmup_seated_back_button" @click="goBackChestWarmup" v-if="isChestWarmupVisible === 'B'">- Back</button>
+                        </div>
+                        <div class="vid_margin">
+                            <video controls="controls" poster="dixie11/movie.jpg"  class="vid_size" id="push_warmup">
+                                <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="chest_1st_press">
+                    <div class="push_flex">
+                        <div class="push_container">
+                            <h2 class="center_font" id="press_header">{{chestPressOneHeader}}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="press_grid_display" v-if="ischestPressOneVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="plateLoadedInclinePress"  @click="handleChestPressOne('plateLoadedInclinePress')">Plate Loaded Incline Press</button></li>
+                                        <li><button class="push_buttons_press" id="plateLoadedFlatPress" @click="handleChestPressOne('plateLoadedFlatPress')">Plate Loaded Flat Press</button></li>
+                                        <li><button class="push_buttons_press" id="plateLoadedDeclinePress" @click="handleChestPressOne('plateLoadedDeclinePress')">Plate Loaded Decline Press</button></li>
+                                        <li><button class="push_buttons_press" id="dumbbellInclinePress" @click="handleChestPressOne('dumbbellInclinePress')">Dumbbell Incline Press</button></li>
+                                        <li><button class="push_buttons_press" id="dumbbellFlatPress" @click="handleChestPressOne('dumbbellFlatPress')">Dumbbell Flat Press</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="dumbbellDeclinePress" @click="handleChestPressOne('dumbbellDeclinePress')">Dumbbell Decline Press</button></li>
+                                        <li><button class="push_buttons_press" id="machineInclinePress" @click="handleChestPressOne('machineInclinePress')">Smith Machine Incline Press</button></li>
+                                        <li><button class="push_buttons_press" id="machineFlatPress" @click="handleChestPressOne('machineFlatPress')">Smith Machine Flat Press</button></li>
+                                        <li><button class="push_buttons_press" id="machineDeclinePress" @click="handleChestPressOne('machineDeclinePress')">Smith Machine Decline Press</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p  id="p_presses" v-if="ischestPressOneVisible === 'B' || ischestPressOneVisible === 'C' || ischestPressOneVisible === 'D' || ischestPressOneVisible === 'F'">{{ chestPressOneP }}</p>
+                            <ul id="first_press_ul" v-if="ischestPressOneVisible === 'B' || ischestPressOneVisible === 'C' || ischestPressOneVisible === 'F'">
+                                <li class="li_pushed" id="press_li1" v-for="(instruction, index) in chestPressOneInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <h2 class="center_font" id="press_header_confirm" v-if="ischestPressOneVisible === 'F' ">{{ chestPressOneHeaderConfirmed }}</h2>
+                            <hr class="hr_yellow" id="hr_yellow_confirm" v-if="ischestPressOneVisible === 'F' "><br>
+                            <ul id="first_press_ul_confirm" v-if="ischestPressOneVisible === 'E' || ischestPressOneVisible === 'F' ">
+                                <li class="li_pushed" id="press_li1_confirm" v-for="(instruction, index) in chestPressOneIntensifiedInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <div v-if="ischestPressOneVisible === 'C' && chestShredPressOneForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newPressOneWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsPressOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsPressOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestPressOne'); chestShredPressOneForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="ischestPressOneVisible === 'F' && chestShredPressOneForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newPressOneWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsPressOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsPressOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestPressOneConfirmed'); chestShredPressOneForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="intesifier" id="intensified_press" v-if="ischestPressOneVisible === 'B'" @click="intensifyChestPressOneShoulder()">Intensifier</button>
+                            <button class="intesifier" id="drop_press" v-if="ischestPressOneVisible === 'D'" @click="handleChestPressOneIntensfier('drop_press')">Drop Set</button>
+                            <button class="intesifier" id="seth_press" v-if="ischestPressOneVisible === 'D'" @click="handleChestPressOneIntensfier('seth_press')">Seth Set</button>
+                            <button class="unilateral" id="negatives_press" v-if="ischestPressOneVisible === 'D'"  @click="handleChestPressOneIntensfier('negatives_press')">Negatives</button>
+                            <!-- <button class="unilateral" id="unilateral_press">Unilateral Set</button> -->
+                            <button class="pause" id="pause_press" v-if="ischestPressOneVisible === 'D'" @click="handleChestPressOneIntensfier('pause_press')">Pause Reps</button>
+                            <button class="back_button" id="second_confirm_press" v-if="ischestPressOneVisible === 'B'" @click="confirmChestPressOneShoulder(); incrementChestAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="confirm_fly_two" v-if="ischestPressOneVisible === 'E'" @click="confirmChestPressOneShoulderTwo(); incrementChestAccomplishedPercent(); incrementChestIntensifierAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="first_press_button" v-if="ischestPressOneVisible === 'B'" @click="goBackShoulderChestPressOne()">- Back</button>
+                            <button class="back_button" id="second_press_button" v-if="ischestPressOneVisible === 'D'" @click="goBackShoulderChestPressOneSecond()">- Back</button>
+                            <button class="back_button" id="third_press_button" v-if="ischestPressOneVisible === 'E'" @click="goBackShoulderChestPressOneThird()">- Back</button>
+                        </div>
+                        <div class="vid_margin">
+                            <video controls="controls" poster="dixie11/movie.jpg" class="vid_size" id="press_video">
+                                <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="chest_1st_fly">
+                    <div class="push_flex">
+                        <div class="push_container">
+                            <h2 class="center_font" id="fly_header">{{chestFlyOneHeader}}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="fly_grid_display" v-if="ischestFlyOneVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="inclineSeatedCableFly" @click="handleChestFlyOne('inclineSeatedCableFly')">Incline Seated Cable Fly</button></li>
+                                        <li><button class="push_buttons_press" id="flatSeatedCableFly" @click="handleChestFlyOne('flatSeatedCableFly')">Flat Seated Cable Fly</button></li>
+                                        <li><button class="push_buttons_press" id="declineSeatedCableFly" @click="handleChestFlyOne('declineSeatedCableFly')">Decline Seated Cable Fly</button></li>
+                                        <li><button class="push_buttons_press" id="inclineStandingFly" @click="handleChestFlyOne('inclineStandingFly')">Incline Standing Cable Fly</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="declineStandingFly" @click="handleChestFlyOne('declineStandingFly')">Decline Standing Cable Fly</button></li>
+                                        <li><button class="push_buttons_press" id="dumbbellInclineFly" @click="handleChestFlyOne('dumbbellInclineFly')">Incline Dumbbell Fly</button></li>
+                                        <li><button class="push_buttons_press" id="dumbbellFlatFly" @click="handleChestFlyOne('dumbbellFlatFly')">Flat Dumbbell Fly</button></li>
+                                        <li><button class="push_buttons_press" id="dumbbellDeclineFly" @click="handleChestFlyOne('dumbbellDeclineFly')">Decline Dumbbell Fly</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="p_fly" v-if="ischestFlyOneVisible === 'B' || ischestFlyOneVisible === 'C' || ischestFlyOneVisible === 'D' || ischestFlyOneVisible === 'F' || ischestFlyOneVisible === 'G' || ischestFlyOneVisible === 'E' || ischestFlyOneVisible === 'J'">{{ chestFlyOneP }}</p>
+                            <ul id="fly_ul" v-if="ischestFlyOneVisible === 'B' || ischestFlyOneVisible === 'C' || ischestFlyOneVisible === 'J' || ischestFlyOneVisible === 'H'">
+                                <li class="li_pushed" id="fly_press_li1" v-for="(instruction, index) in chestFlyOneInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <h2 class="center_font" id="fly_second_header_confirm" v-if="ischestFlyOneVisible === 'H' || ischestFlyOneVisible === 'J'">{{chestFlyOneHeaderConfirmed}}</h2>
+                            <hr class="hr_yellow" id="hr_yellow_confirm_fly" v-if="ischestFlyOneVisible === 'H' || ischestFlyOneVisible === 'J'"><br>
+                            <ul id="second_fly_ul_confirm" v-if="ischestFlyOneVisible === 'G' || ischestFlyOneVisible === 'H'">
+                                <li class="li_pushed" id="fly_li1_confirm_second" v-for="(instruction, index) in chestFlyOneIntensifiedInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <ul id="second_fly_ul_confirm" v-if="ischestFlyOneVisible === 'I' || ischestFlyOneVisible === 'J'">
+                                <li class="li_pushed" id="fly_li1_confirm_second" v-for="(instruction, index) in chestFlyOneSupersetInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <div class="press_grid" id="push_fly_superset_div" v-if="ischestFlyOneVisible === 'D'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="notSure" @click="ischestFlyOneVisible = 'E'">Need Name</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="push_fly_superset" @click="ischestFlyOneVisible = 'F'">Superset</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="press_grid" id="pushed_fly_superset_div" v-if="ischestFlyOneVisible === 'F'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="fly_platePinchPress" @click="handleChestFlyOneSuperSet('fly_platePinchPress')">Plate Pinch Press</button></li>
+                                        <li><button class="push_buttons_press" id="fly_super_unilateral" @click="handleChestFlyOneSuperSet('fly_super_unilateral')">Unilateral</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="fly_super_pushUps" @click="handleChestFlyOneSuperSet('fly_super_pushUps')">Push Ups</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div v-if="ischestFlyOneVisible === 'C' && chestShredFlyOneForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newFlyOneWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsFlyOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsFlyOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestFlyOne'); chestShredFlyOneForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="(ischestFlyOneVisible === 'H' || ischestFlyOneVisible === 'J') && chestShredFlyOneForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newFlyOneWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsFlyOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsFlyOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestFlyOneConfirmed'); chestShredFlyOneForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="intesifier" id="intensified_fly" v-if="ischestFlyOneVisible === 'B'" @click="intensifyChestFlyOne()">Intensifier</button>
+                            <button class="intesifier" id="drop_press_fly" v-if="ischestFlyOneVisible === 'E'" @click="handleChestFlyOneIntensify('drop_press_fly')">Drop Set</button>
+                            <button class="intesifier" id="seth_press_fly" v-if="ischestFlyOneVisible === 'E'" @click="handleChestFlyOneIntensify('seth_press_fly')">Seth Set</button>
+                            <button class="intesifier" id="negatives_fly" v-if="ischestFlyOneVisible === 'E'" @click="handleChestFlyOneIntensify('negatives_fly')">Negatives</button>
+                            <button class="pause" id="pause_press_fly" v-if="ischestFlyOneVisible === 'E'" @click="handleChestFlyOneIntensify('pause_press_fly')">Pause Reps</button>
+                            <button class="back_button" id="confirm_fly_two" v-if="ischestFlyOneVisible === 'B'" @click="confirmChestFlyOne(); incrementChestAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="confirm_fly_two_new" v-if="ischestFlyOneVisible === 'G'" @click="confirmChestFlyOneSecond(); incrementChestAccomplishedPercent(); incrementChestIntensifierAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="confirm_fly_two_new" v-if="ischestFlyOneVisible === 'I'" @click="confirmChestFlyOneThird(); incrementChestAccomplishedPercent(); incrementChestIntensifierAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="fly_back_button" v-if="ischestFlyOneVisible === 'B'" @click="goBackChestFlyOne()">- Back</button>
+                            <button class="back_button" id="second_fly_button" v-if="ischestFlyOneVisible === 'D'" @click="goBackChestFlyOneSecond()">- Back</button>
+                            <button class="back_button" id="third_fly_button" v-if="ischestFlyOneVisible === 'E'" @click="goBackChestFlyOneThird()">- Back</button>
+                            <button class="back_button" id="superset_back_fly_button" v-if="ischestFlyOneVisible === 'F'" @click="goBackChestFlyOneFourth()">- Back</button>
+                            <button class="back_button" v-if="ischestFlyOneVisible === 'G'" @click="goBackChestFlyOneFifth()">- Back</button>
+                            <button class="back_button" v-if="ischestFlyOneVisible === 'I'" @click="goBackChestFlyOneSixth()">- Back</button>
+
+                        </div>
+                        <div class="vid_margin">
+                            <video controls="controls" poster="dixie11/movie.jpg" class="vid_size" id="fly_video">
+                                <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="chest_second_press">
+                    <div class="push_flex">
+                        <div class="push_container">
+                            <h2 class="center_font" id="second_press_header">{{ chestPressTwoHeader }}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="press_grid_display_second" v-if="ischestPressTwoVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="secondInclinePlate" @click="handleChestPressTwo('secondInclinePlate')">Plate Loaded Incline Press</button></li>
+                                        <li><button class="push_buttons_press" id="secondFlatPlate" @click="handleChestPressTwo('secondFlatPlate')">Plate Loaded Flat Press</button></li>
+                                        <li><button class="push_buttons_press" id="secondDeclinePlate" @click="handleChestPressTwo('secondDeclinePlate')">Plate Loaded Decline Press</button></li>
+                                        <li><button class="push_buttons_press" id="secondDumbbellIncline" @click="handleChestPressTwo('secondDumbbellIncline')">Dumbbell Incline Press</button></li>
+                                        <li><button class="push_buttons_press" id="secondDumbbellFlat" @click="handleChestPressTwo('secondDumbbellFlat')">Dumbbell Flat Press</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="secondDumbbellDecline" @click="handleChestPressTwo('secondDumbbellDecline')">Dumbbell Decline Press</button></li>
+                                        <li><button class="push_buttons_press" id="secondSmithIncline" @click="handleChestPressTwo('secondSmithIncline')">Smith Machine Incline Press</button></li>
+                                        <li><button class="push_buttons_press" id="secondSmithFlat" @click="handleChestPressTwo('secondSmithFlat')">Smith Machine Flat Press</button></li>
+                                        <li><button class="push_buttons_press" id="secondSmithDecline" @click="handleChestPressTwo('secondSmithDecline')">Smith Machine Decline Press</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="second_p_presses" v-if="ischestPressTwoVisible === 'B' || ischestPressTwoVisible === 'C' || ischestPressTwoVisible === 'D' || ischestPressTwoVisible === 'E' || ischestPressTwoVisible === 'F'">{{ chestPressTwoP }}</p>
+                            <ul id="second_press_ul" v-if="ischestPressTwoVisible === 'B' || ischestPressTwoVisible === 'C' || ischestPressTwoVisible === 'F'">
+                                <li class="li_pushed" id="second_press_li1" v-for="(instruction, index) in chestPressTwoInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <h2 class="center_font" id="press_second_header_confirm" v-if="ischestPressTwoVisible === 'F' ">{{ chestPressTwoHeaderConfirmed }}</h2>
+                            <hr class="hr_yellow" id="hr_yellow_confirm_second" v-if="ischestPressTwoVisible === 'F' "><br>
+                            <ul id="second_press_ul_confirm" v-if="ischestPressTwoVisible === 'E' || ischestPressTwoVisible === 'F' ">
+                                <li class="li_pushed" id="press_li1_confirm_second" v-for="(instruction, index) in chestPressTwoIntensifiedInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <div v-if="ischestPressTwoVisible === 'C' && chestShredPressTwoForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newPressTwoWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsPressTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsPressTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestPressTwo'); chestShredPressTwoForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="ischestPressTwoVisible === 'F' && chestShredPressTwoForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newPressTwoWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsPressTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsPressTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestPressTwoConfirmed'); chestShredPressTwoForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="intesifier" id="second_intensified_press" v-if="ischestPressTwoVisible === 'B'" @click="intensifyChestPressTwo()">Intensifier</button>
+                            <button class="intesifier" id="drop_press_two" v-if="ischestPressTwoVisible === 'D'" @click="handleChestPressTwoIntensfier('drop_press_two')">Drop Set</button>
+                            <button class="intesifier" id="seth_press_two" v-if="ischestPressTwoVisible === 'D'" @click="handleChestPressTwoIntensfier('seth_press_two')">Seth Set</button>
+                            <button class="unilateral" id="negatives_press_two" v-if="ischestPressTwoVisible === 'D'" @click="handleChestPressTwoIntensfier('negatives_press_two')">Negatives</button>
+                            <!-- <button class="unilateral" id="unilateral_press_two">Unilateral Set</button> -->
+                            <button class="pause" id="pause_press_two" v-if="ischestPressTwoVisible === 'D'" @click="handleChestPressTwoIntensfier('pause_press_two')">Pause Reps</button>
+                            <button class="back_button" id="second_confirm_press_two" v-if="ischestPressTwoVisible === 'B'" @click="confirmChestPressTwo(); incrementChestAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="second_push_press_button" v-if="ischestPressTwoVisible === 'E'" @click="confirmChestPressTwoSecond(); incrementChestAccomplishedPercent(); incrementChestIntensifierAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="second_push_press_button" v-if="ischestPressTwoVisible === 'D'" @click="goBackChestPressTwoSecond()">- Back</button>
+                            <button class="back_button" id="third_press_button_two" v-if="ischestPressTwoVisible === 'B'" @click="goBackChestPressTwo()">- Back</button>
+                            <button class="back_button" id="second_press_button_two" v-if="ischestPressTwoVisible === 'E'" @click="goBackChestPressTwoThird()">- Back</button>
+                        </div>
+                        <div class="vid_margin">
+                            <video controls="controls" poster="dixie11/movie.jpg" class="vid_size" id="second_press_video">
+                                <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="chest_second_fly">
+                    <div class="push_flex">
+                        <div class="push_container">
+                            <h2 class="center_font" id="shoulder_header">{{chestFlyTwoHeader}}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="shoulder_grid_display"  v-if="ischestFlyTwoVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="inclineSeatedCableFly_two" @click="handleChestFlyTwo('inclineSeatedCableFly_two')">Incline Seated Cable Fly</button></li>
+                                        <li><button class="push_buttons_press" id="flatSeatedCableFly_two" @click="handleChestFlyTwo('flatSeatedCableFly_two')">Flat Seated Cable Fly</button></li>
+                                        <li><button class="push_buttons_press" id="declineSeatedCableFly_two" @click="handleChestFlyTwo('declineSeatedCableFly_two')">Decline Seated Cable Fly</button></li>
+                                        <li><button class="push_buttons_press" id="inclineStandingFly_two" @click="handleChestFlyTwo('inclineStandingFly_two')">Incline Standing Cable Fly</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="declineStandingFly_two" @click="handleChestFlyTwo('declineStandingFly_two')">Decline Standing Cable Fly</button></li>
+                                        <li><button class="push_buttons_press" id="dumbbellInclineFly_two" @click="handleChestFlyTwo('dumbbellInclineFly_two')">Dumbbell Incline Fly</button></li>
+                                        <li><button class="push_buttons_press" id="dumbbellFlatFly_two" @click="handleChestFlyTwo('dumbbellFlatFly_two')">Flat Dumbbell Fly</button></li>
+                                        <li><button class="push_buttons_press" id="dumbbellDeclineFly_two" @click="handleChestFlyTwo('dumbbellDeclineFly_two')">Dumbbell Decline Fly</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="p_shoulder" v-if="ischestFlyTwoVisible === 'B' || ischestFlyTwoVisible === 'C' || ischestFlyTwoVisible === 'D' || ischestFlyTwoVisible === 'F' || ischestFlyTwoVisible === 'G' || ischestFlyTwoVisible === 'E' || ischestFlyTwoVisible === 'J'">{{ chestFlyTwoP }}</p>
+                            <ul id="shoulder_ul" v-if="ischestFlyTwoVisible === 'B' || ischestFlyTwoVisible === 'C' || ischestFlyTwoVisible === 'J' || ischestFlyTwoVisible === 'H'">
+                                <li class="li_pushed" id="shoulder_press_li1" v-for="(instruction, index) in chestFlyTwoInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <h2 class="center_font" id="shoulder_second_header_confirm" v-if="ischestFlyTwoVisible === 'H' || ischestFlyTwoVisible === 'J'">{{chestFlyTwoHeaderConfirmed}}</h2>
+                            <hr class="hr_yellow" id="hr_yellow_confirm_shoulder" v-if="ischestFlyTwoVisible === 'H' || ischestFlyTwoVisible === 'J'"><br>
+                            <ul id="second_shoulder_ul_confirm" v-if="ischestFlyTwoVisible === 'G' || ischestFlyTwoVisible === 'H'">
+                                <li class="li_pushed" id="shoulder_li1_confirm_second" v-for="(instruction, index) in chestFlyTwoIntensifiedInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <ul id="second_fly_ul_confirm" v-if="ischestFlyTwoVisible === 'I' || ischestFlyTwoVisible === 'J'">
+                                <li class="li_pushed" id="shoulder_li2_confirm_second" v-for="(instruction, index) in chestFlyTwoSupersetInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <div class="press_grid" id="push_shoulder_superset_div" v-if="ischestFlyTwoVisible === 'D'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="notSure_shoulders" @click="ischestFlyTwoVisible = 'E'">Need Name</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="push_shoulder_superset" @click="ischestFlyTwoVisible = 'F'">Superset</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="press_grid" id="pushed_shoulder_superset_div" v-if="ischestFlyTwoVisible === 'F'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="shoulder_platePinchPress" @click="handleChestFlyTwoSuperSet('shoulder_platePinchPress')">Plate Pinch Press</button></li>
+                                        <li><button class="push_buttons_press" id="shoulder_super_unilateral" @click="handleChestFlyTwoSuperSet('shoulder_super_unilateral')">Unilateral</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="shoulder_super_pushUps" @click="handleChestFlyTwoSuperSet('shoulder_super_pushUps')">Push Ups</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div v-if="ischestFlyTwoVisible === 'C' && chestShredFlyTwoForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newFlyTwoWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsFlyTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsFlyTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestFlyTwo'); chestShredFlyTwoForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="(ischestFlyTwoVisible === 'H' || ischestFlyTwoVisible === 'J') && chestShredFlyTwoForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newFlyTwoWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsFlyTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsFlyTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestFlyTwoConfirmed'); chestShredFlyTwoForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="intesifier" id="intensified_shoulder" v-if="ischestFlyTwoVisible === 'B'" @click="intensifyChestFlyTwo()">Intensifier</button>
+                            <button class="intesifier" id="drop_press_shoulder" v-if="ischestFlyTwoVisible === 'E'" @click="handleChestFlyTwoIntensify('drop_press_shoulder')">Drop Set</button>
+                            <button class="intesifier" id="seth_press_shoulder" v-if="ischestFlyTwoVisible === 'E'" @click="handleChestFlyTwoIntensify('seth_press_shoulder')">Seth Set</button>
+                            <button class="intesifier" id="negatives_shoulder" v-if="ischestFlyTwoVisible === 'E'" @click="handleChestFlyTwoIntensify('negatives_shoulder')">Negatives</button>
+                            <!-- <button class="unilateral" id="unilateral_press_shoulder">Unilateral Set</button> -->
+                            <button class="pause" id="pause_press_shoulder" v-if="ischestFlyTwoVisible === 'E'" @click="handleChestFlyTwoIntensify('pause_press_shoulder')">Pause Reps</button>
+                            <button class="back_button" id="confirm_shoulder_two" v-if="ischestFlyTwoVisible === 'B'" @click="confirmChestFlyTwo(); incrementChestAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="confirm_shoulder_three" v-if="ischestFlyTwoVisible === 'G'" @click="confirmChestFlyTwoSecond(); incrementChestAccomplishedPercent(); incrementChestIntensifierAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="confirm_shoulder_four" v-if="ischestFlyTwoVisible === 'I'" @click="confirmChestFlyTwoThird(); incrementChestAccomplishedPercent(); incrementChestIntensifierAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="shoulder_back_button" v-if="ischestFlyTwoVisible === 'B'" @click="goBackChestFlyTwo()">- Back</button>
+                            <button class="back_button" id="second_shoulder_button" v-if="ischestFlyTwoVisible === 'D'" @click="goBackChestFlyTwoSecond()">- Back</button>
+                            <button class="back_button" id="third_shoulder_button" v-if="ischestFlyTwoVisible === 'E'" @click="goBackChestFlyTwoThird()">- Back</button>
+                            <button class="back_button" id="superset_back_shoulder_button" v-if="ischestFlyTwoVisible === 'F'" @click="goBackChestFlyTwoFourth()">- Back</button>
+                            <button class="back_button" v-if="ischestFlyTwoVisible === 'G'" @click="goBackChestFlyTwoFifth()">- Back</button>
+                            <button class="back_button" v-if="ischestFlyTwoVisible === 'I'" @click="goBackChestFlyTwoSixth()">- Back</button>
+
+                        </div>
+                        <div class="vid_margin">
+                            <video controls="controls" poster="dixie11/movie.jpg" class="vid_size" id="shoulder_video">
+                                <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="chest_second_triceps">
+                    <div class="push_flex">
+                        <div class="push_container">
+                            <h2 class="center_font" id="tricep_header">{{chestTricepsHeader}}</h2><hr class="hr_yellow"><br>
+                            <div class="press_grid" id="tricep_grid_display" v-if="ischestTricepsVisible === 'A'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="inclineEZbar" @click="handleTriceps('inclineEZbar')">Incline EZ Bar Skull Crushers</button></li>
+                                        <li><button class="push_buttons_press" id="flatEZBar" @click="handleTriceps('flatEZBar')">Flat EZ Bar Skull Crushers</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="dip" @click="handleTriceps('dip')">Dips</button></li>
+                                        <li><button class="push_buttons_press" id="dip_machine" @click="handleTriceps('dip_machine')">Dip Machine</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p id="p_tricep" v-if="ischestTricepsVisible === 'B' || ischestTricepsVisible === 'C' || ischestTricepsVisible === 'D' || ischestTricepsVisible === 'F' || ischestTricepsVisible === 'G' || ischestTricepsVisible === 'E' || ischestTricepsVisible === 'J'">{{ chestTricepsP }}</p>
+                            <ul id="tricep_ul" v-if="ischestTricepsVisible === 'B' || ischestTricepsVisible === 'C' || ischestTricepsVisible === 'J' || ischestTricepsVisible === 'H'">
+                                <li class="li_pushed" id="tricep_press_li1" v-for="(instruction, index) in chestTricepsInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <h2 class="center_font" id="tricep_second_header_confirm" v-if="ischestTricepsVisible === 'H' || ischestTricepsVisible === 'J'">{{chestTricepsHeaderConfirmed}}</h2>
+                            <hr class="hr_yellow" id="hr_yellow_confirm_triceps" v-if="ischestTricepsVisible === 'H' || ischestTricepsVisible === 'J'"><br>
+                            <ul id="second_tricep_ul_confirm" v-if="ischestTricepsVisible === 'G' || ischestTricepsVisible === 'H'">
+                                <li class="li_pushed" id="tricep_li1_confirm_second" v-for="(instruction, index) in chestTricepsIntensifiedInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <ul id="second_fly_ul_confirm" v-if="ischestTricepsVisible === 'I' || ischestTricepsVisible === 'J'">
+                                <li class="li_pushed" id="tricep_li2_confirm_second" v-for="(instruction, index) in chestTricepsSupersetInstructions"> {{ instruction }} </li>
+                            </ul>
+                            <div class="press_grid" id="push_tricep_superset_div" v-if="ischestTricepsVisible === 'D'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="notSure_tricep" @click="ischestTricepsVisible = 'E'">Need Name</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li><button class="push_buttons_press" id="push_tricep_superset" @click="ischestTricepsVisible = 'F'">Superset</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="press_grid" id="pushed_tricep_superset_div" v-if="ischestTricepsVisible === 'F'">
+                                <div class="left_grid">
+                                    <ul>
+                                        <li id="inclineEZ_disp"><button class="push_buttons_press" id="inclineEZbar_superset" @click="handleChestTricepsSuperSet('inclineEZbar_superset')">Incline EZ Bar Skull Crushers</button></li>
+                                        <li id="flatEZ_disp"><button class="push_buttons_press" id="flatEZBar_superset" @click="handleChestTricepsSuperSet('flatEZBar_superset')">Flat EZ Bar Skull Crushers</button></li>
+                                    </ul>
+                                </div>
+                                <div class="right_grid">
+                                    <ul>
+                                        <li id="dip_disp"><button class="push_buttons_press" id="dip_superset" @click="handleChestTricepsSuperSet('dip_superset')">Dips</button></li>
+                                        <li id="dipMach_disp"><button class="push_buttons_press" id="dip_machine_superset" @click="handleChestTricepsSuperSet('dip_machine_superset')">Dip Machine</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div v-if="ischestTricepsVisible === 'C' && chestShredTricepsForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newTricepsWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsTricepsAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsTricepsAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestTriceps'); chestShredTricepsForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="(ischestTricepsVisible === 'H' || ischestTricepsVisible === 'J') && chestShredTricepsForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newTricepsWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsTricepsAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsTricepsAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('chestTricepsConfirmed'); chestShredTricepsForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="intesifier" id="intensified_tricep" v-if="ischestTricepsVisible === 'B'" @click="intensifyTricep()">Intensifier</button>
+                            <button class="intesifier" id="drop_press_tricep" v-if="ischestTricepsVisible === 'E'" @click="handleChestTricepIntensify('drop_press_tricep')">Drop Set</button>
+                            <button class="intesifier" id="seth_press_tricep" v-if="ischestTricepsVisible === 'E'" @click="handleChestTricepIntensify('seth_press_tricep')">Seth Set</button>
+                            <button class="unilateral" id="negatives_tricep" v-if="ischestTricepsVisible === 'E'" @click="handleChestTricepIntensify('negatives_tricep')">Negatives</button>
+                            <!-- <button class="unilateral" id="drop_angle_tricep">Drop Angle Set</button> -->
+                            <button class="pause" id="pause_press_tricep" v-if="ischestTricepsVisible === 'E'" @click="handleChestTricepIntensify('pause_press_tricep')">Pause Reps</button>
+                            <button class="back_button" id="confirm_tricep_two" v-if="ischestTricepsVisible === 'B'" @click="confirmChestTricep(); incrementChestAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" v-if="ischestTricepsVisible === 'G'" @click="confirmChestTricepSecond(); incrementChestAccomplishedPercent(); incrementChestIntensifierAccomplishedPercent()">Confirm</button>
+                            <button class="back_button"  v-if="ischestTricepsVisible === 'I'" @click="confirmChestTricepThird(); incrementChestAccomplishedPercent(); incrementChestIntensifierAccomplishedPercent()">Confirm</button>
+                            <button class="back_button" id="tricep_back_button" v-if="ischestTricepsVisible === 'B'" @click="goBackChestTricep()">- Back</button>
+                            <button class="back_button" id="second_tricep_button" v-if="ischestTricepsVisible === 'D'" @click="goBackChestTricepSecond()">- Back</button>
+                            <button class="back_button" id="third_tricep_button" v-if="ischestTricepsVisible === 'E'" @click="goBackChestTricepThird()">- Back</button>
+                            <button class="back_button" v-if="ischestTricepsVisible === 'F'" @click="goBackChestTricepFourth()">- Back</button>
+                            <button class="back_button" v-if="ischestTricepsVisible === 'G'" @click="goBackChestTricepFifth()">- Back</button>
+                            <button class="back_button" v-if="ischestTricepsVisible === 'I'" @click="goBackChestTricepSixth()">- Back</button>
+                        </div>
+                        <div class="vid_margin">
+                            <video controls="controls" poster="dixie11/movie.jpg" class="vid_size" id="tricep_video">
+                                <source src="dixie11/movie.mp4" type="video/mp4">
+                                <a href="dixie11/movie.mp4"></a>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="chest_confirmation">
+                    <button class="push_buttons_press" id="endOfChestWorkout" @click="endOfChestWorkout()">End Your Workout</button>
+                </div>
+                <div id="footer_chest">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
+            <!-- 
+            NEW PAGE
+            BULK PAGE
+             -->
+            <div id="logged_in_nav_bulk" v-if="logPage === 'F'"> 
+                <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="logo1">
+                <div class="nav">
+                    <nav>
+                        <ul>
+                            <li><a class = "nav_padding nav_index" @click ="showPage = 'E'">Home</a></li>
+                            <li><a class = "nav_padding nav_index">Diet</a></li>
+                            <li><a class = "nav_padding nav_index">Functional</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="logout_nav">
+                    <form method="post" action="/logout">
+                        <button type="submit" class= "logout" name="logout">Logout</button>
+                    </form>
+                </div>
+            </div>
+            <div id="wrapper_logged_in" v-if="showPage === 'H'">
+                <div id="logged_in_background"></div>
+                <div id="button_section">
+                    <h2 class="logged_center_button" id="split_padding">Choose your workout split:</h2>
+                    <div class = "logged_options">
+                        <div class="logged_buttons">
+                            <a href="push_chest.html"><h2 class="logged_center_button">Push 1</h2>
+                                <span>-Chest</span>
+                                <span>-Triceps</span>
+                                <div><p>-Shoulders</p></div>
+                                <div><p>Chest Dominant</p></div></a>
+                        </div>
+                        <div class="logged_buttons">
+                            <a href="pull_row.html"><h2 class="logged_center_button">Pull 1</h2>
+                                <span>-Back</span>
+                                <span>-Biceps</span>
+                                <div><p>Row Dominant</p></div></a>
+                        </div>
+                        <div class="legs_button">  
+                            <a href="legs_quad.html"><h2 class="logged_center_button">Legs 1</h2>
+                                <span>-Quads</span>
+                                <span>-Hamstrings</span>
+                                <div><p>Quad Dominant</p></div></a>
+                        </div>
+                    </div>
+                    <div class="logged_options_2">
+                        <div id="push_shoulders">
+                            <a href="push_shoulders.html"><h2 class="logged_center_button">Push 2</h2>
+                                <span>-Chest</span>
+                                <span>-Triceps</span>
+                                <div><p>-Shoulders</p></div>
+                                <div><p>Shoulder Dominant</p></div></a>
+                        </div>
+                        <div id="pull2">
+                            <a href="pull_down.html"><h2 class="logged_center_button">Pull 2</h2>
+                                <span>-Back</span>
+                                <span>-Biceps</span>
+                                <div><p>Pull-down Dominant</p></div></a>
+                        </div>
+                        <div class="legs_button">  
+                            <a href="legs_ham.html"><h2 class="logged_center_button">Legs 2</h2>
+                                <span>-Quads</span>
+                                <span>-Hamstrings</span>
+                                <div><p>Hamstring Dominant</p></div></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="welcome">
+                    <h1 id="welcome_user">Welcome, {{username}}!</h1>
+                </div>
+                <div id="motivation">
+                    <h2>WeightLifting Basics</h2><br>
+                    <h3>Repetitions:</h3>
+                    <p>Is one complete exercise movement.</p>
+                    <h3>Sets:</h3>
+                    <p>A group of repetitions of an exercise.</p>
+                    <h3>Drop Set:</h3>
+                    <p>An exercise technique where you do a set of an exercise until failure and then you decrease the weight and repeat the process.</p>
+                    <h3>Super Set:</h3>
+                    <p>The concept of a superset is to perform 2 exercises back to back to double the amount of work that is achieved.</p>
+                </div>
+                <div id="progress">
+                    <h2 class="center_about">Progress Photos</h2><br>
+                    <div class="progress_image" id="imgBox">
+                        <input type="file" accept="image/*" name="image" id="file" style="display: none;" onchange="loadFile(event)">
+                        <label for="file" class="upload_icon upload_button">Upload</label>
+                        <h3 class="photo_descrip">Upload Progress Photos</h3>
+                    </div>
+                    <div class="progress_image" id="imgBox2">
+                        <input type="file" accept="image/*" name="image" id="file2" style="display: none;" onchange="loadFile2(event)">
+                        <label for="file2" class="upload_icon upload_button">Upload</label>
+                        <h3 class="photo_descrip">Upload Progress Photos</h3>
+                    </div>
+                </div>
+                <div id="footer_logged_in">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
