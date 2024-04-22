@@ -385,6 +385,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'B':
                     switch (intensifiedRearDelts) {
                         case 'drop_press_two':
@@ -438,6 +439,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'C':
                     switch (intensifiedRearDelts) {
                         case 'drop_press_two':
@@ -491,6 +493,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'D':
                     switch (intensifiedRearDelts) {
                         case 'drop_press_two':
@@ -544,6 +547,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 default:
                     break;
             }
@@ -703,6 +707,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'B':
                     switch (intensifiedRearDelts) {
                         case 'drop_press_tricep':
@@ -756,6 +761,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'C':
                     switch (intensifiedRearDelts) {
                         case 'drop_press_tricep':
@@ -809,6 +815,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'D':
                     switch (intensifiedRearDelts) {
                         case 'drop_press_tricep':
@@ -862,6 +869,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 default:
                     break;
             }
@@ -1021,6 +1029,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'B':
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
@@ -1074,6 +1083,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'C':
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
@@ -1127,6 +1137,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'D':
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
@@ -1180,6 +1191,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 default:
                     break;
             }
@@ -1339,6 +1351,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'B':
                     switch (intensifiedRearDelts) {
                         case 'drop_press_fly':
@@ -1392,6 +1405,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'C':
                     switch (intensifiedRearDelts) {
                         case 'drop_press_fly':
@@ -1445,6 +1459,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'D':
                     switch (intensifiedRearDelts) {
                         case 'drop_press_fly':
@@ -1498,6 +1513,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 default:
                     break;
             }
@@ -1748,12 +1764,14 @@ Vue.createApp({
         handleChestPressOneIntensfier(intensifiedRearDelts) {
             this.ischestPressOneVisible = 'E';
             var statement = this.intensifiedchestPressOne;
+            console.log("statement passed", statement)
             switch (statement){
                 case 'A':
                     // YEET
                     // PLATE LOADED INCLINE PRESS
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
+                            console.log("statement passed A", statement)
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.videoSrc = 'dixie11/christian_curls.mp4';
@@ -1805,10 +1823,12 @@ Vue.createApp({
                         default:
                             break;
                     }
+                break;
                 case 'B':
                      // PLATE LOADED FLAT PRESS
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
+                            console.log("statement passed B", statement)
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.videoSrc = 'dixie11/christian_curls.mp4';
@@ -1859,10 +1879,12 @@ Vue.createApp({
                         default:
                             break;
                     }
+                break;
                 case 'C':
                      // PLATE LOADED DECLINE PRESS
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
+                            console.log("statement passed C", statement)
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.videoSrc = 'dixie11/christian_curls.mp4';
@@ -1913,10 +1935,12 @@ Vue.createApp({
                         default:
                             break;
                     }
+                break;
                 case 'D':
                      // INCLINE DUMBBELL PRESS
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
+                            console.log("statement passed D", statement)
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.videoSrc = 'dixie11/christian_curls.mp4';
@@ -1967,10 +1991,12 @@ Vue.createApp({
                         default:
                             break;
                     }
+                break;
                 case 'E':
                     // FLAT DUMBBELL PRESS
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
+                            console.log("statement passed E", statement)
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.videoSrc = 'dixie11/christian_curls.mp4';
@@ -2021,10 +2047,12 @@ Vue.createApp({
                         default:
                             break;
                     }
+                break;
                 case 'F':
                     // DECLINE DUMBBELL PRESS
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
+                            console.log("statement passed F", statement)
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.videoSrc = 'dixie11/christian_curls.mp4';
@@ -2075,10 +2103,12 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'G':
                     // INCLINE SMITH MACHINE PRESS
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
+                            console.log("statement passed G", statement)
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.videoSrc = 'dixie11/christian_curls.mp4';
@@ -2129,10 +2159,12 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'H':
                     // FLAT SMITH MACHINE PRESS
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
+                            console.log("statement passed H", statement)
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.videoSrc = 'dixie11/christian_curls.mp4';
@@ -2183,16 +2215,18 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'I':
                     // DECLINE SMITH MACHINE PRESS
                     switch (intensifiedRearDelts) {
                         case 'drop_press':
+                            console.log("statement passed I", statement)
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.videoSrc = 'dixie11/christian_curls.mp4';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The plate-loaded incline press drop set is a variation of the traditional press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a plate-loaded press machine with a heavy weight and perform a set of 8-12 repetitions.",
+                                "The decline smith machine press drop set is a variation of the traditional decline smith machine press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
+                                "To perform this exercise, you would load the bar of the smith machine with a heavy weight and perform a set of 8-12 repetitions.",
                                 "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
                                 "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
                                 "Aim for 3 to 4 different weight changes."
@@ -2236,9 +2270,10 @@ Vue.createApp({
                             break;
                         default:
                             break;
-                    }
-                default:
-                    break;
+                }
+                break;
+            default:
+                break;
             }
         },
 
@@ -2455,6 +2490,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'B':
                      // FLAT SEATED CABLE FLY
                     switch (intensifiedRearDelts) {
@@ -2509,6 +2545,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'C':
                      // DECLINE SEATED CABLE FLY
                     switch (intensifiedRearDelts) {
@@ -2563,6 +2600,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'D':
                      // INCLINE STANDING CABLE FLY
                     switch (intensifiedRearDelts) {
@@ -2617,6 +2655,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'E':
                     // DECLINE STANDING CABLE FLY
                     switch (intensifiedRearDelts) {
@@ -2671,6 +2710,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'F':
                     // INCLINE DUMBBELL FLY
                     switch (intensifiedRearDelts) {
@@ -2725,6 +2765,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'G':
                     // FLAT DUMBBELL FLY
                     switch (intensifiedRearDelts) {
@@ -2779,6 +2820,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'H':
                     // DECLINE DUMBBELL FLY
                     switch (intensifiedRearDelts) {
@@ -2833,6 +2875,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 default:
                     break;
             }
@@ -3125,6 +3168,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'B':
                      // PLATE LOADED FLAT PRESS
                     switch (intensifiedRearDelts) {
@@ -3179,6 +3223,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'C':
                      // PLATE LOADED DECLINE PRESS
                     switch (intensifiedRearDelts) {
@@ -3233,6 +3278,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'D':
                      // INCLINE DUMBBELL PRESS
                     switch (intensifiedRearDelts) {
@@ -3287,6 +3333,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'E':
                     // FLAT DUMBBELL PRESS
                     switch (intensifiedRearDelts) {
@@ -3341,6 +3388,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'F':
                     // DECLINE DUMBBELL PRESS
                     switch (intensifiedRearDelts) {
@@ -3395,6 +3443,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'G':
                     // INCLINE SMITH MACHINE PRESS
                     switch (intensifiedRearDelts) {
@@ -3449,6 +3498,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'H':
                     // FLAT SMITH MACHINE PRESS
                     switch (intensifiedRearDelts) {
@@ -3503,6 +3553,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'I':
                     // DECLINE SMITH MACHINE PRESS
                     switch (intensifiedRearDelts) {
@@ -3557,6 +3608,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 default:
                     break;
             }
@@ -3778,6 +3830,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'B':
                      // FLAT SEATED CABLE FLY
                     switch (intensifiedRearDelts) {
@@ -3832,6 +3885,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'C':
                      // DECLINE SEATED CABLE FLY
                     switch (intensifiedRearDelts) {
@@ -3886,6 +3940,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'D':
                      // INCLINE STANDING CABLE FLY
                     switch (intensifiedRearDelts) {
@@ -3940,6 +3995,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'E':
                     // DECLINE STANDING CABLE FLY
                     switch (intensifiedRearDelts) {
@@ -3994,6 +4050,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'F':
                     // INCLINE DUMBBELL FLY
                     switch (intensifiedRearDelts) {
@@ -4048,6 +4105,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'G':
                     // FLAT DUMBBELL FLY
                     switch (intensifiedRearDelts) {
@@ -4102,6 +4160,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'H':
                     // DECLINE DUMBBELL FLY
                     switch (intensifiedRearDelts) {
@@ -4156,6 +4215,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 default:
                     break;
             }
@@ -4381,6 +4441,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'B':
                      // FLAT EZ BAR
                     switch (intensifiedRearDelts) {
@@ -4435,6 +4496,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'C':
                      // DIPS
                     switch (intensifiedRearDelts) {
@@ -4489,6 +4551,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 case 'D':
                      // DIP MACHINE
                     switch (intensifiedRearDelts) {
@@ -4543,6 +4606,7 @@ Vue.createApp({
                         default:
                             break;
                     }
+                    break;
                 default:
                     break;
             }
