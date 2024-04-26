@@ -2,10 +2,10 @@ Vue.createApp({
 
     data: function (){
         return {
-            // showPage: 'G',
-            // logPage: 'E',
-            showPage: 'A',
-            logPage: 'A',
+            showPage: 'G',
+            logPage: 'E',
+            // showPage: 'A',
+            // logPage: 'A',
 
             // showPage: 'L',
             
