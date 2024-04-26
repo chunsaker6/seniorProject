@@ -1742,14 +1742,14 @@
                             <div class="press_grid" id="pushed_tricep_superset_div" v-if="ischestTricepsVisible === 'F'">
                                 <div class="left_grid">
                                     <ul>
-                                        <li id="inclineEZ_disp"><button class="push_buttons_press" id="inclineEZbar_superset" @click="handleChestTricepsSuperSet('inclineEZbar_superset')">Incline EZ Bar Skull Crushers</button></li>
-                                        <li id="flatEZ_disp"><button class="push_buttons_press" id="flatEZBar_superset" @click="handleChestTricepsSuperSet('flatEZBar_superset')">Flat EZ Bar Skull Crushers</button></li>
+                                        <li id="inclineEZ_disp" v-if="intensifiedchestTriceps !== 'A'"><button class="push_buttons_press" id="inclineEZbar_superset" @click="handleChestTricepsSuperSet('inclineEZbar_superset')">Incline EZ Bar Skull Crushers</button></li>
+                                        <li id="flatEZ_disp" v-if="intensifiedchestTriceps !== 'B'"><button class="push_buttons_press" id="flatEZBar_superset" @click="handleChestTricepsSuperSet('flatEZBar_superset')">Flat EZ Bar Skull Crushers</button></li>
                                     </ul>
                                 </div>
                                 <div class="right_grid">
                                     <ul>
-                                        <li id="dip_disp"><button class="push_buttons_press" id="dip_superset" @click="handleChestTricepsSuperSet('dip_superset')">Dips</button></li>
-                                        <li id="dipMach_disp"><button class="push_buttons_press" id="dip_machine_superset" @click="handleChestTricepsSuperSet('dip_machine_superset')">Dip Machine</button></li>
+                                        <li id="dip_disp" v-if="intensifiedchestTriceps !== 'C'"><button class="push_buttons_press" id="dip_superset" @click="handleChestTricepsSuperSet('dip_superset')">Dips</button></li>
+                                        <li id="dipMach_disp" v-if="intensifiedchestTriceps !== 'D'"><button class="push_buttons_press" id="dip_machine_superset" @click="handleChestTricepsSuperSet('dip_machine_superset')">Dip Machine</button></li>
                                     </ul>
                                 </div>
                             </div>

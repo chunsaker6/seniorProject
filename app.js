@@ -2,12 +2,13 @@ Vue.createApp({
 
     data: function (){
         return {
-            showPage: 'G',
-            // showPage: 'A',
-            // logPage: 'A',
+            // showPage: 'G',
+            // logPage: 'E',
+            showPage: 'A',
+            logPage: 'A',
 
             // showPage: 'L',
-            logPage: 'E',
+            
             newShred: "",
             shredded: "",
             imageUrl1: null, // To store the URL of the selected image
@@ -1649,7 +1650,7 @@ Vue.createApp({
         },
 
         // CHEST PRESS 1 SECTION
-
+        // first section
         handleChestPressOne(rearDelt) {
             this.ischestPressOneVisible = 'B';
             switch (rearDelt) {
@@ -2332,7 +2333,7 @@ Vue.createApp({
 
         // NEW SECTION
         // CHEST FLIES 1
-
+        // second section
         handleChestFlyOne(rearDelt) {
             this.ischestFlyOneVisible = 'B';
             switch (rearDelt) {
@@ -4335,7 +4336,7 @@ Vue.createApp({
 
         // NEW SECTION
         // CHEST TRICEPS
-
+        // third section
         handleTriceps(rearDelt) {
             this.ischestTricepsVisible = 'B';
             switch (rearDelt) {
@@ -4762,148 +4763,149 @@ Vue.createApp({
                 this.showProgress = 'B';
             }
         },
+        // third section
         calculateChestComparision(){
             if (this.chestDataProgress[0] === 0 && this.chestDataProgress[18] === 0){
                 this.chestWarmupProgress = 'F';
                 //this.firstCountVar = 0;
-            }else if(this.chestDataProgress[18] === 0){
-                this.firstCountVar = -100;
+            }else if(this.chestDataProgress[0] === 0){
+                this.firstCountVar = 100;
             }else{
                 this.firstCountVar = Math.trunc(((this.chestDataProgress[18] - this.chestDataProgress[0]) / this.chestDataProgress[0]) * 100);
             }
             if (this.chestDataProgress[1] === 0 && this.chestDataProgress[19] === 0){
                 this.chestWarmupProgress = 'F';
                 //this.secondCountVar = 0;
-            }else if(this.chestDataProgress[19] === 0){
-                this.secondCountVar = -100;
+            }else if(this.chestDataProgress[1] === 0){
+                this.secondCountVar = 100;
             }else{
                 this.secondCountVar = Math.trunc(((this.chestDataProgress[19] - this.chestDataProgress[1]) / this.chestDataProgress[1]) * 100);
             }
             if (this.chestDataProgress[2] === 0 && this.chestDataProgress[20] === 0){
                 this.chestWarmupProgress = 'F';
                 //this.thirdCountVar = 0;
-            }else if(this.chestDataProgress[20] === 0){
-                this.thirdCountVar = -100;
+            }else if(this.chestDataProgress[2] === 0){
+                this.thirdCountVar = 100;
             }else{
                 this.thirdCountVar = Math.trunc(((this.chestDataProgress[20] - this.chestDataProgress[2]) / this.chestDataProgress[2]) * 100);
             }
             if (this.chestDataProgress[3] === 0 && this.chestDataProgress[21] === 0){
                 this.chestPressOneProgress = 'F';
                 //this.fourthCountVar = 0;
-            }else if(this.chestDataProgress[21] === 0){
-                this.fourthCountVar = -100;
+            }else if(this.chestDataProgress[3] === 0){
+                this.fourthCountVar = 100;
             }else{
                 this.fourthCountVar = Math.trunc(((this.chestDataProgress[21] - this.chestDataProgress[3]) / this.chestDataProgress[3]) * 100);
             }
             if (this.chestDataProgress[4] === 0 && this.chestDataProgress[22] === 0){
                 this.chestPressOneProgress = 'F';
                 //this.fifthCountVar = 0;
-            }else if(this.chestDataProgress[22] === 0){
-                this.fifthCountVar = -100;
+            }else if(this.chestDataProgress[4] === 0){
+                this.fifthCountVar = 100;
             }else{
                 this.fifthCountVar = Math.trunc(((this.chestDataProgress[22] - this.chestDataProgress[4]) / this.chestDataProgress[4]) * 100);
             }
             if (this.chestDataProgress[5] === 0 && this.chestDataProgress[23] === 0){
                 this.chestPressOneProgress = 'F';
                 //this.sixthCountVar = 0;
-            }else if(this.chestDataProgress[23] === 0){
-                this.sixthCountVar = -100;
+            }else if(this.chestDataProgress[5] === 0){
+                this.sixthCountVar = 100;
             }else{
                 this.sixthCountVar = Math.trunc(((this.chestDataProgress[23] - this.chestDataProgress[5]) / this.chestDataProgress[5]) * 100);
             }
             if (this.chestDataProgress[6] === 0 && this.chestDataProgress[24] === 0){
                 this.chestFlyOneProgress = 'F';
                 //this.seventhCountVar = 0;
-            }else if(this.chestDataProgress[24] === 0){
-                this.seventhCountVar = -100;
+            }else if(this.chestDataProgress[6] === 0){
+                this.seventhCountVar = 100;
             }else{
                 this.seventhCountVar = Math.trunc(((this.chestDataProgress[24] - this.chestDataProgress[6]) / this.chestDataProgress[6]) * 100);
             }
             if (this.chestDataProgress[7] === 0 && this.chestDataProgress[25] === 0){
                 //this.eighthCountVar = 0;
                 this.chestFlyOneProgress = 'F';
-            }else if(this.chestDataProgress[25] === 0){
-                this.eighthCountVar = -100;
+            }else if(this.chestDataProgress[7] === 0){
+                this.eighthCountVar = 100;
             }else{
                 this.eighthCountVar = Math.trunc(((this.chestDataProgress[25] - this.chestDataProgress[7]) / this.chestDataProgress[7]) * 100);
             }
             if (this.chestDataProgress[8] === 0 && this.chestDataProgress[26] === 0){
                 this.chestFlyOneProgress = 'F';
                 //this.ninthCountVar = 0;
-            }else if(this.chestDataProgress[26] === 0){
-                this.ninthCountVar = -100;
+            }else if(this.chestDataProgress[8] === 0){
+                this.ninthCountVar = 100;
             }else{
                 this.ninthCountVar = Math.trunc(((this.chestDataProgress[26] - this.chestDataProgress[8]) / this.chestDataProgress[8]) * 100);
             }
             if (this.chestDataProgress[9] === 0 && this.chestDataProgress[27] === 0){
                 this.chestPressTwoProgress = 'F';
                 //this.tenthCountVar = 0;
-            }else if(this.chestDataProgress[27] === 0){
-                this.tenthCountVar = -100;
+            }else if(this.chestDataProgress[9] === 0){
+                this.tenthCountVar = 100;
             }else{
                 this.tenthCountVar = Math.trunc(((this.chestDataProgress[27] - this.chestDataProgress[9]) / this.chestDataProgress[9]) * 100);
             }
             if (this.chestDataProgress[10] === 0 && this.chestDataProgress[28] === 0){
                 this.chestPressTwoProgress = 'F';
                 //this.eleventhCountVar = 0;
-            }else if(this.chestDataProgress[28] === 0){
-                this.eleventhCountVar = -100;
+            }else if(this.chestDataProgress[10] === 0){
+                this.eleventhCountVar = 100;
             }else{
                 this.eleventhCountVar = Math.trunc(((this.chestDataProgress[28] - this.chestDataProgress[10]) / this.chestDataProgress[10]) * 100);
             }
             if (this.chestDataProgress[11] === 0 && this.chestDataProgress[29] === 0){
                 this.chestPressTwoProgress = 'F';
                 //this.twelveCountVar = 0;
-            }else if(this.chestDataProgress[29] === 0){
-                this.twelveCountVar = -100;
+            }else if(this.chestDataProgress[11] === 0){
+                this.twelveCountVar = 100;
             }else{
                 this.twelveCountVar = Math.trunc(((this.chestDataProgress[29] - this.chestDataProgress[11]) / this.chestDataProgress[11]) * 100);
             }
             if (this.chestDataProgress[12] === 0 && this.chestDataProgress[30] === 0){
                 this.chestFlyTwoProgress = 'F';
                 //this.thirteenthCountVar = 0;
-            }else if(this.chestDataProgress[30] === 0){
-                this.thirteenthCountVar = -100;
+            }else if(this.chestDataProgress[12] === 0){
+                this.thirteenthCountVar = 100;
             }else{
                 this.thirteenthCountVar = Math.trunc(((this.chestDataProgress[30] - this.chestDataProgress[12]) / this.chestDataProgress[12]) * 100);
             }
             if (this.chestDataProgress[13] === 0 && this.chestDataProgress[31] === 0){
                 this.chestFlyTwoProgress = 'F';
                 //this.fourteenthCountVar = 0;
-            }else if(this.chestDataProgress[31] === 0){
-                this.fourteenthCountVar = -100;
+            }else if(this.chestDataProgress[13] === 0){
+                this.fourteenthCountVar = 100;
             }else{
                 this.fourteenthCountVar = Math.trunc(((this.chestDataProgress[31] - this.chestDataProgress[13]) / this.chestDataProgress[13]) * 100);
             }
             if (this.chestDataProgress[14] === 0 && this.chestDataProgress[32] === 0){
                 this.chestFlyTwoProgress = 'F';
                 //this.fifteenthCountVar = 0;
-            }else if(this.chestDataProgress[32] === 0){
-                this.fifteenthCountVar = -100;
+            }else if(this.chestDataProgress[14] === 0){
+                this.fifteenthCountVar = 100;
             }else{
                 this.fifteenthCountVar = Math.trunc(((this.chestDataProgress[32] - this.chestDataProgress[14]) / this.chestDataProgress[14]) * 100);
             }
             if (this.chestDataProgress[15] === 0 && this.chestDataProgress[33] === 0){
                 this.chestTricepsProgress = 'F';
                 //this.sixteenthCountVar = 0;
-            }else if(this.chestDataProgress[33] === 0){
-                this.sixteenthCountVar = -100;
+            }else if(this.chestDataProgress[15] === 0){
+                this.sixteenthCountVar = 100;
             }else{
                 this.sixteenthCountVar = Math.trunc(((this.chestDataProgress[33] - this.chestDataProgress[15]) / this.chestDataProgress[15]) * 100);
             }
             if (this.chestDataProgress[16] === 0 && this.chestDataProgress[34] === 0){
                 this.chestTricepsProgress = 'F';
                 //this.seventeenthCountVar = 0;
-            }else if(this.chestDataProgress[34] === 0){
-                this.seventeenthCountVar = -100;
+            }else if(this.chestDataProgress[16] === 0){
+                this.seventeenthCountVar = 100;
             }else{
                 this.seventeenthCountVar = Math.trunc(((this.chestDataProgress[34] - this.chestDataProgress[16]) / this.chestDataProgress[16]) * 100);
             }
             if (this.chestDataProgress[17] === 0 && this.chestDataProgress[35] === 0){
                 this.chestTricepsProgress = 'F';
                 //this.eighteenthCountVar = 0;
-            }else if(this.chestDataProgress[35] === 0){
-                this.eighteenthCountVar = -100;
+            }else if(this.chestDataProgress[17] === 0){
+                this.eighteenthCountVar = 100;
             }else{
                 this.eighteenthCountVar = Math.trunc(((this.chestDataProgress[35] - this.chestDataProgress[17]) / this.chestDataProgress[17]) * 100);
             }
