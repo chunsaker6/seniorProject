@@ -636,7 +636,7 @@
                             <li><a class = "nav_padding nav_index">Back Data</a></li>
                             <li><a class = "nav_padding nav_index">Arms Data</a></li>
                             <li><a class = "nav_padding nav_index">Legs Data</a></li>
-                            <li><a class = "nav_padding nav_index">Shoulders Data</a></li>
+                            <li><a class = "nav_padding nav_index" @click ="showPage = 'O'">Shoulders Data</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -852,6 +852,89 @@
                     </footer>
                 </div>
             </div>
+            <!--  
+            Shoulder Shred Data
+            -->
+            <div class="wrapperShredWorkoutData" v-if="showPage === 'O'">
+                <div class="shredWorkoutBackground"></div>
+                <div class="chestShredContainer">
+                    <h1 class="shoulderMaxHOne">Previous Chest Workouts</h1>
+                    <ul>
+                        <li class="maxContainer" v-for="workout in chestShredShoulderData" :key="workout._id">
+                            <h1><strong>{{workout.dateTime}}</strong></h1>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.shoulderWarmupTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.shoulderWarmupWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.setsWarmupShoulderAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.repsWarmupShoulderAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.newRearDeltTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.newRearDeltWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.newSetsRearDeltAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.newRepsRearDeltAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.newShouldersAuxOneTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.newAuxOneWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.newSetsAuxOneAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.newRepsAuxOneAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.shoulderPressTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.newShoulderPressWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.newSetsShoulderPressAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.newRepsShoulderPressAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <h2><strong>{{workout.newShouldersAuxTwoTitle}}</strong></h2>
+                            <br>
+                            <h3>Workout Weight: {{workout.newAuxTwoWeight}}</h3>
+                            <br>
+                            <h3>Sets: {{workout.newSetsAuxTwoAccomplished}}</h3>
+                            <br>
+                            <h3>Reps: {{workout.newRepsAuxTwoAccomplished}}</h3>
+                            <br>
+                            <hr class="hr_yellow">
+                            <br>
+                            <button class="workoutSelect" @click="addToChestExtractedList(workout)">Compare</button>
+                            <button class="workoutSelect" v-on:click="deleteShoulderWorkoutData(workout._id)">Delete</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="progressReport" v-if="showProgress === 'B'">
+                    <button class="push_buttons_press" @click ="showPage = 'Z'; progressCount = 0; calculateChestComparision()">Progress Report</button>
+                </div>
+                <div class="workoutShredFooter">
+                    <footer>
+                        <div class="logo_footer_align">
+                            <img src="images/wm_logo_imp.png" alt="Apache Fitness Logo" id="footer_logo">
+                            <h1>Work For Your Masterpiece</h1>
+                        </div>
+                        <hr class="hr_yellow">
+                        <p>Copyright LLC</p>
+                        <hr class="hr_yellow">
+                    </footer>
+                </div>
+            </div>
             <!-- 
             NEW PAGE
             CHEST PROGRESS REPORT
@@ -974,7 +1057,29 @@
                             <ul id="seated_fly_ul" v-if="isWarmupVisible != 'A'">
                                 <li class="li_pushed" id="li1" v-for="(instruction, index) in instructions"> {{ instruction }} </li>
                             </ul>
-                            <button class="back_button" id="confirm_warmup" @click="confirmWarmupShoulder" v-if="isWarmupVisible === 'B'">Confirm</button>
+                            <div v-if="isWarmupVisible === 'C' && shoulderShredWarmupForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newWarmupWorkoutWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsWarmupAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsWarmupAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('shoulderWarmup'); shoulderShredWarmupForm = 'N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="back_button" id="confirm_warmup" @click="confirmWarmupShoulder(); incrementChestAccomplishedPercent()" v-if="isWarmupVisible === 'B'">Confirm</button>
                             <button class="back_button" id="warmup_seated_back_button" @click="goBackShoulderWarmup" v-if="isWarmupVisible === 'B'">- Back</button>
                         </div>
                         <div class="vid_margin">
@@ -1010,6 +1115,50 @@
                             <ul id="second_press_ul_confirm" v-if="isRearDeltVisible === 'E' || isRearDeltVisible === 'F' " >
                                 <li class="li_pushed" id="second_press_li1" v-for="(instructions, index) in intensifiedInstructions"> {{ instructions }} </li>
                             </ul>
+                            <div v-if="isRearDeltVisible === 'C' && chestShredPressOneForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newPressOneWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsPressOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsPressOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('rearDelt'); chestShredPressOneForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="isRearDeltVisible === 'F' && chestShredPressOneForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newPressOneWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsPressOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsPressOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('rearDeltConfirmed'); chestShredPressOneForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button class="intesifier" id="second_intensified_press" v-if="isRearDeltVisible === 'B'" @click="intensifyRearDeltShoulder()">Intensifier</button>
                             <button class="intesifier" id="drop_press_two" v-if="isRearDeltVisible === 'D'" @click="handleIntensfier('drop_press_two')">Drop Set</button>
                             <button class="intesifier" id="seth_press_two" v-if="isRearDeltVisible === 'D'" @click="handleIntensfier('seth_press_two')">Seth Set</button>
@@ -1058,6 +1207,50 @@
                             <ul id="second_tricep_ul_confirm" v-if="isAuxOneVisible === 'E' || isAuxOneVisible === 'F' ">
                                 <li class="li_pushed" id="tricep_li1_confirm_second" v-for="(instructions, index) in auxIntensifiedInstructions">{{ instructions }}</li>
                             </ul>
+                            <div v-if="isAuxOneVisible === 'C' && chestShredFlyOneForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newFlyOneWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsFlyOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsFlyOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('shoulderAuxOne'); chestShredFlyOneForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="isAuxOneVisible === 'F' && chestShredFlyOneForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newFlyOneWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsFlyOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsFlyOneAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('shoulderAuxOneConfirm'); chestShredFlyOneForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button class="intesifier" id="intensified_tricep" v-if="isAuxOneVisible === 'B'" @click="intensifyAuxOneShoulder()">Intensifier</button>
                             <button class="intesifier" id="drop_press_tricep" v-if="isAuxOneVisible === 'D'" @click="handleAuxIntensfier('drop_press_tricep')">Drop Set</button>
                             <button class="intesifier" id="seth_press_tricep" v-if="isAuxOneVisible === 'D'" @click="handleAuxIntensfier('seth_press_tricep')">Seth Set</button>
@@ -1069,7 +1262,7 @@
                             <button class="back_button" id="second_tricep_button" v-if="isAuxOneVisible === 'D'" @click="goBackShoulderAuxOneSecond()">- Back</button>
                             <button class="back_button" id="third_tricep_button" v-if="isAuxOneVisible === 'E'" @click="goBackShoulderAuxOneThird()">- Back</button>
                         </div>
-                        <div id="vid_margin">
+                        <div class="vid_margin">
                             <video controls="controls" class="vid_size" id="tricep_video">
                                 <!-- <source src="dixie11/movie.mp4" type="video/mp4">
                                 <a href="dixie11/movie.mp4"></a> -->
@@ -1105,6 +1298,50 @@
                             <ul id="first_press_ul_confirm" v-if="isPressVisible === 'E' || isPressVisible === 'F' ">
                                 <li class="li_pushed" id="press_li1_confirm" v-for="(instruction, index) in pressIntensifiedInstructions"> {{ instruction }} </li>
                             </ul>
+                            <div v-if="isPressVisible === 'C' && chestShredPressTwoForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newPressTwoWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsPressTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsPressTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('shoulderPress'); chestShredPressTwoForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="isPressVisible === 'F' && chestShredPressTwoForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newPressTwoWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsPressTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsPressTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('shoulderPressConfirmed'); chestShredPressTwoForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button class="intesifier" id="intensified_press" v-if="isPressVisible === 'B'" @click="intensifyPressShoulder()">Intensifier</button>
                             <button class="intesifier" id="drop_press" v-if="isPressVisible === 'D'" @click="handlePressIntensfier('drop_press')">Drop Set</button>
                             <button class="intesifier" id="seth_press" v-if="isPressVisible === 'D'" @click="handlePressIntensfier('seth_press')">Seth Set</button>
@@ -1117,7 +1354,7 @@
                             <button class="back_button" id="second_press_button" v-if="isPressVisible === 'D'" @click="goBackShoulderPressSecond()">- Back</button>
                             <button class="back_button" id="third_press_button" v-if="isPressVisible === 'E'" @click="goBackShoulderPressThird()">- Back</button>
                         </div>
-                        <div id="vid_margin">
+                        <div class="vid_margin">
                             <video controls="controls" class="vid_size" id="press_video">
                                 <!-- <source src="dixie11/movie.mp4" type="video/mp4">
                                 <a href="dixie11/movie.mp4"></a> -->
@@ -1153,6 +1390,50 @@
                             <ul id="second_fly_ul_confirm" v-if="isAuxTwoVisible === 'E' || isAuxTwoVisible === 'F' ">
                                 <li class="li_pushed" id="fly_li1_confirm_second" v-for="(instruction, index) in auxTwoIntensifiedInstructions"> {{ instruction }} </li>
                             </ul>
+                            <div v-if="isAuxTwoVisible === 'C' && chestShredFlyTwoForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newFlyTwoWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsFlyTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsFlyTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('shoulderAuxTwo'); chestShredFlyTwoForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="isAuxTwoVisible === 'F' && chestShredFlyTwoForm ==='Y'">
+                                <div class="form_border">
+                                    <div class="form_padding">
+                                        <h2>Fill out the form below.</h2>
+                                        <div class="form">
+                                            <input type="number" placeholder="Enter the weight of the equipment you are using" v-model="newFlyTwoWeight">
+                                            <!-- <div >
+                                                {{errorMessageForField('newShoulderWeek')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of sets you accomplished" v-model="newSetsFlyTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <input type="number" placeholder="Enter the number of reps you did for each set" v-model="newRepsFlyTwoAccomplished">
+                                            <!-- <div >
+                                                {{errorMessageForField('newDumbbellShoulderPress')}}
+                                            </div> -->
+                                            <button class="back_button" v-on:click="workoutTitle('shoulderAuxTwoConfirm'); chestShredFlyTwoForm ='N'">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button class="intesifier" id="intensified_fly" v-if="isAuxTwoVisible === 'B'" @click="intensifyAuxTwoShoulder()">Intensifier</button>
                             <button class="intesifier" id="drop_press_fly" v-if="isAuxTwoVisible === 'D'" @click="handleAuxTwoIntensfier('drop_press_fly')">Drop Set</button>
                             <button class="intesifier" id="seth_press_fly" v-if="isAuxTwoVisible === 'D'" @click="handleAuxTwoIntensfier('seth_press_fly')">Seth Set</button>
@@ -1164,7 +1445,7 @@
                             <button class="back_button" id="second_fly_button" v-if="isAuxTwoVisible === 'D'" @click="goBackShoulderAuxTwoSecond()">- Back</button>
                             <button class="back_button" id="third_fly_button" v-if="isAuxTwoVisible === 'E'" @click="goBackShoulderAuxTwoThird()">- Back</button>
                         </div>
-                        <div id="vid_margin">
+                        <div class="vid_margin">
                             <video controls="controls" class="vid_size" id="fly_video">
                                 <!-- <source src="dixie11/movie.mp4" type="video/mp4">
                                 <a href="dixie11/movie.mp4"></a> -->
@@ -1172,6 +1453,9 @@
                             </video>
                         </div>
                     </div>
+                </div>
+                <div id="back_confirmation">
+                    <button class="push_buttons_press" class="endOfBackWorkout" @click="endOfShoulderWorkout()">End Your Workout</button>
                 </div>
                 <div id="footer_push_1">
                     <footer>
@@ -1822,7 +2106,7 @@
                     </div>
                 </div>
                 <div id="chest_confirmation">
-                    <button class="push_buttons_press" id="endOfChestWorkout" @click="endOfChestWorkout()">End Your Workout</button>
+                    <button class="push_buttons_press" class="endOfChestWorkout" @click="endOfChestWorkout()">End Your Workout</button>
                 </div>
                 <div id="footer_chest">
                     <footer>

@@ -27,6 +27,7 @@ Vue.createApp({
             newSetsWarmupAccomplished: "",
             newRepsAccomplished: "",
             chestShredWorkoutData: [],
+            chestShredShoulderData: [],
             // SHOULDER MAX PAGE
             shoulderMaxWorkouts: [],
             newDumbbellShoulderPress: "",
@@ -41,6 +42,8 @@ Vue.createApp({
             videoSrc: 'dixie11/movie.mp4',
             isWarmupVisible: 'A',
             instructions: [],
+            shoulderShredWarmupForm: 'N',
+            shoulderShredPressOneForm: 'N',
             // REAR DELT
             isRearDeltVisible: 'A',
             rearDeltHeader: 'Rear Delts',
@@ -50,6 +53,7 @@ Vue.createApp({
             intensifiedInstructions: [],
             rearDeltInstructions: [],
             rearDeltHeaderConfirmed: '',
+            
             // AUX
             auxileriesOneHeader: 'Auxileries 1',
             isAuxOneVisible: 'A',
@@ -214,7 +218,27 @@ Vue.createApp({
               reader.readAsDataURL(event.target.files[0]); // Read the selected file
             }
         },
-
+        //YEET
+        endOfShoulderWorkout(){
+            this.totalChestShredWorkouts = this.chestAccomplishedPercent;
+            this.totalChestShredIntensifiedWorkouts = this.chestAccomplishedIntensifiedPercent;
+            if (this.totalChestShredWorkouts > 0 || this.totalChestShredIntensifiedWorkouts > 0){
+                this.shredChestSubset = 'Y';
+                //this.addChestShredAccomplished();
+            }
+            //this.shredChestSubset = 'Y';
+            this.chestAccomplishedIntensifiedPercent = 0;
+            this.chestAccomplishedPercent = 0;
+            if (this.showPage === 'I'){
+                this.goBackShoulderAuxTwo();
+                this.goBackShoulderPress();
+                this.goBackShoulderAuxOne();
+                this.goBackShoulderRearDelt();
+                this.goBackShoulderWarmup();
+            }
+            this.showPage ='G';
+            this.addShoulderWorkoutData();
+        },
         // START OF SHOULDERS WARMUP
 
         handleShoulderWarmup(warmup) {
@@ -259,6 +283,7 @@ Vue.createApp({
         },
         confirmWarmupShoulder() {
             this.isWarmupVisible = 'C';
+            this.shoulderShredWarmupForm = 'Y';
             // Additional logic if needed
         },
 
@@ -560,11 +585,14 @@ Vue.createApp({
         },
         confirmRearDeltShoulder() {
             this.isRearDeltVisible = 'C';
+            this.chestShredPressOneForm = 'Y';
+
             // Additional logic if needed
         },
         confirmRearDeltShoulderTwo() {
             this.isRearDeltVisible = 'F';
             this.rearDeltHeader = this.rearDeltStorage;
+            this.chestShredPressOneForm = 'Y';
             // Additional logic if needed
         },
         intensifyRearDeltShoulder() {
@@ -882,11 +910,13 @@ Vue.createApp({
         },
         confirmAuxOneShoulder() {
             this.isAuxOneVisible = 'C';
+            this.chestShredFlyOneForm = 'Y';
             // Additional logic if needed
         },
         confirmAuxOneShoulderTwo() {
             this.isAuxOneVisible = 'F';
             this.auxileriesOneHeader = this.rearDeltStorage;
+            this.chestShredFlyOneForm = 'Y';
             // Additional logic if needed
         },
         intensifyAuxOneShoulder() {
@@ -1204,11 +1234,13 @@ Vue.createApp({
         },
         confirmPressShoulder() {
             this.isPressVisible = 'C';
+            this.chestShredPressTwoForm = 'Y';
             // Additional logic if needed
         },
         confirmPressShoulderTwo() {
             this.isPressVisible = 'F';
             this.pressHeader = this.rearDeltStorage;
+            this.chestShredPressTwoForm = 'Y';
             // Additional logic if needed
         },
         intensifyPressShoulder() {
@@ -1527,11 +1559,13 @@ Vue.createApp({
         },
         confirmAuxTwoShoulder() {
             this.isAuxTwoVisible = 'C';
+            this.chestShredFlyTwoForm = 'Y';
             // Additional logic if needed
         },
         confirmAuxTwoShoulderTwo() {
             this.isAuxTwoVisible = 'F';
             this.auxileriesTwoHeader = this.rearDeltStorage;
+            this.chestShredFlyTwoForm = 'Y';
             // Additional logic if needed
         },
         intensifyAuxTwoShoulder() {
@@ -4922,11 +4956,20 @@ Vue.createApp({
             if (parameter === "chestWarmup"){
                 this.chestWarmupTitle = this.chestWarmupHeader;
             }
+            if (parameter === "shoulderWarmup"){
+                this.chestWarmupTitle = this.warmupHeader;
+            }
             if(parameter === "chestPressOne"){
                 this.newChestPressTitle = this.chestPressOneHeader;
             }
+            if(parameter === "rearDelt"){
+                this.newChestPressTitle = this.rearDeltHeader;
+            }
             if (parameter === "chestPressOneConfirmed"){
                 this.newChestPressTitle = this.chestPressOneHeaderConfirmed;
+            }
+            if(parameter === "rearDeltConfirmed"){
+                this.newChestPressTitle = this.rearDeltHeaderConfirmed;
             }
             if (parameter === "chestFlyOneConfirmed"){
                 this.newChestFlyOneTitle = this.chestFlyOneHeaderConfirmed;
@@ -4934,17 +4977,35 @@ Vue.createApp({
             if (parameter === "chestFlyOne"){
                 this.newChestFlyOneTitle = this.chestFlyOneHeader;
             }
+            if (parameter === "shoulderAuxOne"){
+                this.newChestFlyOneTitle = this.auxileriesOneHeader;
+            }
             if (parameter === "chestPressTwoConfirmed"){
                 this.chestPressTwoTitle = this.chestPressTwoHeaderConfirmed;
+            }
+            if (parameter === "shoulderAuxOneConfirm"){
+                this.newChestFlyOneTitle = this.auxOneHeaderConfirmed;
             }
             if (parameter === "chestPressTwo"){
                 this.chestPressTwoTitle = this.chestPressTwoHeader;
             }
+            if (parameter === "shoulderPress"){
+                this.chestPressTwoTitle = this.pressHeader;
+            }
+            if (parameter === "shoulderPressConfirmed"){
+                this.chestPressTwoTitle = this.pressHeaderConfirmed;
+            }
             if (parameter === "chestFlyTwo"){
                 this.newFlyTwoTitle = this.chestFlyTwoHeader;
             }
+            if (parameter === "shoulderAuxTwo"){
+                this.newFlyTwoTitle = this.auxileriesTwoHeader;
+            }
             if (parameter === "chestFlyTwoConfirmed"){
                 this.newFlyTwoTitle = this.chestFlyTwoHeaderConfirmed;
+            }
+            if (parameter === "shoulderAuxTwoConfirm"){
+                this.newFlyTwoTitle = this.auxTwoHeaderConfirmed;
             }
             if (parameter === "chestTriceps"){
                 this.newTricepsTitle = this.chestTricepsHeader;
@@ -5086,6 +5147,94 @@ Vue.createApp({
             });
         },
 
+        // NEW SECTION SHOULDERS
+
+        addShoulderWorkoutData: function(){
+            //this.validateWorkoutData();
+            // date
+            const date = new Date().toUTCString();
+            const extractedDateTime = date.slice(5, 16);
+            var data= "dateTime=" + encodeURIComponent(extractedDateTime);
+            // warmups
+            data += "&shoulderWarmupTitle=" + encodeURIComponent(this.chestWarmupTitle);
+            data += "&shoulderWarmupWeight=" + encodeURIComponent(this.newWarmupWorkoutWeight);
+            data += "&setsWarmupShoulderAccomplished=" + encodeURIComponent(this.newSetsWarmupAccomplished);
+            data += "&repsWarmupShoulderAccomplished=" + encodeURIComponent(this.newRepsWarmupAccomplished);
+            // rear delts
+            data += "&newRearDeltTitle=" + encodeURIComponent(this.newChestPressTitle);
+            data += "&newRearDeltWeight=" + encodeURIComponent(this.newPressOneWeight);
+            data += "&newSetsRearDeltAccomplished=" + encodeURIComponent(this.newSetsPressOneAccomplished);
+            data += "&newRepsRearDeltAccomplished=" + encodeURIComponent(this.newRepsPressOneAccomplished);
+            // aux one
+            data += "&newShouldersAuxOneTitle=" + encodeURIComponent(this.newChestFlyOneTitle);
+            data += "&newAuxOneWeight=" + encodeURIComponent(this.newFlyOneWeight);
+            data += "&newSetsAuxOneAccomplished=" + encodeURIComponent(this.newSetsFlyOneAccomplished);
+            data += "&newRepsAuxOneAccomplished=" + encodeURIComponent(this.newRepsFlyOneAccomplished);
+            // shoulder press
+            data += "&shoulderPressTitle=" + encodeURIComponent(this.chestPressTwoTitle);
+            data += "&newShoulderPressWeight=" + encodeURIComponent(this.newPressTwoWeight);
+            data += "&newSetsShoulderPressAccomplished=" + encodeURIComponent(this.newSetsPressTwoAccomplished);
+            data += "&newRepsShoulderPressAccomplished=" + encodeURIComponent(this.newRepsPressTwoAccomplished);
+            // aux two
+            data += "&newShouldersAuxTwoTitle=" + encodeURIComponent(this.newFlyTwoTitle);
+            data += "&newAuxTwoWeight=" + encodeURIComponent(this.newFlyTwoWeight);
+            data += "&newSetsAuxTwoAccomplished=" + encodeURIComponent(this.newSetsFlyTwoAccomplished);
+            data += "&newRepsAuxTwoAccomplished=" + encodeURIComponent(this.newRepsFlyTwoAccomplished);
+            fetch("http://localhost:8080/shoulder_workout_data", {
+                body: data,
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            }).then((response) => {
+                if (response.status == 201){
+                    console.log("Added Shoulder Workout Data");
+                    this.chestWarmupTitle= "";
+                    this.newWarmupWorkoutWeight= "";
+                    this.newSetsWarmupAccomplished= "";
+                    this.newRepsWarmupAccomplished= "";
+                    this.newChestPressTitle= "";
+                    this.newPressOneWeight= "";
+                    this.newSetsPressOneAccomplished= "";
+                    this.newRepsPressOneAccomplished= "";
+                    this.newChestFlyOneTitle= "";
+                    this.newFlyOneWeight= "";
+                    this.newSetsFlyOneAccomplished= "";
+                    this.newRepsFlyOneAccomplished= "";
+                    this.chestPressTwoTitle= "";
+                    this.newPressTwoWeight= "";
+                    this.newSetsPressTwoAccomplished= "";
+                    this.newRepsPressTwoAccomplished= "";
+                    this.newFlyTwoTitle= "";
+                    this.newFlyTwoWeight= "";
+                    this.newSetsFlyTwoAccomplished= "";
+                    this.newRepsFlyTwoAccomplished= "";
+                    this.loadShoulderWorkoutData();
+                }
+
+            });
+        },
+        loadShoulderWorkoutData: function (){
+            fetch("http://localhost:8080/shoulder_workout_data").then((response) => {
+                if (response.status == 200){
+                    response.json().then((maxShoulderFromServer) => {
+                        console.log("recieved foods from API:", maxShoulderFromServer);
+                        this.chestShredShoulderData = maxShoulderFromServer;
+                    });
+                }
+            });
+        },
+        deleteShoulderWorkoutData: function(workoutID){
+            fetch("http://localhost:8080/shoulder_workout_data/" + workoutID, {
+                method: "DELETE"
+            }).then((response) => {
+                if (response.status == 200){
+                    this.loadShoulderWorkoutData();
+                }
+
+            });
+        },
+
         //
         addShred: function(){
             var data= "shred=" + encodeURIComponent(this.newShred);
@@ -5122,8 +5271,9 @@ Vue.createApp({
     },
 
     created: function(){
-        console.log("Hello Vue");
+        //console.log("Hello Vue");
         this.loadChestWorkoutData();
+        //this.loadShoulderWorkoutData();
     }
 
 

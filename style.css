@@ -1622,13 +1622,10 @@ input:focus, textarea:focus{
     grid-template-rows: .07fr auto .01fr;
     grid-template-columns: minmax(0px, 1fr) repeat(6, minmax(0, 175px)) minmax(0px, 1fr);
     background-color: rgb(24, 24, 24);
-    /* background-color: #404040; */
 }
 #push_1_background{
-    grid-row: 1/8;
+    grid-row: 1/9;
     grid-column: 1/-1;
-    /* background-color: rgb(24, 24, 24); */
-
     background-color: white;
 }
 #welcome_push_1{
@@ -1637,7 +1634,6 @@ input:focus, textarea:focus{
     text-align: center;
     font-size: 40px;
     margin-top: 20px;
-    /* color: white; */
 }
 #push_1_warm_up{
     grid-row: 2/3;
@@ -1675,8 +1671,15 @@ input:focus, textarea:focus{
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#footer_push_1{
+#back_confirmation{
     grid-row: 8/9;
+    grid-column: 2/8;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+#footer_push_1{
+    grid-row: 9/10;
     grid-column: 1/-1;
 }
 #push_2_aux{
@@ -1860,18 +1863,9 @@ input:focus, textarea:focus{
 #p_presses_confirm{
     display: none;
 }
-/* #hr_yellow_confirm{
-    display: none;
-} */
-/* #press_second_header_confirm{
-    display: none;
-} */
 #p_second_presses_confirm{
     display: none;
 }
-/* #hr_yellow_confirm_second{
-    display: none;
-} */
 #p_second_fly_confirm{
     display: none;
 }
@@ -1884,21 +1878,9 @@ input:focus, textarea:focus{
 #confirm_shoulder{
     display: none;
 }
-/* #confirm_shoulder_two{
-    display: none;
-} */
-/* #shoulder_second_header_confirm{
-    display: none;
-} */
 #p_second_shoulder_confirm{
     display: none;
 }
-/* #second_shoulder_ul_confirm{
-    display: none;
-} */
-/* #hr_yellow_confirm_shoulder{
-    display: none;
-} */
 #confirm_pullover{
     display: none;
 }
@@ -1914,9 +1896,6 @@ input:focus, textarea:focus{
 #second_pullover_ul_confirm{
     display: none;
 }
-/* #hr_yellow_confirm_pullover{
-    display: none;
-} */
 #confirm_shoulder{
     display: none;
 }
@@ -1929,9 +1908,6 @@ input:focus, textarea:focus{
 #p_second_biceps_confirm{
     display: none;
 }
-/* #hr_yellow_confirm_biceps{
-    display: none;
-} */
 #second_biceps_ul_confirm{
     display: none;
 }
@@ -1950,9 +1926,7 @@ input:focus, textarea:focus{
 #biceps_second_header_confirm{
     display: none;
 }
-/* #hr_yellow_confirm_biceps{
-    display: none;
-} */
+
 #p_second_biceps_confirm{
     display: none;
 }
@@ -2042,25 +2016,10 @@ input:focus, textarea:focus{
 #rest_press_fly{
     display: none;
 }
-/* #push_fly_superset_div{
-    display: none;
-} */
-/* #superset_back_fly_button{
-    display: none;
-} */
-/* #pushed_fly_superset_div{
-    display: none;
-} */
-
-/*  */
 
 #negatives_biceps{
     display: none;
 }
-/* #negatives_shoulder{
-    display: none;
-} */
-/*  */
 /*triceps*/
 #drop_angle_tricep{
     display: none;
@@ -2319,7 +2278,7 @@ input:focus, textarea:focus{
     grid-row: 9/10;
     grid-column: 1/-1;
 }
-#endOfChestWorkout{
+.endOfChestWorkout{
     margin-left: auto;
     margin-right: auto;
 }

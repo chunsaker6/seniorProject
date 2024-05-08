@@ -119,7 +119,81 @@ const ChestWorkoutDataSchema = new mongoose.Schema({
 const ChestWorkoutData = mongoose.model('ChestWorkoutData', ChestWorkoutDataSchema);
 
 
+const ShoulderWorkoutDataSchema = new mongoose.Schema({
+    dateTime: {
+        type: String,
+    },
+    shoulderWarmupTitle: {
+        type: String,
+    },
+    shoulderWarmupWeight: {
+        type: Number,
+    },
+    setsWarmupShoulderAccomplished: {
+        type: Number,
+    },
+    repsWarmupShoulderAccomplished: {
+        type: Number,
+    },
+    //
+    newRearDeltTitle: {
+        type: String,
+    },
+    newRearDeltWeight: {
+        type: Number,
+    },
+    newSetsRearDeltAccomplished: {
+        type: Number,
+    },
+    newRepsRearDeltAccomplished: {
+        type: Number,
+    },
+    //
+    newShouldersAuxOneTitle: {
+        type: String,
+    },
+    newAuxOneWeight: {
+        type: Number,
+    },
+    newSetsAuxOneAccomplished: {
+        type: Number,
+    },
+    newRepsAuxOneAccomplished: {
+        type: Number,
+    },
+    //
+    shoulderPressTitle: {
+        type: String,
+    },
+    newShoulderPressWeight: {
+        type: Number,
+    },
+    newSetsShoulderPressAccomplished: {
+        type: Number,
+    },
+    newRepsShoulderPressAccomplished: {
+        type: Number,
+    },
+    //
+    newShouldersAuxTwoTitle: {
+        type: String,
+    },
+    newAuxTwoWeight: {
+        type: Number,
+    },
+    newSetsAuxTwoAccomplished: {
+        type: Number,
+    },
+    newRepsAuxTwoAccomplished: {
+        type: Number,
+    },
+
+});
+
+const ShoulderWorkoutData = mongoose.model('ShoulderWorkoutData', ShoulderWorkoutDataSchema);
+
 module.exports = {
     Shred: Shred,
-    ChestWorkoutData: ChestWorkoutData
+    ChestWorkoutData: ChestWorkoutData,
+    ShoulderWorkoutData: ShoulderWorkoutData
 }

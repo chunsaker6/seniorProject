@@ -79,6 +79,73 @@ app.delete("/chest_workout_data/:workoutId", function(request, response){
 
 // end of chest
 
+// SHOULDER WORKOUT DATA SECTION
+app.get("/shoulder_workout_data", function(request, response){
+    model.ShoulderWorkoutData.find().then((maxs) => {
+        //  response.set("Access-Control-Allow-Origin", "*")
+         response.json(maxs)
+     });
+});
+app.post("/shoulder_workout_data", function(request, response){
+    console.log("request_body:", request.body);
+    const newShoulderWorkoutData = new model.ShoulderWorkoutData({
+        dateTime: request.body.dateTime,
+        //
+        shoulderWarmupTitle: request.body.shoulderWarmupTitle,
+        shoulderWarmupWeight: request.body.shoulderWarmupWeight,
+        setsWarmupShoulderAccomplished: request.body.setsWarmupShoulderAccomplished,
+        repsWarmupShoulderAccomplished: request.body.repsWarmupShoulderAccomplished,
+        //
+        newRearDeltTitle: request.body.newRearDeltTitle,
+        newRearDeltWeight: request.body.newRearDeltWeight,
+        newSetsRearDeltAccomplished: request.body.newSetsRearDeltAccomplished,
+        newRepsRearDeltAccomplished: request.body.newRepsRearDeltAccomplished,
+        //
+        newShouldersAuxOneTitle: request.body.newShouldersAuxOneTitle,
+        newAuxOneWeight: request.body.newAuxOneWeight,
+        newSetsAuxOneAccomplished: request.body.newSetsAuxOneAccomplished,
+        newRepsAuxOneAccomplished: request.body.newRepsAuxOneAccomplished,
+        //
+        shoulderPressTitle: request.body.shoulderPressTitle,
+        newShoulderPressWeight: request.body.newShoulderPressWeight,
+        newSetsShoulderPressAccomplished: request.body.newSetsShoulderPressAccomplished,
+        newRepsShoulderPressAccomplished: request.body.newRepsShoulderPressAccomplished,
+        //
+        newShouldersAuxTwoTitle: request.body.newShouldersAuxTwoTitle,
+        newAuxTwoWeight: request.body.newAuxTwoWeight,
+        newSetsAuxTwoAccomplished: request.body.newSetsAuxTwoAccomplished,
+        newRepsAuxTwoAccomplished: request.body.newRepsAuxTwoAccomplished,
+    })
+    newShoulderWorkoutData.save().then(() => {
+        // response.set("Access-Control-Allow-Origin", "*")
+        response.status(201).send("Created")
+
+    });
+});
+// delete shoulders max member
+app.delete("/shoulder_workout_data/:workoutId", function(request, response){
+    // Access for Vue.js
+    console.log("Deleting workout data with id:", request.params.workoutId);
+
+    // Use Mongoose's findOneAndDelete to find and delete the food item
+    model.ShoulderWorkoutData.findOneAndDelete({ _id: request.params.workoutId })
+        .then((deletedWorkout) => {
+            if (deletedWorkout) {
+                // response.set("Access-Control-Allow-Origin", "*");
+                response.json({ message: 'Max deleted successfully' });
+            } else {
+                response.sendStatus(404); // If food item not found
+            }
+        })
+        .catch((error) => {
+            console.error("Failed to delete workout data with ID:", request.params.workoutId);
+            response.sendStatus(404);
+        });
+});
+
+// end of shoulders
+
+
 app.get("/workouts", function(request, response){
     model.Shred.find().then((shreds) => {
         //  response.set("Access-Control-Allow-Origin", "*")
