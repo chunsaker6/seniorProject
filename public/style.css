@@ -523,7 +523,7 @@ a:hover{
 
 /* FOOTER SECTION */
 
-footer #footer_logo{
+footer .footer_logo{
     height: 100px;
     margin-right: 10px;
 }
@@ -809,14 +809,14 @@ input:focus, textarea:focus{
     margin-top: 30px;
 }
 
-#login_form form {
+#login_form .container {
     border: 3px solid black;
     border-radius: 5px;
     opacity: .9;
 }
   
   /* Full-width inputs */
-#login_form input[type=text], #login_form input[type=password] {
+#login_form input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -859,7 +859,23 @@ input:focus, textarea:focus{
 #log_in_form_center{
     text-align: center;
 }
-#sign_up_log_in a{
+.sign_up_log_in a{
+    background-color: #FFBF00;
+    text-decoration: none;
+    font-size: small;
+    color: black;
+    border-radius: 5px;
+    padding: 18px 22px;
+    display:block;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.sign_up_log_in a:hover{
+    opacity: 0.8;
+}
+.sign_up_log_in_page a{
     background-color: #f1f1f1;
     text-decoration: none;
     font-size: small;
@@ -872,7 +888,7 @@ input:focus, textarea:focus{
     cursor: pointer;
     margin-top: 10px;
 }
-#sign_up_log_in a:hover{
+.sign_up_log_in_page a:hover{
     opacity: 0.8;
 }
 /* NEW PAGE STARTING */
@@ -959,18 +975,18 @@ input:focus, textarea:focus{
 }
 #shred_plan{
     grid-row: 9/10;
-    grid-column: 2/5;
+    grid-column: 2/8;
     padding-top: 30px;
     margin-right: 20px;
     margin-left: 20px;
 }
-#bulk_plan{
+/* #bulk_plan{
     grid-row: 9/10;
     grid-column: 5/8;
     padding-top: 30px;
     margin-left: 20px;
     margin-right: 20px;
-}
+} */
 #footer_sign_up{
     grid-row: 10/11;
     grid-column: 1/-1;
@@ -1193,7 +1209,7 @@ input:focus, textarea:focus{
     margin-top: 30px;
     padding-bottom: 30px;
 }
-#sign_up_form form {
+#sign_up_form .container {
     border: 3px solid black;
     border-radius: 5px;
     opacity: .9;
@@ -1201,7 +1217,7 @@ input:focus, textarea:focus{
 }
   
 /* Full-width inputs */
-#sign_up_form input[type=text], #sign_up_form input[type=password] {
+#sign_up_form input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -1211,7 +1227,7 @@ input:focus, textarea:focus{
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
+/* Set a style for all buttons
 #sign_up_form #submit_button {
     background-color: #FFBF00;
     border-radius: 5px;
@@ -1221,11 +1237,11 @@ input:focus, textarea:focus{
     cursor: pointer;
     width: 100%;
 }
-  
+*/
   /* Add a hover effect for buttons */
-#sign_up_form #submit_button:hover {
+/* #sign_up_form #submit_button:hover {
     opacity: 0.8;
-} 
+}   */
 #footer_sign_in{
     grid-row: 2/3;
     grid-column: 1/-1;
@@ -1261,7 +1277,7 @@ input:focus, textarea:focus{
 }
 #button_section_shred{
     grid-row: 2/3;
-    grid-column: 2/8;
+    grid-column: 3/7;
     padding-bottom: 50px;
 }
 #workoutsAccomplishedHeader{
@@ -1280,14 +1296,9 @@ input:focus, textarea:focus{
     grid-column: 3/4;
     text-align: center;
 }
-#workoutsAccomplishedArmsShred{
-    grid-row: 4/5;
-    grid-column: 6/7;
-    text-align: center;
-}
 #workoutsAccomplishedShouldersShred{
     grid-row: 4/5;
-    grid-column: 4/6;
+    grid-column: 6/7;
     text-align: center;
 }
 #workoutsAccomplishedLegsShred{
@@ -1312,8 +1323,6 @@ input:focus, textarea:focus{
     margin-top: 20px;
 }
 .workoutsAccomplishedSubset{
-    /* margin-left: 50px;
-    margin-right: 50px; */
     font-weight: bold;
     font-size: 30px;
 }
@@ -1352,13 +1361,14 @@ input:focus, textarea:focus{
     border-radius: 50px;
     border: 2px solid black;
     box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
-    margin-left: 30px;
+    
 }
 .logged_options_gap{
     display: flex;
     flex-flow: row nowrap;
-    gap: 160px;
-    margin-left: 21.5%;
+    justify-content: space-around;
+    /* gap: 160px;
+    margin-left: 21.5%; */
 }
 
 /* NEW PAGE */
@@ -1617,78 +1627,78 @@ input:focus, textarea:focus{
 }
 /* NEW PAGE */
 /* PUSH 1 PAGE */
-#wrapper_push_1{
+.wrapper_push_1{
     display: grid;
     grid-template-rows: .07fr auto .01fr;
     grid-template-columns: minmax(0px, 1fr) repeat(6, minmax(0, 175px)) minmax(0px, 1fr);
     background-color: rgb(24, 24, 24);
 }
-#push_1_background{
+.push_1_background{
     grid-row: 1/9;
     grid-column: 1/-1;
     background-color: white;
 }
-#welcome_push_1{
+.welcome_push_1{
     grid-row: 1/2;
     grid-column: 2/8;
     text-align: center;
     font-size: 40px;
     margin-top: 20px;
 }
-#push_1_warm_up{
+.push_1_warm_up{
     grid-row: 2/3;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#push_1_1st_press{
+.push_1_1st_press{
     grid-row: 3/4;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#push_1_2nd_press{
+.push_1_2nd_press{
     grid-row: 4/5;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#push_1_flies{
+.push_1_flies{
     grid-row: 5/6;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#push_1_triceps{
+.push_1_triceps{
     grid-row: 6/7;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#push_1_shoulders{
+.push_1_shoulders{
     grid-row: 7/8;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#back_confirmation{
+.back_confirmation{
     grid-row: 8/9;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
     text-align: center;
 }
-#footer_push_1{
+.footer_push_1{
     grid-row: 9/10;
     grid-column: 1/-1;
 }
-#push_2_aux{
+.push_2_aux{
     grid-row: 5/6;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#push_2_flies{
+.push_2_flies{
     grid-row: 6/7;
     grid-column: 2/8;
     margin-top: 20px;
@@ -1851,11 +1861,11 @@ input:focus, textarea:focus{
     cursor: pointer;
     opacity: .7;
 }
-#p_warmup{
+.p_warmup{
     font-size: large;
     margin-bottom: 10px;
 }
-#p_presses{
+.p_presses{
     font-size: 20px;
     margin-bottom: 10px;
     font-weight: bold;
@@ -1994,7 +2004,7 @@ input:focus, textarea:focus{
     cursor: pointer;
     opacity: .7;
 }
-#second_p_presses{
+.second_p_presses{
     font-size: large;
     margin-bottom: 10px;
 }
@@ -2008,7 +2018,7 @@ input:focus, textarea:focus{
 #unilateral_press{
     display: none;
 }
-#p_fly{
+.p_fly{
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -2024,7 +2034,7 @@ input:focus, textarea:focus{
 #drop_angle_tricep{
     display: none;
 }
-#p_tricep{
+.p_tricep{
     font-size: large;
     margin-bottom: 10px;
 }
@@ -2213,68 +2223,68 @@ input:focus, textarea:focus{
 /* NEW PAGE */
 /* CHEST PAGE */
 
-#wrapper_chest{
+.wrapper_chest{
     display: grid;
     grid-template-rows: .1fr auto .01fr;
     grid-template-columns: minmax(0px, 1fr) repeat(6, minmax(0, 175px)) minmax(0px, 1fr);
     background-color: rgb(24, 24, 24);
 }
-#chest_background{
+.chest_background{
     grid-row: 1/9;
     grid-column: 1/-1;
     background-color: white;
 }
-#welcome_chest{
+.welcome_chest{
     grid-row: 1/2;
     grid-column: 2/8;
     text-align: center;
     font-size: 40px;
     margin-top: 20px;
 }
-#chest_warm_up{
+.chest_warm_up{
     grid-row: 2/3;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#chest_1st_press{
+.chest_1st_press{
     grid-row: 3/4;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#chest_1st_fly{
+.chest_1st_fly{
     grid-row: 4/5;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#chest_second_press{
+.chest_second_press{
     grid-row: 5/6;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#chest_second_fly{
+.chest_second_fly{
     grid-row: 6/7;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#chest_second_triceps{
+.chest_second_triceps{
     grid-row: 7/8;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-#chest_confirmation{
+.chest_confirmation{
     grid-row: 8/9;
     grid-column: 2/8;
     margin-top: 20px;
     margin-bottom: 30px;
     text-align: center;
 }
-#footer_chest{
+.footer_chest{
     grid-row: 9/10;
     grid-column: 1/-1;
 }
@@ -2347,5 +2357,8 @@ CHEST PROGRESS PAGE
     grid-row: 2/3;
     grid-column:1/-1;
     background-color: rgb(24, 24, 24); 
+}
+.userErrorMassages{
+    margin-bottom: 5px;
 }
   
