@@ -355,16 +355,17 @@ app.delete("/session", function(request, response){
 
 //retrieve session
 app.get("/session", (request, response) =>{
-    // console.log("session:", request.session)
-    // console.log("session user id", request.session.userId)
-    // if (request.session && request.session.userId){
-    //     // logged in
-    //     response.status(201).send("Autheticated")
-    // }else{
-    //     response.status(401).send("Not Autheticated")
-    // }
-    console.log("user get session info", request.user)
-    response.json(request.user)
+    console.log("session:", request.session)
+    console.log("session user id", request.session.userId)
+    if (request.session && request.session.userId){
+        // logged in
+        console.log("user get session info", request.user)
+        // response.json(request.user)
+        response.status(201).send("Autheticated")
+    }else{
+        response.status(401).send("Not Autheticated")
+    }
+    
     // response.status(201).send("Autheticated")
 })
 // authentification: create session

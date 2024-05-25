@@ -5,12 +5,38 @@ Vue.createApp({
             // showPage: 'Q',
             // showPage: 'G',
             // logPage: 'E',
-            // showPage: 'A',
-            // logPage: 'A',
-            showPage: 'D',
-            logPage: 'B',
+            showPage: 'A',
+            logPage: 'A',
+            // showPage: 'F',
+            // logPage: 'D',
 
             // showPage: 'L',
+
+            slides: [
+                {
+                  beforeImage: "images/pre_transformations_c.jpg",
+                  beforeAlt: "calvin_before",
+                  afterImage: "images/post_transformation_c.jpg",
+                  afterAlt: "calvin_after",
+                  caption: "Caption Text"
+                },
+                {
+                  beforeImage: "images/pre_transformations_c.jpg",
+                  beforeAlt: "calvin_before",
+                  afterImage: "images/post_transformation_c.jpg",
+                  afterAlt: "calvin_after",
+                  caption: "Caption Two"
+                },
+                {
+                  beforeImage: "images/pre_transformations_c.jpg",
+                  beforeAlt: "calvin_before",
+                  afterImage: "images/post_transformation_c.jpg",
+                  afterAlt: "calvin_after",
+                  caption: "Caption Three"
+                }
+              ],
+            currentSlideIndex: 0,
+            slideInterval: null,
             // LOGIN STUFF
             newLoginEmail: '',
             newLoginPassword: '',
@@ -19,7 +45,7 @@ Vue.createApp({
             newEmail: '',
             newPlainTextPassword: '',
             errorSessionMessages: {},
-            errorMessageForUser: {},
+            errorMessageForUsers: {},
             
             newShred: "",
             shredded: "",
@@ -399,12 +425,11 @@ Vue.createApp({
                             this.rearDeltHeader = 'Drop Set';
                             this.rearDeltHeaderConfirmed = 'Drop Set';
                             this.intensifiedInstructions = [
-                                "Here's a description of how to perform a rear delt cables drop set: Set up the cable machine with the pulleys at shoulder height. Attach D-handle grips to each pulley.",
-                                "Stand facing the cable machine with your feet shoulder-width apart. Grasp one D-handle in each hand with your palms facing downward. Step back slightly to create tension in the cables. Position your feet and torso for stability. Start with your arms extended forward in front of you, maintaining a slight bend in your elbows.",
-                                "Perform a set of rear delt cable flyes by squeezing your shoulder blades together and pulling your arms outward and backward in an arc-like motion. Focus on engaging your rear deltoid muscles as you bring your arms to the sides until they are parallel to the ground or slightly above shoulder level. Hold the contracted position for a brief moment, feeling the tension in your rear deltoids.",
-                                "Slowly return your arms to the starting position, maintaining control over the cables' resistance. Without resting, quickly reduce the weight on the cable machine by moving the pin to a lower weight setting or using a lighter weight stack.",
-                                "Immediately continue with another set of rear delt cable flyes with the reduced resistance. Aim to perform as many reps as possible with the lighter weight."
-
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -450,11 +475,11 @@ Vue.createApp({
                             this.rearDeltHeader = 'Drop Set';
                             this.rearDeltHeaderConfirmed = 'Drop Set';
                             this.intensifiedInstructions = [
-                                "Here's a description of how to perform chest supported rear delt dumbbell fly drop sets: Set up an incline bench to a moderate angle (around 30-45 degrees) and place it in front of a rack or a flat surface where you can rest the dumbbells. Lie face down on the incline bench with your chest fully supported on the pad. Position your head, neck, and upper body comfortably and securely on the bench.",
-                                "Hold a pair of dumbbells in each hand with your palms facing each other. Extend your arms downward toward the floor, just below shoulder level. This is your starting position. Engage your core and maintain stability on the bench throughout the exercise.",
-                                "Initiate the movement by squeezing your shoulder blades together and lifting the dumbbells outward and upward in an arc-like motion. Continue the movement until your arms are parallel to the ground or slightly above shoulder level. Keep a slight bend in your elbows to avoid strain on the joints.",
-                                "Focus on engaging your rear deltoid muscles as you lift the dumbbells to the sides. Hold the fully extended position for a brief moment to maximize muscle engagement. Lower the dumbbells back down in a controlled manner to the starting position.",
-                                "Perform the chest supported rear delt dumbbell fly for the desired number of repetitions with a challenging weight that allows you to maintain proper form. Without resting, quickly switch to a lighter set of dumbbells (reducing the weight by around 20-30% or as needed) and immediately perform another set of rear delt flyes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -500,11 +525,11 @@ Vue.createApp({
                             this.rearDeltHeader = 'Drop Set';
                             this.rearDeltHeaderConfirmed = 'Drop Set';
                             this.intensifiedInstructions = [
-                                "Here's a description of how to perform rear delt dumbbell fly drop sets: Stand with your feet shoulder-width apart and hold a dumbbell in each hand with a neutral grip (palms facing each other). Bend your knees slightly and hinge forward at your hips, maintaining a flat back. Your upper body should be almost parallel to the ground, and your chest should be facing down.",
-                                "Keep your shoulders back and down, and engage your core for stability. Start with your arms hanging down toward the floor, just below shoulder level. Your elbows should have a slight bend.",
-                                "Initiate the movement by squeezing your shoulder blades together and lifting the dumbbells outward and upward in an arc-like motion. Continue the movement until your arms are parallel to the ground or slightly above shoulder level. Your arms should be in line with your shoulders, forming a T shape with your body.",
-                                "Focus on engaging your rear deltoid muscles as you lift the dumbbells to the sides. Hold the fully extended position for a brief moment to maximize the muscle engagement. Slowly lower the dumbbells back to the starting position, maintaining control over the movement.",
-                                "Perform the rear delt dumbbell fly for the desired number of repetitions with a challenging weight that allows you to maintain proper form. Without resting, quickly switch to a lighter set of dumbbells (reducing the weight by around 20-30% or as needed) and immediately perform another set of rear delt flyes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -550,11 +575,11 @@ Vue.createApp({
                             this.rearDeltHeader = 'Drop Set';
                             this.rearDeltHeaderConfirmed = 'Drop Set';
                             this.intensifiedInstructions = [
-                                "Here's a description of how to perform rear delt peck deck flies drop set: Begin by adjusting the peck deck machine to a height that allows you to comfortably grip the handles while seated. Sit on the machine with your back against the backrest and your feet flat on the floor.",
-                                "Grasp the handles of the peck deck machine with an overhand grip, ensuring that your palms are facing each other. Your elbows should be slightly bent, and your arms should be at about shoulder height. Sit with your chest lifted and shoulders relaxed, maintaining a neutral spine and engaging your core for stability.",
-                                "Initiate the movement by squeezing your shoulder blades together and pulling the handles outward and backward. Continue the movement until your arms are fully extended to the sides, maintaining a slight bend in your elbows throughout the exercise.",
-                                "Focus on engaging your rear deltoid muscles as you bring your arms to the sides until you feel a contraction in the rear deltoids. Hold the fully extended position for a brief moment to maximize the muscle engagement. Slowly return your arms to the starting position, maintaining control over the resistance.",
-                                "Without resting, quickly reduce the weight on the peck deck machine by moving the pin to a lower weight setting or using a lighter weight stack. Immediately continue with another set of rear delt peck deck flies with the reduced resistance. Aim to perform as many reps as possible with the lighter weight."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -703,11 +728,11 @@ Vue.createApp({
                             this.auxileriesOneHeader = 'Drop Set';
                             this.auxOneHeaderConfirmed = 'Drop Set';
                             this.auxIntensifiedInstructions = [
-                                "Here's a description of how to perform a rear delt cables drop set: Set up the cable machine with the pulleys at shoulder height. Attach D-handle grips to each pulley.",
-                                "Stand facing the cable machine with your feet shoulder-width apart. Grasp one D-handle in each hand with your palms facing downward. Step back slightly to create tension in the cables. Position your feet and torso for stability. Start with your arms extended forward in front of you, maintaining a slight bend in your elbows.",
-                                "Perform a set of rear delt cable flyes by squeezing your shoulder blades together and pulling your arms outward and backward in an arc-like motion. Focus on engaging your rear deltoid muscles as you bring your arms to the sides until they are parallel to the ground or slightly above shoulder level. Hold the contracted position for a brief moment, feeling the tension in your rear deltoids.",
-                                "Slowly return your arms to the starting position, maintaining control over the cables' resistance. Without resting, quickly reduce the weight on the cable machine by moving the pin to a lower weight setting or using a lighter weight stack.",
-                                "Immediately continue with another set of rear delt cable flyes with the reduced resistance. Aim to perform as many reps as possible with the lighter weight."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
 
                             ];
                             break;
@@ -754,11 +779,11 @@ Vue.createApp({
                             this.auxileriesOneHeader = 'Drop Set';
                             this.auxOneHeaderConfirmed = 'Drop Set';
                             this.auxIntensifiedInstructions = [
-                                "Here's a description of how to perform chest supported rear delt dumbbell fly drop sets: Set up an incline bench to a moderate angle (around 30-45 degrees) and place it in front of a rack or a flat surface where you can rest the dumbbells. Lie face down on the incline bench with your chest fully supported on the pad. Position your head, neck, and upper body comfortably and securely on the bench.",
-                                "Hold a pair of dumbbells in each hand with your palms facing each other. Extend your arms downward toward the floor, just below shoulder level. This is your starting position. Engage your core and maintain stability on the bench throughout the exercise.",
-                                "Initiate the movement by squeezing your shoulder blades together and lifting the dumbbells outward and upward in an arc-like motion. Continue the movement until your arms are parallel to the ground or slightly above shoulder level. Keep a slight bend in your elbows to avoid strain on the joints.",
-                                "Focus on engaging your rear deltoid muscles as you lift the dumbbells to the sides. Hold the fully extended position for a brief moment to maximize muscle engagement. Lower the dumbbells back down in a controlled manner to the starting position.",
-                                "Perform the chest supported rear delt dumbbell fly for the desired number of repetitions with a challenging weight that allows you to maintain proper form. Without resting, quickly switch to a lighter set of dumbbells (reducing the weight by around 20-30% or as needed) and immediately perform another set of rear delt flyes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -804,11 +829,11 @@ Vue.createApp({
                             this.auxileriesOneHeader = 'Drop Set';
                             this.auxOneHeaderConfirmed = 'Drop Set';
                             this.auxIntensifiedInstructions = [
-                                "Here's a description of how to perform rear delt dumbbell fly drop sets: Stand with your feet shoulder-width apart and hold a dumbbell in each hand with a neutral grip (palms facing each other). Bend your knees slightly and hinge forward at your hips, maintaining a flat back. Your upper body should be almost parallel to the ground, and your chest should be facing down.",
-                                "Keep your shoulders back and down, and engage your core for stability. Start with your arms hanging down toward the floor, just below shoulder level. Your elbows should have a slight bend.",
-                                "Initiate the movement by squeezing your shoulder blades together and lifting the dumbbells outward and upward in an arc-like motion. Continue the movement until your arms are parallel to the ground or slightly above shoulder level. Your arms should be in line with your shoulders, forming a T shape with your body.",
-                                "Focus on engaging your rear deltoid muscles as you lift the dumbbells to the sides. Hold the fully extended position for a brief moment to maximize the muscle engagement. Slowly lower the dumbbells back to the starting position, maintaining control over the movement.",
-                                "Perform the rear delt dumbbell fly for the desired number of repetitions with a challenging weight that allows you to maintain proper form. Without resting, quickly switch to a lighter set of dumbbells (reducing the weight by around 20-30% or as needed) and immediately perform another set of rear delt flyes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -854,11 +879,11 @@ Vue.createApp({
                             this.auxileriesOneHeader = 'Drop Set';
                             this.auxOneHeaderConfirmed = 'Drop Set';
                             this.auxIntensifiedInstructions = [
-                                "Here's a description of how to perform rear delt peck deck flies drop set: Begin by adjusting the peck deck machine to a height that allows you to comfortably grip the handles while seated. Sit on the machine with your back against the backrest and your feet flat on the floor.",
-                                "Grasp the handles of the peck deck machine with an overhand grip, ensuring that your palms are facing each other. Your elbows should be slightly bent, and your arms should be at about shoulder height. Sit with your chest lifted and shoulders relaxed, maintaining a neutral spine and engaging your core for stability.",
-                                "Initiate the movement by squeezing your shoulder blades together and pulling the handles outward and backward. Continue the movement until your arms are fully extended to the sides, maintaining a slight bend in your elbows throughout the exercise.",
-                                "Focus on engaging your rear deltoid muscles as you bring your arms to the sides until you feel a contraction in the rear deltoids. Hold the fully extended position for a brief moment to maximize the muscle engagement. Slowly return your arms to the starting position, maintaining control over the resistance.",
-                                "Without resting, quickly reduce the weight on the peck deck machine by moving the pin to a lower weight setting or using a lighter weight stack. Immediately continue with another set of rear delt peck deck flies with the reduced resistance. Aim to perform as many reps as possible with the lighter weight."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -1007,11 +1032,11 @@ Vue.createApp({
                             this.pressHeader = 'Drop Set';
                             this.pressHeaderConfirmed = 'Drop Set';
                             this.pressIntensifiedInstructions = [
-                                "The dumbell shoulder press drop set is a variation of the traditional dumbbell press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would grab a heavy set of dumbbells and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -1057,11 +1082,11 @@ Vue.createApp({
                             this.pressHeader = 'Drop Set';
                             this.pressHeaderConfirmed = 'Drop Set';
                             this.pressIntensifiedInstructions = [
-                                "The plate-loaded shoulder press drop set is a variation of the traditional shoulder press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a plate-loaded shoulder press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -1107,11 +1132,11 @@ Vue.createApp({
                             this.pressHeader = 'Drop Set';
                             this.pressHeaderConfirmed = 'Drop Set';
                             this.pressIntensifiedInstructions = [
-                                "The cable drop set is a variation of the traditional cable press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would set the cables to a weight that you can perform a set of 8-12 repetitions with.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -1157,11 +1182,11 @@ Vue.createApp({
                             this.pressHeader = 'Drop Set';
                             this.pressHeaderConfirmed = 'Drop Set';
                             this.pressIntensifiedInstructions = [
-                                "The smith machine shoulder press drop set is a variation of the traditional smith machine shoulder press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a smith press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -1309,12 +1334,11 @@ Vue.createApp({
                             this.auxileriesTwoHeader = 'Drop Set';
                             this.auxTwoHeaderConfirmed = 'Drop Set';
                             this.auxTwoIntensifiedInstructions = [
-                                "Here's a description of how to perform a rear delt cables drop set: Set up the cable machine with the pulleys at shoulder height. Attach D-handle grips to each pulley.",
-                                "Stand facing the cable machine with your feet shoulder-width apart. Grasp one D-handle in each hand with your palms facing downward. Step back slightly to create tension in the cables. Position your feet and torso for stability. Start with your arms extended forward in front of you, maintaining a slight bend in your elbows.",
-                                "Perform a set of rear delt cable flyes by squeezing your shoulder blades together and pulling your arms outward and backward in an arc-like motion. Focus on engaging your rear deltoid muscles as you bring your arms to the sides until they are parallel to the ground or slightly above shoulder level. Hold the contracted position for a brief moment, feeling the tension in your rear deltoids.",
-                                "Slowly return your arms to the starting position, maintaining control over the cables' resistance. Without resting, quickly reduce the weight on the cable machine by moving the pin to a lower weight setting or using a lighter weight stack.",
-                                "Immediately continue with another set of rear delt cable flyes with the reduced resistance. Aim to perform as many reps as possible with the lighter weight."
-
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -1360,11 +1384,11 @@ Vue.createApp({
                             this.auxileriesTwoHeader = 'Drop Set';
                             this.auxTwoHeaderConfirmed = 'Drop Set';
                             this.auxTwoIntensifiedInstructions = [
-                                "Here's a description of how to perform chest supported rear delt dumbbell fly drop sets: Set up an incline bench to a moderate angle (around 30-45 degrees) and place it in front of a rack or a flat surface where you can rest the dumbbells. Lie face down on the incline bench with your chest fully supported on the pad. Position your head, neck, and upper body comfortably and securely on the bench.",
-                                "Hold a pair of dumbbells in each hand with your palms facing each other. Extend your arms downward toward the floor, just below shoulder level. This is your starting position. Engage your core and maintain stability on the bench throughout the exercise.",
-                                "Initiate the movement by squeezing your shoulder blades together and lifting the dumbbells outward and upward in an arc-like motion. Continue the movement until your arms are parallel to the ground or slightly above shoulder level. Keep a slight bend in your elbows to avoid strain on the joints.",
-                                "Focus on engaging your rear deltoid muscles as you lift the dumbbells to the sides. Hold the fully extended position for a brief moment to maximize muscle engagement. Lower the dumbbells back down in a controlled manner to the starting position.",
-                                "Perform the chest supported rear delt dumbbell fly for the desired number of repetitions with a challenging weight that allows you to maintain proper form. Without resting, quickly switch to a lighter set of dumbbells (reducing the weight by around 20-30% or as needed) and immediately perform another set of rear delt flyes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -1410,11 +1434,11 @@ Vue.createApp({
                             this.auxileriesTwoHeader = 'Drop Set';
                             this.auxTwoHeaderConfirmed = 'Drop Set';
                             this.auxTwoIntensifiedInstructions = [
-                                "Here's a description of how to perform rear delt dumbbell fly drop sets: Stand with your feet shoulder-width apart and hold a dumbbell in each hand with a neutral grip (palms facing each other). Bend your knees slightly and hinge forward at your hips, maintaining a flat back. Your upper body should be almost parallel to the ground, and your chest should be facing down.",
-                                "Keep your shoulders back and down, and engage your core for stability. Start with your arms hanging down toward the floor, just below shoulder level. Your elbows should have a slight bend.",
-                                "Initiate the movement by squeezing your shoulder blades together and lifting the dumbbells outward and upward in an arc-like motion. Continue the movement until your arms are parallel to the ground or slightly above shoulder level. Your arms should be in line with your shoulders, forming a T shape with your body.",
-                                "Focus on engaging your rear deltoid muscles as you lift the dumbbells to the sides. Hold the fully extended position for a brief moment to maximize the muscle engagement. Slowly lower the dumbbells back to the starting position, maintaining control over the movement.",
-                                "Perform the rear delt dumbbell fly for the desired number of repetitions with a challenging weight that allows you to maintain proper form. Without resting, quickly switch to a lighter set of dumbbells (reducing the weight by around 20-30% or as needed) and immediately perform another set of rear delt flyes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -1460,11 +1484,11 @@ Vue.createApp({
                             this.auxileriesTwoHeader = 'Drop Set';
                             this.auxTwoHeaderConfirmed = 'Drop Set';
                             this.auxTwoIntensifiedInstructions = [
-                                "Here's a description of how to perform rear delt peck deck flies drop set: Begin by adjusting the peck deck machine to a height that allows you to comfortably grip the handles while seated. Sit on the machine with your back against the backrest and your feet flat on the floor.",
-                                "Grasp the handles of the peck deck machine with an overhand grip, ensuring that your palms are facing each other. Your elbows should be slightly bent, and your arms should be at about shoulder height. Sit with your chest lifted and shoulders relaxed, maintaining a neutral spine and engaging your core for stability.",
-                                "Initiate the movement by squeezing your shoulder blades together and pulling the handles outward and backward. Continue the movement until your arms are fully extended to the sides, maintaining a slight bend in your elbows throughout the exercise.",
-                                "Focus on engaging your rear deltoid muscles as you bring your arms to the sides until you feel a contraction in the rear deltoids. Hold the fully extended position for a brief moment to maximize the muscle engagement. Slowly return your arms to the starting position, maintaining control over the resistance.",
-                                "Without resting, quickly reduce the weight on the peck deck machine by moving the pin to a lower weight setting or using a lighter weight stack. Immediately continue with another set of rear delt peck deck flies with the reduced resistance. Aim to perform as many reps as possible with the lighter weight."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -1766,12 +1790,11 @@ Vue.createApp({
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The plate-loaded incline press drop set is a variation of the traditional incline press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a plate-loaded incline press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
-
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -1819,11 +1842,11 @@ Vue.createApp({
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The plate-loaded press drop set is a variation of the traditional press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a plate-loaded press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -1871,11 +1894,11 @@ Vue.createApp({
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The plate-loaded incline press drop set is a variation of the traditional incline press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a plate-loaded decline press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -1923,11 +1946,11 @@ Vue.createApp({
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The incline dumbbell press drop set is a variation of the traditional incline dumbbell press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would grab a set of dumbbells and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -1975,11 +1998,11 @@ Vue.createApp({
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The dumbbell press drop set is a variation of the traditional dumbbell press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would grab a set of dumbbells with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -2027,11 +2050,11 @@ Vue.createApp({
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The decline dumbbell press drop set is a variation of the traditional decline dumbbell press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would grab a set of dummbells with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -2079,11 +2102,11 @@ Vue.createApp({
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The incline smith machine press drop set is a variation of the traditional incline smith machine press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load the bar of the incline smich machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -2131,11 +2154,11 @@ Vue.createApp({
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The smith machine press drop set is a variation of the traditional smith machine press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load the bar of the smith machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -2183,11 +2206,11 @@ Vue.createApp({
                             this.chestPressOneHeader = 'Drop Set';
                             this.chestPressOneHeaderConfirmed = 'Drop Set';
                             this.chestPressOneIntensifiedInstructions = [
-                                "The decline smith machine press drop set is a variation of the traditional decline smith machine press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load the bar of the smith machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -2386,12 +2409,11 @@ Vue.createApp({
                             this.chestFlyOneHeader = 'Drop Set';
                             this.chestFlyOneHeaderConfirmed = 'Drop Set';
                             this.chestFlyOneIntensifiedInstructions = [
-                                "To perform the seated cable incline fly exercise, you sit on a bench with an adjustable incline, facing away from the cable machine. Perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "The key to performing seated cable incline fly drop sets effectively is to focus on maintaining proper form throughout the exercise, even as the weight gets lighter.",
-                                "Aim for 3 to 4 different weight changes."
-
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -2438,11 +2460,11 @@ Vue.createApp({
                             this.chestFlyOneHeader = 'Drop Set';
                             this.chestFlyOneHeaderConfirmed = 'Drop Set';
                             this.chestFlyOneIntensifiedInstructions = [
-                                "To perform the seated cable flat fly exercise, you sit on a bench facing away from the cable machine. Perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "The key to performing seated cable flat fly drop sets effectively is to focus on maintaining proper form throughout the exercise, even as the weight gets lighter.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -2489,11 +2511,11 @@ Vue.createApp({
                             this.chestFlyOneHeader = 'Drop Set';
                             this.chestFlyOneHeaderConfirmed = 'Drop Set';
                             this.chestFlyOneIntensifiedInstructions = [
-                                "To perform the seated cable decline fly exercise, you sit on a bench with an adjustable decline, facing away from the cable machine. Perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "The key to performing seated cable decline fly drop sets effectively is to focus on maintaining proper form throughout the exercise, even as the weight gets lighter.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -2540,11 +2562,11 @@ Vue.createApp({
                             this.chestFlyOneHeader = 'Drop Set';
                             this.chestFlyOneHeaderConfirmed = 'Drop Set';
                             this.chestFlyOneIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Set up the cable machine with the handles at the high position.",
-                                "Grab the handles and stand with your feet shoulder-width apart, facing the cable machine with your back to the bench.",
-                                "Lean forward slightly and bend your arms slightly at the elbows with your palms facing each other. This is the starting position.",
-                                "Keeping your arms slightly bent and your palms facing each other, slowly bring your arms forward and downward in a fly motion until your hands are in front of your chest.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring your arms back up to the starting position. Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -2591,11 +2613,11 @@ Vue.createApp({
                             this.chestFlyOneHeader = 'Drop Set';
                             this.chestFlyOneHeaderConfirmed = 'Drop Set';
                             this.chestFlyOneIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Set up the cable machine with the handles at the low position.",
-                                "Grab the handles and stand with your feet shoulder-width apart, facing the cable machine with your back to the bench.",
-                                "Lean forward slightly and bend your arms slightly at the elbows with your palms facing each other. This is the starting position.",
-                                "Keeping your arms slightly bent and your palms facing each other, slowly bring your arms forward and downward in a fly motion until your hands are in front of your chest.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring your arms back up to the starting position. Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -2642,11 +2664,11 @@ Vue.createApp({
                             this.chestFlyOneHeader = 'Drop Set';
                             this.chestFlyOneHeaderConfirmed = 'Drop Set';
                             this.chestFlyOneIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Adjust an incline bench to a comfortable angle and select a pair of dumbbells that are appropriate for your fitness level.",
-                                "Lie back on the bench and hold the dumbbells with your palms facing each other, extending your arms straight above your chest.",
-                                "Keeping a slight bend in your elbows, slowly lower the dumbbells out to the sides in a fly motion until your arms are parallel to the floor.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring the dumbbells back up to the starting position.",
-                                "Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -2693,11 +2715,11 @@ Vue.createApp({
                             this.chestFlyOneHeader = 'Drop Set';
                             this.chestFlyOneHeaderConfirmed = 'Drop Set';
                             this.chestFlyOneIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Garb an flat bench and select a pair of dumbbells that are appropriate for your fitness level.",
-                                "Lie back on the bench and hold the dumbbells with your palms facing each other, extending your arms straight above your chest.",
-                                "Keeping a slight bend in your elbows, slowly lower the dumbbells out to the sides in a fly motion until your arms are parallel to the floor.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring the dumbbells back up to the starting position.",
-                                "Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -2744,11 +2766,11 @@ Vue.createApp({
                             this.chestFlyOneHeader = 'Drop Set';
                             this.chestFlyOneHeaderConfirmed = 'Drop Set';
                             this.chestFlyOneIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Adjust an decline bench to a comfortable angle and select a pair of dumbbells that are appropriate for your fitness level.",
-                                "Lie back on the bench and hold the dumbbells with your palms facing each other, extending your arms straight above your chest.",
-                                "Keeping a slight bend in your elbows, slowly lower the dumbbells out to the sides in a fly motion until your arms are parallel to the floor.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring the dumbbells back up to the starting position.",
-                                "Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -3019,12 +3041,11 @@ Vue.createApp({
                             this.chestPressTwoHeader = 'Drop Set';
                             this.chestPressTwoHeaderConfirmed = 'Drop Set';
                             this.chestPressTwoIntensifiedInstructions = [
-                                "The plate-loaded incline press drop set is a variation of the traditional incline press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a plate-loaded incline press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
-
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -3071,11 +3092,11 @@ Vue.createApp({
                             this.chestPressTwoHeader = 'Drop Set';
                             this.chestPressTwoHeaderConfirmed = 'Drop Set';
                             this.chestPressTwoIntensifiedInstructions = [
-                                "The plate-loaded press drop set is a variation of the traditional press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a plate-loaded press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -3122,11 +3143,11 @@ Vue.createApp({
                             this.chestPressTwoHeader = 'Drop Set';
                             this.chestPressTwoHeaderConfirmed = 'Drop Set';
                             this.chestPressTwoIntensifiedInstructions = [
-                                "The plate-loaded decline press drop set is a variation of the traditional decline press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a plate-loaded decline press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -3173,11 +3194,11 @@ Vue.createApp({
                             this.chestPressTwoHeader = 'Drop Set';
                             this.chestPressTwoHeaderConfirmed = 'Drop Set';
                             this.chestPressTwoIntensifiedInstructions = [
-                                "The incline dumbbell press drop set is a variation of the traditional incline dumbbell press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would grab a set of dumbbells and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -3224,11 +3245,11 @@ Vue.createApp({
                             this.chestPressTwoHeader = 'Drop Set';
                             this.chestPressTwoHeaderConfirmed = 'Drop Set';
                             this.chestPressTwoIntensifiedInstructions = [
-                                "The dumbbell press drop set is a variation of the traditional dumbbell press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would grab a set of dumbbells with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -3275,11 +3296,11 @@ Vue.createApp({
                             this.chestPressTwoHeader = 'Drop Set';
                             this.chestPressTwoHeaderConfirmed = 'Drop Set';
                             this.chestPressTwoIntensifiedInstructions = [
-                                "The decline dumbbell press drop set is a variation of the traditional decline dumbbell press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would grab a set of dummbells with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -3326,11 +3347,11 @@ Vue.createApp({
                             this.chestPressTwoHeader = 'Drop Set';
                             this.chestPressTwoHeaderConfirmed = 'Drop Set';
                             this.chestPressTwoIntensifiedInstructions = [
-                                "The incline smith machine press drop set is a variation of the traditional incline smith machine press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load the bar of the incline smich machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -3377,11 +3398,11 @@ Vue.createApp({
                             this.chestPressTwoHeader = 'Drop Set';
                             this.chestPressTwoHeaderConfirmed = 'Drop Set';
                             this.chestPressTwoIntensifiedInstructions = [
-                                "The smith machine press drop set is a variation of the traditional smith machine press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load the bar of the smith machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -3428,11 +3449,11 @@ Vue.createApp({
                             this.chestPressTwoHeader = 'Drop Set';
                             this.chestPressTwoHeaderConfirmed = 'Drop Set';
                             this.chestPressTwoIntensifiedInstructions = [
-                                "The decline smith machine press drop set is a variation of the traditional decline smith machine press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load the bar of the smith machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_two':
@@ -3636,12 +3657,11 @@ Vue.createApp({
                             this.chestFlyTwoHeader = 'Drop Set';
                             this.chestFlyTwoHeaderConfirmed = 'Drop Set';
                             this.chestFlyTwoIntensifiedInstructions = [
-                                "To perform the seated cable incline fly exercise, you sit on a bench with an adjustable incline, facing away from the cable machine. Perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "The key to performing seated cable incline fly drop sets effectively is to focus on maintaining proper form throughout the exercise, even as the weight gets lighter.",
-                                "Aim for 3 to 4 different weight changes."
-
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_shoulder':
@@ -3688,11 +3708,11 @@ Vue.createApp({
                             this.chestFlyTwoHeader = 'Drop Set';
                             this.chestFlyTwoHeaderConfirmed = 'Drop Set';
                             this.chestFlyTwoIntensifiedInstructions = [
-                                "To perform the seated cable flat fly exercise, you sit on a bench facing away from the cable machine. Perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "The key to performing seated cable flat fly drop sets effectively is to focus on maintaining proper form throughout the exercise, even as the weight gets lighter.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_shoulder':
@@ -3739,11 +3759,11 @@ Vue.createApp({
                             this.chestFlyTwoHeader = 'Drop Set';
                             this.chestFlyTwoHeaderConfirmed = 'Drop Set';
                             this.chestFlyTwoIntensifiedInstructions = [
-                                "To perform the seated cable decline fly exercise, you sit on a bench with an adjustable decline, facing away from the cable machine. Perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "The key to performing seated cable decline fly drop sets effectively is to focus on maintaining proper form throughout the exercise, even as the weight gets lighter.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_shoulder':
@@ -3790,11 +3810,11 @@ Vue.createApp({
                             this.chestFlyTwoHeader = 'Drop Set';
                             this.chestFlyTwoHeaderConfirmed = 'Drop Set';
                             this.chestFlyTwoIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Set up the cable machine with the handles at the high position.",
-                                "Grab the handles and stand with your feet shoulder-width apart, facing the cable machine with your back to the bench.",
-                                "Lean forward slightly and bend your arms slightly at the elbows with your palms facing each other. This is the starting position.",
-                                "Keeping your arms slightly bent and your palms facing each other, slowly bring your arms forward and downward in a fly motion until your hands are in front of your chest.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring your arms back up to the starting position. Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_shoulder':
@@ -3841,11 +3861,11 @@ Vue.createApp({
                             this.chestFlyTwoHeader = 'Drop Set';
                             this.chestFlyTwoHeaderConfirmed = 'Drop Set';
                             this.chestFlyTwoIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Set up the cable machine with the handles at the low position.",
-                                "Grab the handles and stand with your feet shoulder-width apart, facing the cable machine with your back to the bench.",
-                                "Lean forward slightly and bend your arms slightly at the elbows with your palms facing each other. This is the starting position.",
-                                "Keeping your arms slightly bent and your palms facing each other, slowly bring your arms forward and downward in a fly motion until your hands are in front of your chest.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring your arms back up to the starting position. Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_shoulder':
@@ -3892,11 +3912,11 @@ Vue.createApp({
                             this.chestFlyTwoHeader = 'Drop Set';
                             this.chestFlyTwoHeaderConfirmed = 'Drop Set';
                             this.chestFlyTwoIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Adjust an incline bench to a comfortable angle and select a pair of dumbbells that are appropriate for your fitness level.",
-                                "Lie back on the bench and hold the dumbbells with your palms facing each other, extending your arms straight above your chest.",
-                                "Keeping a slight bend in your elbows, slowly lower the dumbbells out to the sides in a fly motion until your arms are parallel to the floor.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring the dumbbells back up to the starting position.",
-                                "Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_shoulder':
@@ -3943,11 +3963,11 @@ Vue.createApp({
                             this.chestFlyTwoHeader = 'Drop Set';
                             this.chestFlyTwoHeaderConfirmed = 'Drop Set';
                             this.chestFlyTwoIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Garb an flat bench and select a pair of dumbbells that are appropriate for your fitness level.",
-                                "Lie back on the bench and hold the dumbbells with your palms facing each other, extending your arms straight above your chest.",
-                                "Keeping a slight bend in your elbows, slowly lower the dumbbells out to the sides in a fly motion until your arms are parallel to the floor.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring the dumbbells back up to the starting position.",
-                                "Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_shoulder':
@@ -3994,11 +4014,11 @@ Vue.createApp({
                             this.chestFlyTwoHeader = 'Drop Set';
                             this.chestFlyTwoHeaderConfirmed = 'Drop Set';
                             this.chestFlyTwoIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Adjust an decline bench to a comfortable angle and select a pair of dumbbells that are appropriate for your fitness level.",
-                                "Lie back on the bench and hold the dumbbells with your palms facing each other, extending your arms straight above your chest.",
-                                "Keeping a slight bend in your elbows, slowly lower the dumbbells out to the sides in a fly motion until your arms are parallel to the floor.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring the dumbbells back up to the starting position.",
-                                "Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_shoulder':
@@ -4207,12 +4227,11 @@ Vue.createApp({
                             this.chestTricepsHeader = 'Drop Set';
                             this.chestTricepsHeaderConfirmed = 'Drop Set';
                             this.chestTricepsIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Set an adjustable bench to a comfortable incline angle and load an EZ bar with weight plates that are appropriate for your fitness level.",
-                                "Sit on the bench and grasp the EZ bar with an overhand grip, keeping your hands shoulder-width apart.",
-                                "Begin the exercise by extending the EZ bar up and overhead, keeping your elbows close to your head and slowly lowering the bar down towards your forehead.",
-                                "Without allowing your elbows to move, pause briefly at the bottom of the movement, and then extend the bar back up towards the starting position.",
-                                "Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure. Once you have completed the drop set, rest for a brief moment, and then repeat the exercise for the desired number of sets."
-
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -4259,11 +4278,11 @@ Vue.createApp({
                             this.chestTricepsHeader = 'Drop Set';
                             this.chestTricepsHeaderConfirmed = 'Drop Set';
                             this.chestTricepsIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Get a flat bench and load an EZ bar with weight plates that are appropriate for your fitness level.",
-                                "Sit on the bench and grasp the EZ bar with an overhand grip, keeping your hands shoulder-width apart.",
-                                "Begin the exercise by extending the EZ bar up and overhead, keeping your elbows close to your head and slowly lowering the bar down towards your forehead.",
-                                "Without allowing your elbows to move, pause briefly at the bottom of the movement, and then extend the bar back up towards the starting position.",
-                                "Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure. Once you have completed the drop set, rest for a brief moment, and then repeat the exercise for the desired number of sets."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -4310,11 +4329,11 @@ Vue.createApp({
                             this.chestTricepsHeader = 'Drop Set';
                             this.chestTricepsHeaderConfirmed = 'Drop Set';
                             this.chestTricepsIntensifiedInstructions = [
-                                "To perform the seated cable decline fly exercise, you sit on a bench with an adjustable decline, facing away from the cable machine. Perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "The key to performing seated cable decline fly drop sets effectively is to focus on maintaining proper form throughout the exercise, even as the weight gets lighter.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -4361,11 +4380,11 @@ Vue.createApp({
                             this.chestTricepsHeader = 'Drop Set';
                             this.chestTricepsHeaderConfirmed = 'Drop Set';
                             this.chestTricepsIntensifiedInstructions = [
-                                "Here are the steps to perform this exercise: Set up the cable machine with the handles at the high position.",
-                                "Grab the handles and stand with your feet shoulder-width apart, facing the cable machine with your back to the bench.",
-                                "Lean forward slightly and bend your arms slightly at the elbows with your palms facing each other. This is the starting position.",
-                                "Keeping your arms slightly bent and your palms facing each other, slowly bring your arms forward and downward in a fly motion until your hands are in front of your chest.",
-                                "Pause for a moment at the bottom of the movement, then slowly bring your arms back up to the starting position. Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -4672,12 +4691,11 @@ Vue.createApp({
                     this.chestFlyOneHeader = 'Drop Set';
                     this.chestFlyOneHeaderConfirmed = 'Drop Set';
                     this.chestFlyOneIntensifiedInstructions = [
-                        "To perform the seated cable incline fly exercise, you sit on a bench with an adjustable incline, facing away from the cable machine. Perform a set of 8-12 repetitions.",
-                        "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                        "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                        "The key to performing seated cable incline fly drop sets effectively is to focus on maintaining proper form throughout the exercise, even as the weight gets lighter.",
-                        "Aim for 3 to 4 different weight changes."
-
+                        "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                        "This process can be repeated several times, typically three to four weight reductions in total.",
+                        "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                        "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                        "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                     ];
                     break;
                 case 'seth_press_fly':
@@ -4883,12 +4901,11 @@ Vue.createApp({
                         this.backRowHeader = 'Drop Set';
                         this.chestPressOneHeaderConfirmed = 'Drop Set';
                         this.chestPressOneIntensifiedInstructions = [
-                            "The plate-loaded incline press drop set is a variation of the traditional incline press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                            "To perform this exercise, you would load a plate-loaded incline press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                            "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                            "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                            "Aim for 3 to 4 different weight changes."
-
+                            "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                            "This process can be repeated several times, typically three to four weight reductions in total.",
+                            "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                            "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                            "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                         ];
                         break;
                     case 'seth_press':
@@ -5067,12 +5084,11 @@ Vue.createApp({
                     this.backPulldownTwoHeader = 'Drop Set';
                     this.chestPressTwoHeaderConfirmed = 'Drop Set';
                     this.chestPressTwoIntensifiedInstructions = [
-                        "To perform the seated cable incline fly exercise, you sit on a bench with an adjustable incline, facing away from the cable machine. Perform a set of 8-12 repetitions.",
-                        "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                        "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                        "The key to performing seated cable incline fly drop sets effectively is to focus on maintaining proper form throughout the exercise, even as the weight gets lighter.",
-                        "Aim for 3 to 4 different weight changes."
-
+                        "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                        "This process can be repeated several times, typically three to four weight reductions in total.",
+                        "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                        "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                        "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                     ];
                     break;
                 case 'seth_press_fly':
@@ -5153,12 +5169,11 @@ Vue.createApp({
                         this.backPulldownTwoHeader = 'Drop Set';
                         this.chestPressTwoHeaderConfirmed = 'Drop Set';
                         this.chestPressTwoIntensifiedInstructions = [
-                            "The plate-loaded incline press drop set is a variation of the traditional incline press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                            "To perform this exercise, you would load a plate-loaded incline press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                            "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                            "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                            "Aim for 3 to 4 different weight changes."
-
+                            "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                            "This process can be repeated several times, typically three to four weight reductions in total.",
+                            "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                            "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                            "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                         ];
                         break;
                     case 'seth_press_two':
@@ -5364,12 +5379,11 @@ Vue.createApp({
                             this.backTrapsHeader = 'Drop Set';
                             this.chestFlyTwoHeaderConfirmed = 'Drop Set';
                             this.chestFlyTwoIntensifiedInstructions = [
-                                "The plate-loaded incline press drop set is a variation of the traditional incline press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would load a plate-loaded incline press machine with a heavy weight and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
-    
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press':
@@ -5538,12 +5552,11 @@ Vue.createApp({
                         this.backBicepsHeader = 'Drop Set';
                         this.chestTricepsHeaderConfirmed = 'Drop Set';
                         this.chestTricepsIntensifiedInstructions = [
-                            "Here are the steps to perform this exercise: Set an adjustable bench to a comfortable incline angle and load an EZ bar with weight plates that are appropriate for your fitness level.",
-                            "Sit on the bench and grasp the EZ bar with an overhand grip, keeping your hands shoulder-width apart.",
-                            "Begin the exercise by extending the EZ bar up and overhead, keeping your elbows close to your head and slowly lowering the bar down towards your forehead.",
-                            "Without allowing your elbows to move, pause briefly at the bottom of the movement, and then extend the bar back up towards the starting position.",
-                            "Perform a drop set by decreasing the weight and immediately performing another set of repetitions until failure. Once you have completed the drop set, rest for a brief moment, and then repeat the exercise for the desired number of sets."
-
+                            "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                            "This process can be repeated several times, typically three to four weight reductions in total.",
+                            "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                            "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                            "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                         ];
                         break;
                     case 'seth_press_tricep':
@@ -5851,12 +5864,11 @@ Vue.createApp({
                         this.calvesHeader = 'Drop Set';
                         this.rearDeltHeaderConfirmed = 'Drop Set';
                         this.intensifiedInstructions = [
-                            "Here's a description of how to perform a rear delt cables drop set: Set up the cable machine with the pulleys at shoulder height. Attach D-handle grips to each pulley.",
-                            "Stand facing the cable machine with your feet shoulder-width apart. Grasp one D-handle in each hand with your palms facing downward. Step back slightly to create tension in the cables. Position your feet and torso for stability. Start with your arms extended forward in front of you, maintaining a slight bend in your elbows.",
-                            "Perform a set of rear delt cable flyes by squeezing your shoulder blades together and pulling your arms outward and backward in an arc-like motion. Focus on engaging your rear deltoid muscles as you bring your arms to the sides until they are parallel to the ground or slightly above shoulder level. Hold the contracted position for a brief moment, feeling the tension in your rear deltoids.",
-                            "Slowly return your arms to the starting position, maintaining control over the cables' resistance. Without resting, quickly reduce the weight on the cable machine by moving the pin to a lower weight setting or using a lighter weight stack.",
-                            "Immediately continue with another set of rear delt cable flyes with the reduced resistance. Aim to perform as many reps as possible with the lighter weight."
-
+                            "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                            "This process can be repeated several times, typically three to four weight reductions in total.",
+                            "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                            "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                            "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                         ];
                         break;
                     case 'seth_press_two':
@@ -6018,12 +6030,11 @@ Vue.createApp({
                             this.hamstringHeader = 'Drop Set';
                             this.auxOneHeaderConfirmed = 'Drop Set';
                             this.auxIntensifiedInstructions = [
-                                "Here's a description of how to perform a rear delt cables drop set: Set up the cable machine with the pulleys at shoulder height. Attach D-handle grips to each pulley.",
-                                "Stand facing the cable machine with your feet shoulder-width apart. Grasp one D-handle in each hand with your palms facing downward. Step back slightly to create tension in the cables. Position your feet and torso for stability. Start with your arms extended forward in front of you, maintaining a slight bend in your elbows.",
-                                "Perform a set of rear delt cable flyes by squeezing your shoulder blades together and pulling your arms outward and backward in an arc-like motion. Focus on engaging your rear deltoid muscles as you bring your arms to the sides until they are parallel to the ground or slightly above shoulder level. Hold the contracted position for a brief moment, feeling the tension in your rear deltoids.",
-                                "Slowly return your arms to the starting position, maintaining control over the cables' resistance. Without resting, quickly reduce the weight on the cable machine by moving the pin to a lower weight setting or using a lighter weight stack.",
-                                "Immediately continue with another set of rear delt cable flyes with the reduced resistance. Aim to perform as many reps as possible with the lighter weight."
-
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -6174,11 +6185,11 @@ Vue.createApp({
                             this.quadHeader = 'Drop Set';
                             this.pressHeaderConfirmed = 'Drop Set';
                             this.pressIntensifiedInstructions = [
-                                "The dumbell shoulder press drop set is a variation of the traditional dumbbell press exercise that involves performing a set with progressively lighter weights, or “dropping” the weight, to increase muscle fatigue and potentially achieve greater muscle growth.",
-                                "To perform this exercise, you would grab a heavy set of dumbbells and perform a set of 8-12 repetitions.",
-                                "Without rest, you would then immediately decrease the weight by 10-20% and perform another set of 8-12 repetitions.",
-                                "You may continue this process, decreasing the weight and performing another set, until you are unable to perform a set with good form or reach a predetermined number of sets.",
-                                "Aim for 3 to 4 different weight changes."
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_tricep':
@@ -6304,12 +6315,11 @@ Vue.createApp({
                             this.hamAuxHeader = 'Drop Set';
                             this.auxTwoHeaderConfirmed = 'Drop Set';
                             this.auxTwoIntensifiedInstructions = [
-                                "Here's a description of how to perform a rear delt cables drop set: Set up the cable machine with the pulleys at shoulder height. Attach D-handle grips to each pulley.",
-                                "Stand facing the cable machine with your feet shoulder-width apart. Grasp one D-handle in each hand with your palms facing downward. Step back slightly to create tension in the cables. Position your feet and torso for stability. Start with your arms extended forward in front of you, maintaining a slight bend in your elbows.",
-                                "Perform a set of rear delt cable flyes by squeezing your shoulder blades together and pulling your arms outward and backward in an arc-like motion. Focus on engaging your rear deltoid muscles as you bring your arms to the sides until they are parallel to the ground or slightly above shoulder level. Hold the contracted position for a brief moment, feeling the tension in your rear deltoids.",
-                                "Slowly return your arms to the starting position, maintaining control over the cables' resistance. Without resting, quickly reduce the weight on the cable machine by moving the pin to a lower weight setting or using a lighter weight stack.",
-                                "Immediately continue with another set of rear delt cable flyes with the reduced resistance. Aim to perform as many reps as possible with the lighter weight."
-
+                                "A drop set is a strength training technique in which you perform a set of an exercise to muscle fatigue, then immediately reduce the weight and continue for additional repetitions.",                        
+                                "This process can be repeated several times, typically three to four weight reductions in total.",
+                                "The goal is to push the muscles beyond their normal limits by extending the set's duration and intensity.",
+                                "Drop sets are effective for increasing muscle hypertrophy due to the sustained time under tension.",
+                                "This method can be applied to a wide range of exercises using free weights, machines, or cables."
                             ];
                             break;
                         case 'seth_press_fly':
@@ -7292,6 +7302,10 @@ Vue.createApp({
                     this.newPlainTextPassword= "";
                     this.showPage = 'G';
                     this.logPage = 'E';
+                    // this.loadChestWorkoutData();
+                    // this.loadLegWorkoutData();
+                    // this.loadBackWorkoutData();
+                    // this.loadShoulderWorkoutData();
                 }else if( response.status == 422){
                     return response.json(); // Parse JSON data from response
                 }
@@ -7334,7 +7348,7 @@ Vue.createApp({
                 if (response.status == 201){
                     this.newLoginEmail= "";
                     this.newLoginPassword= "";
-                    this.loadSession()
+                    this.loadSession();
                     this.showPage = 'G';
                     this.logPage = 'E';
                 }else if (response.status == 401){
@@ -7350,6 +7364,10 @@ Vue.createApp({
                 // credentials: "include"
             }).then((response) => {
                 if (response.status != 401){
+                this.loadChestWorkoutData();
+                this.loadLegWorkoutData();
+                this.loadBackWorkoutData();
+                this.loadShoulderWorkoutData();
                 this.showPage = 'G';
                 this.logPage = 'E';
                 console.log("Session is authenticated");
@@ -7375,7 +7393,6 @@ Vue.createApp({
 
             }).then((response) => {
                 if (response.status == 200){
-                    //this.loadFoods();
                     this.showPage = 'D'; 
                     this.logPage = 'B';
                 }
@@ -7422,8 +7439,18 @@ Vue.createApp({
             return this.userIsValid;
         },
         errorMessageForUser: function(field){
-            return this.errorUserMessages[field];
+            return this.errorMessageForUsers[field];
         },
+        startSlideshow() {
+            this.slideInterval = setInterval(this.nextSlide, 3000); // Change slide every 3 seconds
+        },
+        nextSlide() {
+            this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
+        },
+        currentSlide(index) {
+            this.currentSlideIndex = index;
+            clearInterval(this.slideInterval); // Stop the automatic slideshow when a dot is clicked
+        }
 
     },
     computed:{
@@ -7440,12 +7467,12 @@ Vue.createApp({
 
     created: function(){
         this.loadSession();
-
+        this.startSlideshow();
         //console.log("Hello Vue");
-        // this.loadChestWorkoutData();
-        // this.loadLegWorkoutData();
-        // this.loadBackWorkoutData();
-        // this.loadShoulderWorkoutData();
+        
+    },
+    beforeUnmount() {
+        clearInterval(this.slideInterval);
     }
 
 
