@@ -2,10 +2,6 @@ const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://chunsaker-SE4200:tE5gDZ6YlZKZcnHg@cluster0.6txnlrl.mongodb.net/workout?retryWrites=true&w=majority');
 
-const Shred = mongoose.model('Shred', { 
-    shred: String
-});
-
 
 
 const ChestWorkoutDataSchema = new mongoose.Schema({
@@ -417,7 +413,6 @@ const User = mongoose.model('User', userSchema);
 
 
 module.exports = {
-    Shred: Shred,
     ChestWorkoutData: ChestWorkoutData,
     ShoulderWorkoutData: ShoulderWorkoutData,
     LegsWorkoutData: LegsWorkoutData,

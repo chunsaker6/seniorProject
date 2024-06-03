@@ -290,24 +290,6 @@ app.delete("/back_workout_data/:workoutId", function(request, response){
 });
 // END OF BACK
 
-app.get("/workouts", function(request, response){
-    model.Shred.find().then((shreds) => {
-        //  response.set("Access-Control-Allow-Origin", "*")
-         response.json(shreds)
-     })
-})
-app.post("/workouts", function(request, response){
-    console.log("request_body:", request.body);
-    const newShred = new model.Shred({
-         shred: request.body.shred,
-    })
-    newShred.save().then(() => {
-        // response.set("Access-Control-Allow-Origin", "*")
-        response.status(201).send("Created")
-
-    })
-})
-
 
 // create new user member
 app.post("/users", function(request, response){

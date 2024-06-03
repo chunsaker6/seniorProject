@@ -46,9 +46,6 @@ Vue.createApp({
             newPlainTextPassword: '',
             errorSessionMessages: {},
             errorMessageForUsers: {},
-            
-            newShred: "",
-            shredded: "",
             imageUrl1: null, // To store the URL of the selected image
             imageUrl2: null, // To store the URL of the second selected image
             // SHRED HOMEPAGE
@@ -6745,13 +6742,6 @@ Vue.createApp({
                 this.showProgress = 'B';
             }
         },
-        //
-        shredOption: function(){
-            this.newShred = "Yes";
-            this.showPage = "G";
-            this.logPage = "E";
-            // this.addShred();
-        },
         // chest workout data non intensified
         workoutTitle: function(parameter){
             if (parameter === "chestWarmup"){
@@ -6961,7 +6951,7 @@ Vue.createApp({
             fetch("http://localhost:8080/chest_workout_data").then((response) => {
                 if (response.status == 200){
                     response.json().then((maxShoulderFromServer) => {
-                        console.log("recieved foods from API:", maxShoulderFromServer);
+                        console.log("recieved chest workout from API:", maxShoulderFromServer);
                         this.chestShredWorkoutData = maxShoulderFromServer;
                     });
                 }
@@ -7049,7 +7039,7 @@ Vue.createApp({
             fetch("http://localhost:8080/shoulder_workout_data").then((response) => {
                 if (response.status == 200){
                     response.json().then((maxShoulderFromServer) => {
-                        console.log("recieved foods from API:", maxShoulderFromServer);
+                        console.log("recieved shoulder workout from API:", maxShoulderFromServer);
                         this.chestShredShoulderData = maxShoulderFromServer;
                     });
                 }
@@ -7137,7 +7127,7 @@ Vue.createApp({
             fetch("http://localhost:8080/leg_workout_data").then((response) => {
                 if (response.status == 200){
                     response.json().then((maxShoulderFromServer) => {
-                        console.log("recieved foods from API:", maxShoulderFromServer);
+                        console.log("recieved leg workout from API:", maxShoulderFromServer);
                         this.chestShredLegData = maxShoulderFromServer;
                     });
                 }
@@ -7234,7 +7224,7 @@ Vue.createApp({
             fetch("http://localhost:8080/back_workout_data").then((response) => {
                 if (response.status == 200){
                     response.json().then((maxShoulderFromServer) => {
-                        console.log("recieved foods from API:", maxShoulderFromServer);
+                        console.log("recieved back workout from API:", maxShoulderFromServer);
                         this.backWorkoutData = maxShoulderFromServer;
                     });
                 }
@@ -7248,33 +7238,6 @@ Vue.createApp({
                     this.loadBackWorkoutData();
                 }
 
-            });
-        },
-
-        addShred: function(){
-            var data= "shred=" + encodeURIComponent(this.newShred);
-            fetch("http://localhost:8080/workouts", {
-                body: data,
-                method: "POST",
-                headers:{
-                    "Content-Type": "application/x-www-form-urlencoded"
-                }
-            }).then((response) => {
-                if (response.status == 201){
-                    this.newShred;
-                    this.loadShred();
-                }
-
-            });
-        },
-        loadShred: function (){
-            fetch("http://localhost:8080/workouts").then((response) => {
-                if (response.status == 200){
-                    response.json().then((shredsFromServer) => {
-                        console.log("recieved foods from API:", shredsFromServer);
-                        this.shredded = shredsFromServer;
-                    });
-                }
             });
         },
         // users section YEET
@@ -7300,12 +7263,12 @@ Vue.createApp({
                     this.newLastName= "";
                     this.newEmail= "";
                     this.newPlainTextPassword= "";
+                    this.loadChestWorkoutData();
+                    this.loadLegWorkoutData();
+                    this.loadBackWorkoutData();
+                    this.loadShoulderWorkoutData();
                     this.showPage = 'G';
                     this.logPage = 'E';
-                    // this.loadChestWorkoutData();
-                    // this.loadLegWorkoutData();
-                    // this.loadBackWorkoutData();
-                    // this.loadShoulderWorkoutData();
                 }else if( response.status == 422){
                     return response.json(); // Parse JSON data from response
                 }
@@ -7364,14 +7327,14 @@ Vue.createApp({
                 // credentials: "include"
             }).then((response) => {
                 if (response.status != 401){
-                this.loadChestWorkoutData();
-                this.loadLegWorkoutData();
-                this.loadBackWorkoutData();
-                this.loadShoulderWorkoutData();
-                this.showPage = 'G';
-                this.logPage = 'E';
-                console.log("Session is authenticated");
-                return response.json(); // Parse JSON data from response
+                    this.loadChestWorkoutData();
+                    this.loadLegWorkoutData();
+                    this.loadBackWorkoutData();
+                    this.loadShoulderWorkoutData();
+                    this.showPage = 'G';
+                    this.logPage = 'E';
+                    console.log("Session is authenticated");
+                    return response.json(); // Parse JSON data from response
             }
             }).then(data => {
                 // Handle the JSON data returned from the server
