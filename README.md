@@ -20,6 +20,7 @@ This is a personal training web application built using Vue.js for the front end
 - **Front End**: Vue.js, Custom CSS
 - **Back End**: Node.js, Express.js, MongoDB
 - **Authentication**: Bcrypt
+- **Deployment**: Render
 
 ## Installation
 1. Clone the repository:
