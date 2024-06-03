@@ -29,6 +29,8 @@ This is a personal training web application built using Vue.js for the front end
    git clone https://github.com/chunsaker6/seniorProject.git
    npm install node, vue, mongoose, bycrypt
    To Run it: node server.js
+A premade user is email: 123@gmail.com
+Password: 123gmail
 Open your web browser and navigate to http://localhost:8080 to access the application.
 
 ## MOBILE VERSION NOT COMPLETE
