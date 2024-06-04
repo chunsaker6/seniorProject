@@ -303,6 +303,8 @@ app.post("/users", function(request, response){
     newUser.setEncryptedPassword(request.body.plainPassword).then(function(){
         // at this time the password has been encrypted and set on the user
         newUser.save().then(() => {
+            request.session.userId = newUser._id
+            console.log("new user id", request.session.userId)
             response.status(201).send("Created")
     
         }).catch((error) => {
@@ -340,13 +342,12 @@ app.get("/session", (request, response) =>{
     console.log("session:", request.session)
     console.log("session user id", request.session.userId)
     if (request.session && request.session.userId){
-        // logged in
-        console.log("user get session info", request.user)
-        // response.json(request.user)
-        response.status(201).send("Autheticated")
+        response.status(201).json("Autheticated");
     }else{
-        response.status(401).send("Not Autheticated")
+        response.status(401).json("Not Autheticated");
     }
+    //console.log("user get session info", request.user)
+    
     
     // response.status(201).send("Autheticated")
 })

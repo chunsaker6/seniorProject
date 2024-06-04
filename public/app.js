@@ -45,7 +45,7 @@ Vue.createApp({
             newEmail: '',
             newPlainTextPassword: '',
             errorSessionMessages: {},
-            errorMessageForUsers: {},
+            errorUserMessages: {},
             imageUrl1: null, // To store the URL of the selected image
             imageUrl2: null, // To store the URL of the second selected image
             // SHRED HOMEPAGE
@@ -7259,14 +7259,11 @@ Vue.createApp({
                 }
             }).then((response) => {
                 if (response.status == 201){
+                    this.loadSession();
                     this.newFirstName= "";
                     this.newLastName= "";
                     this.newEmail= "";
                     this.newPlainTextPassword= "";
-                    this.loadChestWorkoutData();
-                    this.loadLegWorkoutData();
-                    this.loadBackWorkoutData();
-                    this.loadShoulderWorkoutData();
                     this.showPage = 'G';
                     this.logPage = 'E';
                 }else if( response.status == 422){
@@ -7402,7 +7399,7 @@ Vue.createApp({
             return this.userIsValid;
         },
         errorMessageForUser: function(field){
-            return this.errorMessageForUsers[field];
+            return this.errorUserMessages[field];
         },
         startSlideshow() {
             this.slideInterval = setInterval(this.nextSlide, 3000); // Change slide every 3 seconds
